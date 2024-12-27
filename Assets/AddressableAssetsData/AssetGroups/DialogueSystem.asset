@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: DialogueSystem
+  m_EditorClassIdentifier: 
+  m_GroupName: DialogueSystem
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a013f25c6df27a14c93c5c60e01dd818
+  m_SerializeEntries:
+  - m_GUID: c22ab835e40be184fafff6108f64a052
+    m_Address: DIALOGUE_BLOCK
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dcbce229f074f2d448085f56e5d22dbe
+    m_Address: BUTTON_CONTAINER
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ed3645e2be95abf4d99ac3f0601098f8, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: cd261c729bb638746aa26517bb29a67d, type: 2}
+    - {fileID: 11400000, guid: 96d1df88357717847871dd5d5bfb710a, type: 2}

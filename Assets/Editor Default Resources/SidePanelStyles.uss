@@ -1,0 +1,5 @@
+.ds-node__side-pane-container
+{
+background-color: var(--ds-colors-grid-light-grey-1);
+width: 200px;
+}

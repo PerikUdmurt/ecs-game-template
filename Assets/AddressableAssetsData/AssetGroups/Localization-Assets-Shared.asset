@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Shared
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Assets-Shared
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ba2b8b794dbc16644bb315be9536c27b
+  m_SerializeEntries:
+  - m_GUID: 0cc507da5bf6f7643a30d9e8901b7758
+    m_Address: Assets/Localization/ResourcesLT/ResourceLocalizationTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a58f4c21a2e1e546adbb31e2c55cb13
+    m_Address: Assets/Localization/ProgressTokensLT/ProgressTokens Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a1f81a98aca85f41941141151f79491
+    m_Address: Assets/Localization/LocalizationAssets/FlagIcon/FlagAssetTable Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9313e9a1f4ec3044c905dce965e1498e
+    m_Address: Assets/Localization/DialogueSystemUI/DialogueSystemUI Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: ed3645e2be95abf4d99ac3f0601098f8, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f674ffadf06fbf44dba0f1e4d4064ab2, type: 2}
+    - {fileID: 11400000, guid: 606e1dea300c3f7458cf379d9e922427, type: 2}
