@@ -3,7 +3,7 @@ using Code.Gameplay.DialogueSystem.UI.Controller;
 using Code.UI.Core.Controller;
 using Code.UI.Core.Navigator;
 using Code.UI.Develop;
-using Code.UI.Localization;
+using Code.UI.Settings;
 using UnityEngine;
 using Zenject;
 
@@ -42,7 +42,7 @@ namespace Code.UI.Core
 
             Installer<DevelopUIInstaller>.Install(Container);
             Installer<DialogueSystemUIInstaller>.Install(Container);
-            Installer<LocalizationUIInstaller>.Install(Container);
+            Installer<SettingsUIInstaller>.Install(Container);
         }
     }
 }

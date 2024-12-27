@@ -11,6 +11,6 @@ namespace Code.UI.Core
 
         public const string DialogueScreenView = "UI/DialogueSystem/DIALOGUE_SCREEN_VIEW";
         
-        public const string LocalizationPopup = "UI/LocalizationPopup";
+        public const string SettingsScreen = "UI/Settings/SettingsPopup";
     }
 }
