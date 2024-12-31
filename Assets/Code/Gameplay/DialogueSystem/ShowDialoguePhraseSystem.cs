@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Code.Gameplay.DialogueSystem.UI.Controller;
 using Code.UI.Core;
+using Cysharp.Threading.Tasks;
 using Entitas;
 using JetBrains.Annotations;
 using UnityEngine.Localization.Tables;
@@ -23,7 +24,8 @@ namespace Code.Gameplay.DialogueSystem
             foreach (var entity in entities)
             {
                 var text = entity.dialoguePhrase.Value;
-                _uINavigator.Show<DialogueScreenController>(controller => controller.ShowPhrase(text));
+                _uINavigator.Show<DialogueScreenController>(controller => 
+                    controller.ShowPhrase(text).Forget());
             }
         }
 
