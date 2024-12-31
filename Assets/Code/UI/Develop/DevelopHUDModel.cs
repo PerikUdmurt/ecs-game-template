@@ -5,6 +5,7 @@ using Code.UI.Core;
 using Code.UI.Develop.Debugger;
 using System;
 using System.Collections.Generic;
+using Code.UI.Settings;
 using UnityEngine;
 using Zenject;
 
@@ -50,6 +51,12 @@ namespace Code.UI.Develop
             {
                 ISaveLoadService progress = _container.TryResolve<ISaveLoadService>();
                 progress.LoadProgress();
+            });
+            
+            CreateAction("Open Settings", (str) =>
+            {
+                IUINavigator navigator = _container.TryResolve<IUINavigator>();
+                navigator.Show<SettingsScreenController>();
             });
         }
 

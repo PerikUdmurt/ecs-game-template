@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
+using JetBrains.Annotations;
 using UnityEngine.Localization.Settings;
 
 namespace Code.Services.LocalizationServices
 {
+    [UsedImplicitly]
     public class LocalizationService : ILocalizationService
     {
         public async UniTask SetLocale(ELocaleType locale)
@@ -20,11 +22,5 @@ namespace Code.Services.LocalizationServices
             => LocalizationSettings.AvailableLocales.Locales
                 .Select(l => l.CustomFormatterCode.ToLocaleType())
                 .ToList();
-    }
-
-    public interface ILocalizationService
-    {
-        UniTask SetLocale(ELocaleType locale);
-        List<ELocaleType> GetAvailableLocale();
     }
 }

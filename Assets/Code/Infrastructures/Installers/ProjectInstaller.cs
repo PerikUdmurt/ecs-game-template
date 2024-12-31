@@ -12,6 +12,8 @@ using Code.NodeBasedSystem;
 using Code.Progress;
 using Code.Services.InputServices;
 using Code.Services.LocalizationServices;
+using Code.Services.PlayerSettingsServices;
+using Code.Services.ScreenResolutionService;
 using Code.Services.StaticDataServices;
 using Code.UI.Core;
 using UnityEngine;
@@ -56,6 +58,8 @@ namespace Code.Infrastructures.Installers
             Install<IdentifierServiceInstaller>();
             Install<StaticDataInstaller>();
             Install<LocalizationInstaller>();
+            Install<ScreenResolutionInstaller>();
+            Install<PlayerSettingsInstaller>();
         }
 
         private void InstallGameplayFactories()
