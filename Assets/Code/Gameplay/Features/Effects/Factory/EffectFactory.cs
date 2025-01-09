@@ -1,4 +1,5 @@
 using System;
+using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Infrastructure.Identifiers;
 

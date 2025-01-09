@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Code.NodeBasedSystem.Core.Datas;
 using Cysharp.Threading.Tasks;
 
 namespace Code.Services.LocalizationServices
@@ -7,5 +8,7 @@ namespace Code.Services.LocalizationServices
     {
         UniTask SetLocale(ELocaleType locale);
         List<ELocaleType> GetAvailableLocale();
+        string GetLocalizedString(string entryKey, string tableKey);
+        string GetLocalizedString(LocalizedStringData data);
     }
 }

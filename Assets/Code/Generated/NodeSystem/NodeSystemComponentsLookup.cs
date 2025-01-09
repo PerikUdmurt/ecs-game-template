@@ -8,32 +8,36 @@
 //------------------------------------------------------------------------------
 public static class NodeSystemComponentsLookup {
 
-    public const int AddBenzine = 0;
-    public const int AddItem = 1;
-    public const int AddMoney = 2;
-    public const int AddRating = 3;
-    public const int AddToken = 4;
-    public const int AddVolition = 5;
-    public const int RemoveBenzine = 6;
-    public const int RemoveItem = 7;
-    public const int RemoveMoney = 8;
-    public const int RemoveRating = 9;
-    public const int RemoveToken = 10;
-    public const int RemoveVolition = 11;
-    public const int DialoguePhrase = 12;
-    public const int GraphID = 13;
-    public const int NextNodes = 14;
-    public const int Node = 15;
-    public const int NodeId = 16;
-    public const int NodePosition = 17;
-    public const int Played = 18;
-    public const int Playing = 19;
-    public const int SkipTimerNode = 20;
-    public const int StartNode = 21;
+    public const int DialoguePhrase = 0;
+    public const int NextNodeRequest = 1;
+    public const int AddBenzine = 2;
+    public const int AddItem = 3;
+    public const int AddMoney = 4;
+    public const int AddRating = 5;
+    public const int AddToken = 6;
+    public const int AddVolition = 7;
+    public const int RemoveBenzine = 8;
+    public const int RemoveItem = 9;
+    public const int RemoveMoney = 10;
+    public const int RemoveRating = 11;
+    public const int RemoveToken = 12;
+    public const int RemoveVolition = 13;
+    public const int GraphID = 14;
+    public const int NextChoices = 15;
+    public const int NextNodes = 16;
+    public const int Node = 17;
+    public const int NodeId = 18;
+    public const int NodePosition = 19;
+    public const int Played = 20;
+    public const int Playing = 21;
+    public const int SkipTimerNode = 22;
+    public const int StartNode = 23;
 
-    public const int TotalComponents = 22;
+    public const int TotalComponents = 24;
 
     public static readonly string[] componentNames = {
+        "DialoguePhrase",
+        "NextNodeRequest",
         "AddBenzine",
         "AddItem",
         "AddMoney",
@@ -46,8 +50,8 @@ public static class NodeSystemComponentsLookup {
         "RemoveRating",
         "RemoveToken",
         "RemoveVolition",
-        "DialoguePhrase",
         "GraphID",
+        "NextChoices",
         "NextNodes",
         "Node",
         "NodeId",
@@ -59,6 +63,8 @@ public static class NodeSystemComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent),
+        typeof(Code.NodeBasedSystem.NextNodeRequestComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddBenzineComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddItemComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddMoneyComponent),
@@ -71,8 +77,8 @@ public static class NodeSystemComponentsLookup {
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.RemoveRatingComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.RemoveTokenComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.RemoveVolitionComponent),
-        typeof(DialoguePhraseComponent),
         typeof(NodeBasedSystem.Nodes.GraphIDComponent),
+        typeof(NodeBasedSystem.Nodes.NextChoices),
         typeof(NodeBasedSystem.Nodes.NextNodes),
         typeof(NodeBasedSystem.Nodes.Node),
         typeof(NodeBasedSystem.Nodes.NodeId),

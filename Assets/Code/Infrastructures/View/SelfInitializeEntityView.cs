@@ -1,3 +1,4 @@
+using Code.Common.Entity;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
 using Zenject;

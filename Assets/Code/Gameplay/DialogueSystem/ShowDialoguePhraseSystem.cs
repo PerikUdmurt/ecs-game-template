@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using Code.Gameplay.DialogueSystem.UI.Controller;
+using Code.NodeBasedSystem.Core.Datas;
+using Code.Services.LocalizationServices;
 using Code.UI.Core;
 using Cysharp.Threading.Tasks;
 using Entitas;
 using JetBrains.Annotations;
-using UnityEngine.Localization.Tables;
 
 namespace Code.Gameplay.DialogueSystem
 {
@@ -12,18 +13,23 @@ namespace Code.Gameplay.DialogueSystem
     public class ShowDialoguePhraseSystem : ReactiveSystem<NodeSystemEntity>
     {
         private readonly IUINavigator _uINavigator;
+        private readonly ILocalizationService _localizationService;
 
-        public ShowDialoguePhraseSystem(NodeSystemContext context, IUINavigator uINavigator) 
+        public ShowDialoguePhraseSystem(NodeSystemContext context, IUINavigator uINavigator, ILocalizationService localizationService) 
             : base(context)
         {
             _uINavigator = uINavigator;
+            _localizationService = localizationService;
         }
 
         protected override void Execute(List<NodeSystemEntity> entities)
         {
             foreach (var entity in entities)
             {
-                var text = entity.dialoguePhrase.Value;
+                LocalizedStringData data = entity.dialoguePhrase.Value;
+
+                string text = _localizationService.GetLocalizedString(data);
+                
                 _uINavigator.Show<DialogueScreenController>(controller => 
                     controller.ShowPhrase(text).Forget());
             }
@@ -37,6 +43,36 @@ namespace Code.Gameplay.DialogueSystem
         protected override ICollector<NodeSystemEntity> GetTrigger(IContext<NodeSystemEntity> context)
         {
             return context.CreateCollector(NodeSystemMatcher.Playing.Added());
+        }
+    }
+    
+    public class ShowDialogueChoicesSystem : ReactiveSystem<NodeSystemEntity>
+    {
+        private readonly IUINavigator _uINavigator;
+
+        public ShowDialogueChoicesSystem(NodeSystemContext context, IUINavigator uINavigator) 
+            : base(context)
+        {
+            _uINavigator = uINavigator;
+        }
+
+        protected override ICollector<NodeSystemEntity> GetTrigger(IContext<NodeSystemEntity> context)
+        {
+            return context.CreateCollector(NodeSystemMatcher.Playing.Added());
+        }
+
+        protected override bool Filter(NodeSystemEntity entity)
+        {
+            return true;
+        }
+
+        protected override void Execute(List<NodeSystemEntity> entities)
+        {
+            foreach (var entity in entities)
+            {
+                _uINavigator.Show<DialogueScreenController>(controller => 
+                    controller.ShowChoices().Forget());
+            }
         }
     }
 }

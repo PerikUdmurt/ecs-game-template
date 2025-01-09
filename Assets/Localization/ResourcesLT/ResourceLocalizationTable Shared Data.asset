@@ -31,6 +31,10 @@ MonoBehaviour:
     m_Key: rating
     m_Metadata:
       m_Items: []
+  - m_Id: 22219995550707712
+    m_Key: rtyui
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
