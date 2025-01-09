@@ -7,15 +7,16 @@ namespace NodeBasedSystem.Nodes
 {
     [NodeSystem] public class NodeId : INodeComponent { public string Value; }
     [NodeSystem] public class Node : INodeComponent { public ENodeType Value; }
-    [NodeSystem] public class NextNodes : INodeComponent { public List<ConditionedNode> Value; }
+    [NodeSystem] public class NextNodes : INodeComponent { public List<ConditionNodeLink> Value; }
+    [NodeSystem] public class NextChoices : INodeComponent { public List<ChoiceNodeLink> Value; }
     [NodeSystem] public class NodePosition : INodeComponent { public Vector2Data Value; }
     [NodeSystem] public class PlayingComponent : INodeComponent { }
     [NodeSystem] public class PlayedComponent : INodeComponent { }
     [NodeSystem] public class GraphIDComponent : INodeComponent { public string Value; }
 
-    [NodeSystem, NodeComponent("Стратовая нода", "#228B22")] 
+    [NodeSystem, NodeComponent("РЎС‚Р°СЂС‚РѕРІР°СЏ РЅРѕРґР°", "#228B22")] 
     public class StartNodeComponent : INodeEventComponent { }
 
-    [NodeSystem, NodeComponent("Таймер автоскипа", "#2F4F4F")] 
+    [NodeSystem, NodeComponent("РђРІС‚РѕСЃРєРёРї С‚Р°Р№РјРµСЂ", "#2F4F4F")] 
     public class SkipTimerNodeComponent : INodeEventComponent { public float Value; }
 }

@@ -34,10 +34,10 @@ public sealed partial class NodeSystemMatcher {
 public partial class NodeSystemEntity {
 
     public NodeBasedSystem.Nodes.NextNodes nextNodes { get { return (NodeBasedSystem.Nodes.NextNodes)GetComponent(NodeSystemComponentsLookup.NextNodes); } }
-    public System.Collections.Generic.List<Code.NodeBasedSystem.Core.Conditions.ConditionedNode> NextNodes { get { return nextNodes.Value; } }
+    public System.Collections.Generic.List<Code.NodeBasedSystem.Core.Conditions.ConditionNodeLink> NextNodes { get { return nextNodes.Value; } }
     public bool hasNextNodes { get { return HasComponent(NodeSystemComponentsLookup.NextNodes); } }
 
-    public NodeSystemEntity AddNextNodes(System.Collections.Generic.List<Code.NodeBasedSystem.Core.Conditions.ConditionedNode> newValue) {
+    public NodeSystemEntity AddNextNodes(System.Collections.Generic.List<Code.NodeBasedSystem.Core.Conditions.ConditionNodeLink> newValue) {
         var index = NodeSystemComponentsLookup.NextNodes;
         var component = (NodeBasedSystem.Nodes.NextNodes)CreateComponent(index, typeof(NodeBasedSystem.Nodes.NextNodes));
         component.Value = newValue;
@@ -45,7 +45,7 @@ public partial class NodeSystemEntity {
         return this;
     }
 
-    public NodeSystemEntity ReplaceNextNodes(System.Collections.Generic.List<Code.NodeBasedSystem.Core.Conditions.ConditionedNode> newValue) {
+    public NodeSystemEntity ReplaceNextNodes(System.Collections.Generic.List<Code.NodeBasedSystem.Core.Conditions.ConditionNodeLink> newValue) {
         var index = NodeSystemComponentsLookup.NextNodes;
         var component = (NodeBasedSystem.Nodes.NextNodes)CreateComponent(index, typeof(NodeBasedSystem.Nodes.NextNodes));
         component.Value = newValue;

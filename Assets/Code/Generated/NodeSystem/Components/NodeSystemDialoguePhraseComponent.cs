@@ -33,21 +33,21 @@ public sealed partial class NodeSystemMatcher {
 //------------------------------------------------------------------------------
 public partial class NodeSystemEntity {
 
-    public DialoguePhraseComponent dialoguePhrase { get { return (DialoguePhraseComponent)GetComponent(NodeSystemComponentsLookup.DialoguePhrase); } }
-    public string DialoguePhrase { get { return dialoguePhrase.Value; } }
+    public Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent dialoguePhrase { get { return (Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent)GetComponent(NodeSystemComponentsLookup.DialoguePhrase); } }
+    public Code.NodeBasedSystem.Core.Datas.LocalizedStringData DialoguePhrase { get { return dialoguePhrase.Value; } }
     public bool hasDialoguePhrase { get { return HasComponent(NodeSystemComponentsLookup.DialoguePhrase); } }
 
-    public NodeSystemEntity AddDialoguePhrase(string newValue) {
+    public NodeSystemEntity AddDialoguePhrase(Code.NodeBasedSystem.Core.Datas.LocalizedStringData newValue) {
         var index = NodeSystemComponentsLookup.DialoguePhrase;
-        var component = (DialoguePhraseComponent)CreateComponent(index, typeof(DialoguePhraseComponent));
+        var component = (Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent)CreateComponent(index, typeof(Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public NodeSystemEntity ReplaceDialoguePhrase(string newValue) {
+    public NodeSystemEntity ReplaceDialoguePhrase(Code.NodeBasedSystem.Core.Datas.LocalizedStringData newValue) {
         var index = NodeSystemComponentsLookup.DialoguePhrase;
-        var component = (DialoguePhraseComponent)CreateComponent(index, typeof(DialoguePhraseComponent));
+        var component = (Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent)CreateComponent(index, typeof(Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
