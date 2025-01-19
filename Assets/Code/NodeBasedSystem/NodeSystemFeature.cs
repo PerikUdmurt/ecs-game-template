@@ -10,6 +10,7 @@ namespace Code.NodeBasedSystem
         public NodeSystemFeature(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<AutoskipNodeSystem>());
+            Add(systemFactory.Create<PlayNextNodeGraphSystem>());
         }
     }
 }

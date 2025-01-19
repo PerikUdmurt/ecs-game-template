@@ -1,9 +1,11 @@
 ﻿using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.StateInfrastructure;
+using JetBrains.Annotations;
 using Zenject;
 
 namespace Code.Infrastructure.States.StateMachine
 {
+  [UsedImplicitly]
   public class GameStateMachine : IGameStateMachine, ITickable
   {
     private IExitableState _activeState;

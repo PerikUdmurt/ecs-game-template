@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: ru
   m_SharedData: {fileID: 11400000, guid: 9313e9a1f4ec3044c905dce965e1498e, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 1037106930973933570
   m_TableData:
   - m_Id: 7940136960
     m_Localized: "\u0421\u0432\u0435\u0440\u043D\u0443\u0442\u044C"
@@ -26,6 +27,21 @@ MonoBehaviour:
     m_Localized: "\u0420\u0430\u0437\u0432\u0435\u0440\u043D\u0443\u0442\u044C"
     m_Metadata:
       m_Items: []
+  - m_Id: 17704089264975872
+    m_Localized: "\u041F\u0440\u043E\u043F\u0443\u0441\u0442\u0438\u0442\u044C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17704999198257152
+    m_Localized: "\u041E\u0447\u0438\u0441\u0442\u0438\u0442\u044C"
+    m_Metadata:
+      m_Items:
+      - rid: 1037106930973933570
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1037106930973933570
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 17704999198257152

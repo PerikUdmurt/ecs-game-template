@@ -5,27 +5,29 @@ using Code.UI.Core;
 using Code.UI.Develop.Debugger;
 using System;
 using System.Collections.Generic;
+using Code.NodeBasedSystem.Core.Conditions;
+using Code.NodeBasedSystem.Core.NodeGraphPlayer;
 using Code.UI.Settings;
+using JetBrains.Annotations;
 using UnityEngine;
 using Zenject;
 
 namespace Code.UI.Develop
 {
+    [UsedImplicitly]
     public class DevelopHUDModel : IInitializable
     {
         private readonly DiContainer _container;
 
-        private Dictionary<string, Action<string>> _actions;
-
-        public Dictionary<string, Action<string>> Actions => _actions;
+        public Dictionary<string, Action<string>> Actions { get; }
 
         public DevelopHUDModel(DiContainer diContainer)
         {
             _container = diContainer;
-            _actions = new Dictionary<string, Action<string>>();
+            Actions = new Dictionary<string, Action<string>>();
         }
 
-        public void CreateDevelopHUDActions()
+        private void CreateDevelopHUDActions()
         {
             CreateAction("ShowDebugger", (str) =>
             {
@@ -37,7 +39,8 @@ namespace Code.UI.Develop
             {
                 IGraphLoader graphLoader = _container.TryResolve<IGraphLoader>();
                 NodeSystemContext context = _container.TryResolve<NodeSystemContext>();
-                NodeGraphPlayer graphPlayer = new NodeGraphPlayer(context, graphLoader, "7");
+                INodeConditionVerifyService verifyService = _container.TryResolve<INodeConditionVerifyService>();
+                NodeGraphPlayer graphPlayer = new NodeGraphPlayer(context, verifyService, graphLoader, "TestGraphPlayer");
                 graphPlayer.StartGraph(str);
             });
 
@@ -61,7 +64,7 @@ namespace Code.UI.Develop
         }
 
         private void CreateAction(string label, Action<string> action) =>
-            _actions.TryAdd(label, action);
+            Actions.TryAdd(label, action);
 
         public void Initialize()
         {

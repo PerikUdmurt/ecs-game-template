@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using Code.Common.UnityStructs;
 using Code.NodeBasedSystem.Core.Conditions;
+using Code.NodeBasedSystem.Core.NodeGraphPlayer;
+using Code.NodeBasedSystem.GraphPlayer;
 using NodeBasedSystem.Nodes.Attributes;
 
 namespace NodeBasedSystem.Nodes
@@ -13,10 +15,14 @@ namespace NodeBasedSystem.Nodes
     [NodeSystem] public class PlayingComponent : INodeComponent { }
     [NodeSystem] public class PlayedComponent : INodeComponent { }
     [NodeSystem] public class GraphIDComponent : INodeComponent { public string Value; }
+    [NodeSystem] public class GraphPlayerComponent : INodeComponent { public NodeGraphPlayer Value; }
 
-    [NodeSystem, NodeComponent("Стартовая нода", "#228B22")] 
+    [NodeSystem, NodeComponent("Core. StartNode", "#228B22")]
     public class StartNodeComponent : INodeEventComponent { }
 
-    [NodeSystem, NodeComponent("Автоскип таймер", "#2F4F4F")] 
+    [NodeSystem, NodeComponent("Core. AutoskipTimer", "#2F4F4F")] 
     public class SkipTimerNodeComponent : INodeEventComponent { public float Value; }
+    
+    [NodeSystem, NodeComponent("Core. Play Graph", "#FF2D00")] 
+    public class PlayNextGraphComponent : INodeEventComponent { public string Value; }
 }

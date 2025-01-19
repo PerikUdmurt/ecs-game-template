@@ -1,8 +1,10 @@
 using Code.Infrastructure.States.StateInfrastructure;
+using JetBrains.Annotations;
 using Zenject;
 
 namespace Code.Infrastructure.States.Factory
 {
+  [UsedImplicitly]
   public class StateFactory : IStateFactory
   {
     private readonly DiContainer _container;

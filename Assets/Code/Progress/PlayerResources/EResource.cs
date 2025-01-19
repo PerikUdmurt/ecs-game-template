@@ -7,4 +7,8 @@ namespace Code.Progress.PlayerStorage
         Benzine = 2,
         Rating = 3,
     }
+
+    public static class ResourcesExtensions
+    {
+    }
 }

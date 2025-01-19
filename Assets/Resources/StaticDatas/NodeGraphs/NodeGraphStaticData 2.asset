@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 224670ff027f66243a7b9a5899b19f2d, type: 3}
+  m_Name: NodeGraphStaticData 2
+  m_EditorClassIdentifier: 
+  Id: TestGraph
+  Json: "{\r\n  \"nodes\": [\r\n    {\r\n      \"c\": [\r\n        {\r\n         
+    \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent, Assembly-CSharp\",\r\n         
+    \"Value\": {\r\n            \"entryKey\": \"txt_skip\",\r\n            \"tableKey\":
+    \"DialogueSystemUI\"\r\n          }\r\n        },\r\n        {\r\n          \"$type\":
+    \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n          \"Value\": \"ccc4920f-b59f-42fa-a556-6eefd4c4a347\"\r\n       
+    },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodePosition,
+    Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"X\": 1427.2,\r\n           
+    \"Y\": 110.399994\r\n          }\r\n        },\r\n        {\r\n          \"$type\":
+    \"NodeBasedSystem.Nodes.Node, Assembly-CSharp\",\r\n          \"Value\": 0\r\n       
+    },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
+    \"Value\": [\r\n            {\r\n              \"NodeId\": \"dc44f1de-5673-4669-91d3-9afe83d609cc\",\r\n             
+    \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
+    },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent,
+    Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"entryKey\": \"txt_clear\",\r\n           
+    \"tableKey\": \"DialogueSystemUI\"\r\n          }\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n          \"Value\":
+    \"a3a36769-55c5-4c82-976b-bcf4ea4756c9\"\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NodePosition, Assembly-CSharp\",\r\n         
+    \"Value\": {\r\n            \"X\": 1427.2,\r\n            \"Y\": 445.6\r\n         
+    }\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.Node,
+    Assembly-CSharp\",\r\n          \"Value\": 0\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
+    \"Value\": [\r\n            {\r\n              \"NodeId\": \"dc44f1de-5673-4669-91d3-9afe83d609cc\",\r\n             
+    \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
+    },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent,
+    Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"entryKey\": \"volitile\",\r\n           
+    \"tableKey\": \"ResourceLocalizationTable\"\r\n          }\r\n        },\r\n       
+    {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n         
+    \"Value\": \"7a687627-934c-4fec-900f-f9aeca2da368\"\r\n        },\r\n       
+    {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodePosition, Assembly-CSharp\",\r\n         
+    \"Value\": {\r\n            \"X\": 2362.4,\r\n            \"Y\": 312.800018\r\n         
+    }\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.Node,
+    Assembly-CSharp\",\r\n          \"Value\": 0\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
+    \"Value\": [\r\n            {\r\n              \"NodeId\": \"df2e6660-d358-4391-a187-3134c75ac49c\",\r\n             
+    \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
+    },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent,
+    Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"entryKey\": \"money\",\r\n           
+    \"tableKey\": \"ResourceLocalizationTable\"\r\n          }\r\n        },\r\n       
+    {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n         
+    \"Value\": \"000462d4-401b-4b9c-a538-b3fc0f19fe12\"\r\n        },\r\n       
+    {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodePosition, Assembly-CSharp\",\r\n         
+    \"Value\": {\r\n            \"X\": 2362.4,\r\n            \"Y\": 55.2\r\n         
+    }\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.Node,
+    Assembly-CSharp\",\r\n          \"Value\": 0\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
+    \"Value\": [\r\n            {\r\n              \"NodeId\": \"df2e6660-d358-4391-a187-3134c75ac49c\",\r\n             
+    \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
+    },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.PlayNextGraphComponent,
+    Assembly-CSharp\",\r\n          \"Value\": \"TestGraph\"\r\n        },\r\n       
+    {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n         
+    \"Value\": \"df2e6660-d358-4391-a187-3134c75ac49c\"\r\n        },\r\n       
+    {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodePosition, Assembly-CSharp\",\r\n         
+    \"Value\": {\r\n            \"X\": 2836.8,\r\n            \"Y\": 312.800018\r\n         
+    }\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.Node,
+    Assembly-CSharp\",\r\n          \"Value\": 0\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
+    \"Value\": []\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"c\": [\r\n       
+    {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent,
+    Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"entryKey\": \"rating\",\r\n           
+    \"tableKey\": \"ResourceLocalizationTable\"\r\n          }\r\n        },\r\n       
+    {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n         
+    \"Value\": \"53f0f430-45fb-4948-aa7d-61c8be648570\"\r\n        },\r\n       
+    {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodePosition, Assembly-CSharp\",\r\n         
+    \"Value\": {\r\n            \"X\": 2362.4,\r\n            \"Y\": 615.2\r\n         
+    }\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.Node,
+    Assembly-CSharp\",\r\n          \"Value\": 0\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
+    \"Value\": [\r\n            {\r\n              \"NodeId\": \"df2e6660-d358-4391-a187-3134c75ac49c\",\r\n             
+    \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
+    },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.StartNodeComponent,
+    Assembly-CSharp\"\r\n        },\r\n        {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent,
+    Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"entryKey\": \"ui_fold\",\r\n           
+    \"tableKey\": \"DialogueSystemUI\"\r\n          }\r\n        },\r\n        {\r\n         
+    \"$type\": \"Code.NodeBasedSystem.DialogueSystem.BindDialogueWindowComponent,
+    Assembly-CSharp\",\r\n          \"Value\": 1\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n          \"Value\":
+    \"85439a52-cf57-4f65-872b-eec1e86e3382\"\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NodePosition, Assembly-CSharp\",\r\n         
+    \"Value\": {\r\n            \"X\": 832.8,\r\n            \"Y\": 248.8\r\n         
+    }\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.Node,
+    Assembly-CSharp\",\r\n          \"Value\": 2\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
+    \"Value\": [\r\n            {\r\n              \"NodeId\": \"ccc4920f-b59f-42fa-a556-6eefd4c4a347\",\r\n             
+    \"Conditions\": [\r\n                {\r\n                  \"$type\": \"Code.NodeBasedSystem.Core.Conditions.HasToken,
+    Assembly-CSharp\",\r\n                  \"Token\": \"123\"\r\n               
+    }\r\n              ]\r\n            },\r\n            {\r\n              \"NodeId\":
+    \"a3a36769-55c5-4c82-976b-bcf4ea4756c9\",\r\n              \"Conditions\": []\r\n           
+    }\r\n          ]\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NextChoices,
+    Assembly-CSharp\",\r\n          \"Value\": [\r\n            {\r\n             
+    \"ChoiceLocalizedStringData\": {\r\n                \"entryKey\": \"ui_unfold\",\r\n               
+    \"tableKey\": \"DialogueSystemUI\"\r\n              },\r\n              \"NodeId\":
+    \"ccc4920f-b59f-42fa-a556-6eefd4c4a347\",\r\n              \"Conditions\": [\r\n               
+    {\r\n                  \"$type\": \"Code.NodeBasedSystem.Core.Conditions.HasToken,
+    Assembly-CSharp\",\r\n                  \"Token\": \"123\"\r\n               
+    }\r\n              ]\r\n            },\r\n            {\r\n              \"ChoiceLocalizedStringData\":
+    {\r\n                \"entryKey\": \"ui_fold\",\r\n                \"tableKey\":
+    \"DialogueSystemUI\"\r\n              },\r\n              \"NodeId\": \"a3a36769-55c5-4c82-976b-bcf4ea4756c9\",\r\n             
+    \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
+    },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.SkipTimerNodeComponent,
+    Assembly-CSharp\",\r\n          \"Value\": 2.0\r\n        },\r\n        {\r\n         
+    \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent, Assembly-CSharp\",\r\n         
+    \"Value\": {\r\n            \"entryKey\": \"benzine\",\r\n            \"tableKey\":
+    \"ResourceLocalizationTable\"\r\n          }\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n          \"Value\":
+    \"dc44f1de-5673-4669-91d3-9afe83d609cc\"\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NodePosition, Assembly-CSharp\",\r\n         
+    \"Value\": {\r\n            \"X\": 1928.8,\r\n            \"Y\": 192.8\r\n         
+    }\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.Node,
+    Assembly-CSharp\",\r\n          \"Value\": 1\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
+    \"Value\": [\r\n            {\r\n              \"NodeId\": \"000462d4-401b-4b9c-a538-b3fc0f19fe12\",\r\n             
+    \"Conditions\": [\r\n                {\r\n                  \"$type\": \"Code.NodeBasedSystem.Core.Conditions.HasToken,
+    Assembly-CSharp\",\r\n                  \"Token\": \"123\"\r\n               
+    }\r\n              ]\r\n            },\r\n            {\r\n              \"NodeId\":
+    \"7a687627-934c-4fec-900f-f9aeca2da368\",\r\n              \"Conditions\": [\r\n               
+    {\r\n                  \"$type\": \"Code.NodeBasedSystem.Core.Conditions.ResourceCondition,
+    Assembly-CSharp\",\r\n                  \"Resource\": 0,\r\n                 
+    \"Equation\": 0,\r\n                  \"Amount\": 100\r\n                }\r\n             
+    ]\r\n            },\r\n            {\r\n              \"NodeId\": \"53f0f430-45fb-4948-aa7d-61c8be648570\",\r\n             
+    \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
+    }\r\n  ]\r\n}"

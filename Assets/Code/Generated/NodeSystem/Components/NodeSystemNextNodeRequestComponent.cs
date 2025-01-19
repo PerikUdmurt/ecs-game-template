@@ -33,24 +33,28 @@ public sealed partial class NodeSystemMatcher {
 //------------------------------------------------------------------------------
 public partial class NodeSystemEntity {
 
-    static readonly Code.NodeBasedSystem.NextNodeRequestComponent nextNodeRequestComponent = new Code.NodeBasedSystem.NextNodeRequestComponent();
+    public Code.NodeBasedSystem.NextNodeRequestComponent nextNodeRequest { get { return (Code.NodeBasedSystem.NextNodeRequestComponent)GetComponent(NodeSystemComponentsLookup.NextNodeRequest); } }
+    public string NextNodeRequest { get { return nextNodeRequest.Value; } }
+    public bool hasNextNodeRequest { get { return HasComponent(NodeSystemComponentsLookup.NextNodeRequest); } }
 
-    public bool isNextNodeRequest {
-        get { return HasComponent(NodeSystemComponentsLookup.NextNodeRequest); }
-        set {
-            if (value != isNextNodeRequest) {
-                var index = NodeSystemComponentsLookup.NextNodeRequest;
-                if (value) {
-                    var componentPool = GetComponentPool(index);
-                    var component = componentPool.Count > 0
-                            ? componentPool.Pop()
-                            : nextNodeRequestComponent;
+    public NodeSystemEntity AddNextNodeRequest(string newValue) {
+        var index = NodeSystemComponentsLookup.NextNodeRequest;
+        var component = (Code.NodeBasedSystem.NextNodeRequestComponent)CreateComponent(index, typeof(Code.NodeBasedSystem.NextNodeRequestComponent));
+        component.Value = newValue;
+        AddComponent(index, component);
+        return this;
+    }
 
-                    AddComponent(index, component);
-                } else {
-                    RemoveComponent(index);
-                }
-            }
-        }
+    public NodeSystemEntity ReplaceNextNodeRequest(string newValue) {
+        var index = NodeSystemComponentsLookup.NextNodeRequest;
+        var component = (Code.NodeBasedSystem.NextNodeRequestComponent)CreateComponent(index, typeof(Code.NodeBasedSystem.NextNodeRequestComponent));
+        component.Value = newValue;
+        ReplaceComponent(index, component);
+        return this;
+    }
+
+    public NodeSystemEntity RemoveNextNodeRequest() {
+        RemoveComponent(NodeSystemComponentsLookup.NextNodeRequest);
+        return this;
     }
 }

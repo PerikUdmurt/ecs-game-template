@@ -1,22 +1,32 @@
-using Code.NodeBasedSystem.GraphLoaders;
-using Entitas;
 using System.Collections.Generic;
 using System.Linq;
+using Code.NodeBasedSystem.Core.Conditions;
+using Code.NodeBasedSystem.GraphLoaders;
+using Code.NodeBasedSystem.GraphPlayer;
+using Entitas;
+using NodeBasedSystem.Nodes;
 using UnityEngine;
 
-namespace Code.NodeBasedSystem.GraphPlayer
+namespace Code.NodeBasedSystem.Core.NodeGraphPlayer
 {
     public class NodeGraphPlayer : IGraphPlayer
     {
         private readonly NodeSystemContext _context;
         private readonly IGraphLoader _graphLoader;
+        private readonly INodeConditionVerifyService _verifier;
         private readonly string _graphID;
+        
         private IEnumerable<NodeSystemEntity> _targetGraphGroup;
 
-        public NodeGraphPlayer(NodeSystemContext context, IGraphLoader graphLoader, string graphId) 
+        public NodeGraphPlayer(
+            NodeSystemContext context, 
+            INodeConditionVerifyService verifier,
+            IGraphLoader graphLoader, 
+            string graphId)
         {
             _graphID = graphId;
             _context = context;
+            _verifier = verifier;
             _graphLoader = graphLoader;
         }
 
@@ -25,8 +35,8 @@ namespace Code.NodeBasedSystem.GraphPlayer
             ReleaseGraph();
 
             _graphLoader.LoadGraph(staticDataId, _graphID);
-            
             _targetGraphGroup = FindTargetGraph();
+            AssignGraphPlayer();
 
             NodeSystemEntity startNode = _targetGraphGroup
                 .FirstOrDefault(entity => entity.isStartNode);
@@ -38,6 +48,14 @@ namespace Code.NodeBasedSystem.GraphPlayer
             }
 
             PlayNode(startNode.nodeId.Value);
+        }
+
+        private void AssignGraphPlayer()
+        {
+            foreach (NodeSystemEntity entity in _targetGraphGroup)
+            {
+                entity.ReplaceGraphPlayer(this);
+            }
         }
 
         private IEnumerable<NodeSystemEntity> FindTargetGraph()
@@ -68,6 +86,38 @@ namespace Code.NodeBasedSystem.GraphPlayer
             MarkTargetNode(nodeId);
         }
 
+        public void PlayNextNode()
+        {
+            NodeSystemEntity currentNode 
+                = _targetGraphGroup.FirstOrDefault(n 
+                    => n.isPlaying && n.Node != ENodeType.Choices);
+
+            if (currentNode == null)
+            {
+                Debug.LogWarning($"Not found next available node in graph {_graphID}");
+                return;
+            }
+            
+            if (currentNode.Node == ENodeType.Simple)
+            {
+                PlayNode(currentNode.NextNodes.First().NodeId);
+            }
+            
+            if (currentNode.Node == ENodeType.Conditional)
+            {
+                ConditionNodeLink link = currentNode.NextNodes
+                    .FirstOrDefault(n => _verifier.Check(n.Conditions.ToArray()));
+
+                if (link == null)
+                {
+                    Debug.LogError($"[NodeGraphPlayer] Not found next available node by conditions in graph {_graphID}");
+                    return;
+                }
+                string nextNodeId = link.NodeId;
+                PlayNode(nextNodeId);
+            }
+        }
+
         private void MarkTargetNode(string nodeId)
         {
             NodeSystemEntity targetNode = _targetGraphGroup
@@ -91,11 +141,5 @@ namespace Code.NodeBasedSystem.GraphPlayer
                     node.isPlaying = false;
             }
         }
-    }
-
-    public interface IGraphPlayer
-    {
-        void PlayNode(string nodeId);
-        void StartGraph(string graphId);
     }
 }

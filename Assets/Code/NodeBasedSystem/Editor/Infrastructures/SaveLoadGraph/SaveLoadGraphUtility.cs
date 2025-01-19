@@ -5,12 +5,10 @@ using NodeBasedEditor.Editors;
 using NodeBasedEditor.Editors.Nodes;
 using NodeBasedSystem.Editor.Extensions;
 using NodeBasedSystem.Nodes;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using Unity.VisualScripting;
+using Code.NodeBasedSystem.Core.StaticDatas;
+using UnityEditor;
 using UnityEngine;
 using Node = NodeBasedSystem.Nodes.Node;
 
@@ -80,7 +78,7 @@ namespace NodeBasedEditor.SaveLoadUtility
                 List<ChoiceNodePortContent> contents = new List<ChoiceNodePortContent>();
                 foreach (ChoiceNodeLink nextNode in nextNodes.Value)
                 {
-                    ChoiceNodePortContent content = new(nextNode.ChoiceLocalizedStringDataData, nextNode.Conditions.ToArray());
+                    ChoiceNodePortContent content = new(nextNode.ChoiceLocalizedStringData, nextNode.Conditions.ToArray());
                     contents.Add(content);
                 }
                 
@@ -115,6 +113,7 @@ namespace NodeBasedEditor.SaveLoadUtility
             NodeGraphSavedData data = new NodeGraphSavedData();
             WriteNodesToData(data);
             _nodeGraphStaticData.Json = data.ToJson();
+            EditorUtility.SetDirty(_nodeGraphStaticData);
         }
         
         private static void WriteNodesToData(NodeGraphSavedData data)
@@ -151,8 +150,8 @@ namespace NodeBasedEditor.SaveLoadUtility
                 entity.components.Add(new NodeId() {Value = node.ID});
                 entity.components.Add(new NodePosition() {Value = node.GetPosition().position.ToVector2Data()});
                 entity.components.Add(new Node() {Value = ENodeType.Choices});
-                entity.components.Add(new NextNodes() {Value = GetNextNodesForChoiceNode(node).ToList<ConditionNodeLink>()});
-                entity.components.Add(new NextChoices() {Value = GetNextNodesForChoiceNode(node)});
+                entity.components.Add(new NextNodes() {Value = GetNextNodesForChoiceNode(node)});
+                entity.components.Add(new NextChoices() {Value = GetChoicesNodesForChoiceNode(node)});
                 data.nodeSnapshots.Add(entity);
             }
             
@@ -175,7 +174,7 @@ namespace NodeBasedEditor.SaveLoadUtility
             }
         }
 
-        private static List<ChoiceNodeLink> GetNextNodesForChoiceNode(ChoiceNode node)
+        private static List<ChoiceNodeLink> GetChoicesNodesForChoiceNode(ChoiceNode node)
         {
             List<ChoiceNodeLink> nextNodes = new List<ChoiceNodeLink>();
             
@@ -189,7 +188,23 @@ namespace NodeBasedEditor.SaveLoadUtility
                 BaseNode nextNode = connection.input.node as BaseNode;
                 nextNodes.Add(new (nextNode.ID, port.Content.ChoiceLocalizedString, port.Content.Conditions.ToArray()));
             }
+            return nextNodes;
+        }
+        
+        private static List<ConditionNodeLink> GetNextNodesForChoiceNode(ChoiceNode node)
+        {
+            List<ConditionNodeLink> nextNodes = new List<ConditionNodeLink>();
             
+            foreach (CustomPort<ChoiceNodePortContent> port in node.OutputPorts)
+            {
+                UnityEditor.Experimental.GraphView.Edge connection = port.Port.connections.FirstOrDefault();
+                
+                if (connection == null)
+                    continue;
+                
+                BaseNode nextNode = connection.input.node as BaseNode;
+                nextNodes.Add(new (nextNode.ID, port.Content.Conditions.ToArray()));
+            }
             return nextNodes;
         }
         

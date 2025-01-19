@@ -15,7 +15,7 @@ namespace Code.Gameplay.DialogueSystem
         private readonly IUINavigator _uINavigator;
         private readonly ILocalizationService _localizationService;
 
-        public ShowDialoguePhraseSystem(NodeSystemContext context, IUINavigator uINavigator, ILocalizationService localizationService) 
+        public ShowDialoguePhraseSystem(NodeSystemContext context, IUINavigator uINavigator, ILocalizationService localizationService)
             : base(context)
         {
             _uINavigator = uINavigator;
@@ -43,36 +43,6 @@ namespace Code.Gameplay.DialogueSystem
         protected override ICollector<NodeSystemEntity> GetTrigger(IContext<NodeSystemEntity> context)
         {
             return context.CreateCollector(NodeSystemMatcher.Playing.Added());
-        }
-    }
-    
-    public class ShowDialogueChoicesSystem : ReactiveSystem<NodeSystemEntity>
-    {
-        private readonly IUINavigator _uINavigator;
-
-        public ShowDialogueChoicesSystem(NodeSystemContext context, IUINavigator uINavigator) 
-            : base(context)
-        {
-            _uINavigator = uINavigator;
-        }
-
-        protected override ICollector<NodeSystemEntity> GetTrigger(IContext<NodeSystemEntity> context)
-        {
-            return context.CreateCollector(NodeSystemMatcher.Playing.Added());
-        }
-
-        protected override bool Filter(NodeSystemEntity entity)
-        {
-            return true;
-        }
-
-        protected override void Execute(List<NodeSystemEntity> entities)
-        {
-            foreach (var entity in entities)
-            {
-                _uINavigator.Show<DialogueScreenController>(controller => 
-                    controller.ShowChoices().Forget());
-            }
         }
     }
 }

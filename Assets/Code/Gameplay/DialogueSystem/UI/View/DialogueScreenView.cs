@@ -10,8 +10,12 @@ namespace Code.Gameplay.DialogueSystem.UI.View
     {
         [SerializeField] private Button _showHistoryButton;
         [SerializeField] private Transform _blockContainer;
+        [SerializeField] private Button _skipZone;
+        [SerializeField] private Button _clearHistoryButton;
         
+        public IObservable<Unit> OnClearButtonClicked => _clearHistoryButton.OnClickAsObservable();
         public IObservable<Unit> ShowHistoryButtonClicked => _showHistoryButton.OnClickAsObservable();
+        public IObservable<Unit> OnSkipClicked => _skipZone.OnClickAsObservable();
         public Transform BlockContainer => _blockContainer;
     }
 }

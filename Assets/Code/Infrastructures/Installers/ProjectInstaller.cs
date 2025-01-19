@@ -1,7 +1,4 @@
-using System;
 using Code.Gameplay.Common.Collisions;
-using Code.Gameplay.Features.Cards.Factory;
-using Code.Gameplay.Features.Effects.Factory;
 using Code.Identifiers;
 using Code.Infrastructures.AssetManagement;
 using Code.Infrastructures.Factories;
