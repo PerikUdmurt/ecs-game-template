@@ -23,6 +23,14 @@ MonoBehaviour:
     m_Key: ui_unfold
     m_Metadata:
       m_Items: []
+  - m_Id: 17704089264975872
+    m_Key: txt_skip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17704999198257152
+    m_Key: txt_clear
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

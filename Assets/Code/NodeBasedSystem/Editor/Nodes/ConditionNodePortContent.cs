@@ -65,7 +65,6 @@ namespace NodeBasedEditor.Editors.Nodes
         {
             if (ConditionFinder.TryGetConditionType(conditionName, out var type))
             {
-                Debug.Log(type.FullName);
                 BaseConditionData condition = (BaseConditionData)Activator.CreateInstance(type);
 
                 AddCondition(condition);

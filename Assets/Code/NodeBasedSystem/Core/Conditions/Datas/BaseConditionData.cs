@@ -6,13 +6,13 @@ namespace Code.NodeBasedSystem.Core.Conditions
 {
     public abstract class BaseConditionData { }
 
-    [NodeCondition("Есть токен")]
+    [NodeCondition("Has Token")]
     public class HasToken : BaseConditionData
     {
         public string Token;
     }
     
-    [NodeCondition("Ресурсы")]
+    [NodeCondition("Resources")]
     public class ResourceCondition : BaseConditionData
     {
         public EResource Resource;
@@ -20,7 +20,7 @@ namespace Code.NodeBasedSystem.Core.Conditions
         public int Amount;
     }
     
-    [NodeCondition("Предметы")]
+    [NodeCondition("Items")]
     public class ItemCondition : BaseConditionData
     {
         public EPlayerItem Item;

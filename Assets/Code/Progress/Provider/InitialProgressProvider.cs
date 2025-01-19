@@ -2,6 +2,7 @@ using System.Linq;
 using Code.Progress.Data;
 using Code.Progress.PlayerResources.Configs;
 using Code.Progress.PlayerStorage;
+using Code.Progress.ProgressTokens;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -26,9 +27,10 @@ namespace Code.Progress.Provider
                 components = new()
                 {
                     new PlayerResourcesComponent(),
+                    new ProgressTokenStorage() { Value = new()},
                     new MaxBenzineComponent() { Value = _resourcesConfig.maxBenzine },
-                    new BenzineComponent() { Value = _resourcesConfig.initialBenzine},
-                    new MaxMoneyComponent() { Value = _resourcesConfig.maxMoney},
+                    new BenzineComponent() { Value = _resourcesConfig.initialBenzine },
+                    new MaxMoneyComponent() { Value = _resourcesConfig.maxMoney },
                     new MoneyComponent() { Value = _resourcesConfig.initialMoney },
                     new MaxRatingComponent() { Value = _resourcesConfig.maxRating },
                     new RatingComponent() { Value = _resourcesConfig.initialRating },

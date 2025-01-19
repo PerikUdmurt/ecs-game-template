@@ -1,3 +1,5 @@
+using Code.NodeBasedSystem.Core.StaticDatas;
+
 namespace Code.Services.StaticDataServices
 {
     public interface INodeGraphStaticDataService

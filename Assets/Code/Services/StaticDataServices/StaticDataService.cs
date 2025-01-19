@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Code.NodeBasedSystem.Core.StaticDatas;
 using UnityEngine;
 
 namespace Code.Services.StaticDataServices

@@ -10,7 +10,7 @@ namespace NodeBasedEditor.Editors.Nodes
 {
     public abstract class BaseEditorNode<TPortContent> : BaseNode where TPortContent : VisualElement 
     {
-        protected abstract string nodeName { get; }
+        protected abstract override string nodeName { get; }
         protected VisualElement eventsContainer;
         
         private List<Port> _inputPorts;

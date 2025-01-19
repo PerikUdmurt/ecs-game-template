@@ -4,11 +4,12 @@ using Code.Common.Extensions;
 using Code.Progress.Data;
 using Code.Progress.Provider;
 using Code.Services.FileDataServices;
-using Newtonsoft.Json;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Code.Progress.SaveLoadServices
 {
+    [UsedImplicitly]
     public class SaveLoadService : ISaveLoadService
     {
         private readonly ProgressContext _context;

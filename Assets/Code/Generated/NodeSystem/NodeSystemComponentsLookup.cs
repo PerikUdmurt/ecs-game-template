@@ -8,36 +8,42 @@
 //------------------------------------------------------------------------------
 public static class NodeSystemComponentsLookup {
 
-    public const int DialoguePhrase = 0;
-    public const int NextNodeRequest = 1;
-    public const int AddBenzine = 2;
-    public const int AddItem = 3;
-    public const int AddMoney = 4;
-    public const int AddRating = 5;
-    public const int AddToken = 6;
-    public const int AddVolition = 7;
-    public const int RemoveBenzine = 8;
-    public const int RemoveItem = 9;
-    public const int RemoveMoney = 10;
-    public const int RemoveRating = 11;
-    public const int RemoveToken = 12;
-    public const int RemoveVolition = 13;
-    public const int GraphID = 14;
-    public const int NextChoices = 15;
-    public const int NextNodes = 16;
-    public const int Node = 17;
-    public const int NodeId = 18;
-    public const int NodePosition = 19;
-    public const int Played = 20;
-    public const int Playing = 21;
-    public const int SkipTimerNode = 22;
-    public const int StartNode = 23;
+    public const int BindDialogueWindow = 0;
+    public const int DialoguePhrase = 1;
+    public const int NextNodeRequest = 2;
+    public const int NextNodeRequestGraphId = 3;
+    public const int AddBenzine = 4;
+    public const int AddItem = 5;
+    public const int AddMoney = 6;
+    public const int AddRating = 7;
+    public const int AddToken = 8;
+    public const int AddVolition = 9;
+    public const int RemoveBenzine = 10;
+    public const int RemoveItem = 11;
+    public const int RemoveMoney = 12;
+    public const int RemoveRating = 13;
+    public const int RemoveToken = 14;
+    public const int RemoveVolition = 15;
+    public const int GraphID = 16;
+    public const int GraphPlayer = 17;
+    public const int NextChoices = 18;
+    public const int NextNodes = 19;
+    public const int Node = 20;
+    public const int NodeId = 21;
+    public const int NodePosition = 22;
+    public const int Played = 23;
+    public const int Playing = 24;
+    public const int PlayNextGraph = 25;
+    public const int SkipTimerNode = 26;
+    public const int StartNode = 27;
 
-    public const int TotalComponents = 24;
+    public const int TotalComponents = 28;
 
     public static readonly string[] componentNames = {
+        "BindDialogueWindow",
         "DialoguePhrase",
         "NextNodeRequest",
+        "NextNodeRequestGraphId",
         "AddBenzine",
         "AddItem",
         "AddMoney",
@@ -51,6 +57,7 @@ public static class NodeSystemComponentsLookup {
         "RemoveToken",
         "RemoveVolition",
         "GraphID",
+        "GraphPlayer",
         "NextChoices",
         "NextNodes",
         "Node",
@@ -58,13 +65,16 @@ public static class NodeSystemComponentsLookup {
         "NodePosition",
         "Played",
         "Playing",
+        "PlayNextGraph",
         "SkipTimerNode",
         "StartNode"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.NodeBasedSystem.DialogueSystem.BindDialogueWindowComponent),
         typeof(Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent),
         typeof(Code.NodeBasedSystem.NextNodeRequestComponent),
+        typeof(Code.NodeBasedSystem.NextNodeRequestGraphIdComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddBenzineComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddItemComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddMoneyComponent),
@@ -78,6 +88,7 @@ public static class NodeSystemComponentsLookup {
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.RemoveTokenComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.RemoveVolitionComponent),
         typeof(NodeBasedSystem.Nodes.GraphIDComponent),
+        typeof(NodeBasedSystem.Nodes.GraphPlayerComponent),
         typeof(NodeBasedSystem.Nodes.NextChoices),
         typeof(NodeBasedSystem.Nodes.NextNodes),
         typeof(NodeBasedSystem.Nodes.Node),
@@ -85,6 +96,7 @@ public static class NodeSystemComponentsLookup {
         typeof(NodeBasedSystem.Nodes.NodePosition),
         typeof(NodeBasedSystem.Nodes.PlayedComponent),
         typeof(NodeBasedSystem.Nodes.PlayingComponent),
+        typeof(NodeBasedSystem.Nodes.PlayNextGraphComponent),
         typeof(NodeBasedSystem.Nodes.SkipTimerNodeComponent),
         typeof(NodeBasedSystem.Nodes.StartNodeComponent)
     };

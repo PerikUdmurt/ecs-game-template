@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using Code.Common.Extensions;
+using Code.NodeBasedSystem.Core.StaticDatas;
 using Code.Services.StaticDataServices;
 using Entitas;
 using NodeBasedSystem.Nodes;
