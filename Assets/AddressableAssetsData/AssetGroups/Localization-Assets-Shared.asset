@@ -17,6 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: ba2b8b794dbc16644bb315be9536c27b
   m_SerializeEntries:
+  - m_GUID: 0638a6192dbaad045913b7047863146a
+    m_Address: Assets/Localization/TestDialogue/TestDialogue Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0cc507da5bf6f7643a30d9e8901b7758
     m_Address: Assets/Localization/ResourcesLT/ResourceLocalizationTable Shared Data.asset
     m_ReadOnly: 1

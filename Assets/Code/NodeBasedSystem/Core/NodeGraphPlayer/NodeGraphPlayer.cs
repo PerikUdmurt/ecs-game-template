@@ -137,7 +137,7 @@ namespace Code.NodeBasedSystem.Core.NodeGraphPlayer
         {
             foreach (NodeSystemEntity node in _targetGraphGroup)
             {
-                if (node.isPlaying == true)
+                if (node.isPlaying)
                     node.isPlaying = false;
             }
         }

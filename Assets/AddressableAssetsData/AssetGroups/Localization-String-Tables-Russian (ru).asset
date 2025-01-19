@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 284d4fa26da38d64386ee02ed7361c80
   m_SerializeEntries:
+  - m_GUID: 3897ecc65e074f248a7fe27df7c22798
+    m_Address: TestDialogue_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6212d0cf8866fec4987457e6e4909264
     m_Address: ProgressTokens_ru
     m_ReadOnly: 1
