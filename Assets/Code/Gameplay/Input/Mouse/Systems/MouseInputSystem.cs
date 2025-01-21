@@ -19,7 +19,7 @@ namespace Code.Gameplay.Input.Mouse.Systems
         {
             foreach (GameEntity input in _inputs)
             {
-                input.ReplaceMousePosition(_inputService.GetMousePosition());
+                input.ReplaceMousePosition(_inputService.GetMouseScreenPosition());
             }
         }
     }

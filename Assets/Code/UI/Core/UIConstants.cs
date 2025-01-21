@@ -8,6 +8,7 @@ namespace Code.UI.Core
         public const string DevelopShower = "UI/DEVELOP/ShowDevelopDisplay";
         public const string DevelopDisplay = "UI/DEVELOP/DevelopDisplay";
         public const string Debugger = "UI/DEVELOP/GraphyDebugger";
+        public const string ProgressDebugger = "UI/DEVELOP/ProgressDebugger";
 
         public const string DialogueScreenView = "UI/DialogueSystem/DIALOGUE_SCREEN_VIEW";
         

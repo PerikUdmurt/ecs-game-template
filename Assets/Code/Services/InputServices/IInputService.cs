@@ -6,6 +6,11 @@ namespace Code.Services.InputServices
     {
         float GetAxisHorizontal();
         float GetAxisVertical();
-        Vector2 GetMousePosition();
+        Vector2 GetMouseScreenPosition();
+        float GetWheelScrollAxis();
+        bool GetJumpDown();
+        bool GetCrouchDown();
+        bool GetCrouchUp();
+        bool IsAxisActive();
     }
 }

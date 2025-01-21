@@ -1,10 +1,12 @@
 using Entitas;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Code.Common.Systems
 {
+    [UsedImplicitly]
     public class CleanupGameDestructedSystem : ICleanupSystem
     {
         private readonly IGroup<GameEntity> _entities;
@@ -22,6 +24,7 @@ namespace Code.Common.Systems
         }
     }
 
+    [UsedImplicitly]
     public class CleanupGameDestructedViewsSystem : ICleanupSystem
     {
         private readonly IGroup<GameEntity> _entities;

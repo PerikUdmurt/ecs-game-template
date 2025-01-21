@@ -9,38 +9,40 @@
 public static class NodeSystemComponentsLookup {
 
     public const int BindDialogueWindow = 0;
-    public const int DialoguePhrase = 1;
-    public const int NextNodeRequest = 2;
-    public const int NextNodeRequestGraphId = 3;
-    public const int AddBenzine = 4;
-    public const int AddItem = 5;
-    public const int AddMoney = 6;
-    public const int AddRating = 7;
-    public const int AddToken = 8;
-    public const int AddVolition = 9;
-    public const int RemoveBenzine = 10;
-    public const int RemoveItem = 11;
-    public const int RemoveMoney = 12;
-    public const int RemoveRating = 13;
-    public const int RemoveToken = 14;
-    public const int RemoveVolition = 15;
-    public const int GraphID = 16;
-    public const int GraphPlayer = 17;
-    public const int NextChoices = 18;
-    public const int NextNodes = 19;
-    public const int Node = 20;
-    public const int NodeId = 21;
-    public const int NodePosition = 22;
-    public const int Played = 23;
-    public const int Playing = 24;
-    public const int PlayNextGraph = 25;
-    public const int SkipTimerNode = 26;
-    public const int StartNode = 27;
+    public const int DialogueActor = 1;
+    public const int DialoguePhrase = 2;
+    public const int NextNodeRequest = 3;
+    public const int NextNodeRequestGraphId = 4;
+    public const int AddBenzine = 5;
+    public const int AddItem = 6;
+    public const int AddMoney = 7;
+    public const int AddRating = 8;
+    public const int AddToken = 9;
+    public const int AddVolition = 10;
+    public const int RemoveBenzine = 11;
+    public const int RemoveItem = 12;
+    public const int RemoveMoney = 13;
+    public const int RemoveRating = 14;
+    public const int RemoveToken = 15;
+    public const int RemoveVolition = 16;
+    public const int GraphID = 17;
+    public const int GraphPlayer = 18;
+    public const int NextChoices = 19;
+    public const int NextNodes = 20;
+    public const int Node = 21;
+    public const int NodeId = 22;
+    public const int NodePosition = 23;
+    public const int Played = 24;
+    public const int Playing = 25;
+    public const int PlayNextGraph = 26;
+    public const int SkipTimerNode = 27;
+    public const int StartNode = 28;
 
-    public const int TotalComponents = 28;
+    public const int TotalComponents = 29;
 
     public static readonly string[] componentNames = {
         "BindDialogueWindow",
+        "DialogueActor",
         "DialoguePhrase",
         "NextNodeRequest",
         "NextNodeRequestGraphId",
@@ -72,6 +74,7 @@ public static class NodeSystemComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(Code.NodeBasedSystem.DialogueSystem.BindDialogueWindowComponent),
+        typeof(Code.NodeBasedSystem.DialogueSystem.DialogueActorComponent),
         typeof(Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent),
         typeof(Code.NodeBasedSystem.NextNodeRequestComponent),
         typeof(Code.NodeBasedSystem.NextNodeRequestGraphIdComponent),

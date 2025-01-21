@@ -9,6 +9,9 @@ namespace Code.NodeBasedSystem.DialogueSystem
     
     [NodeSystem, NodeComponent("DialogueSystem. Bind Window", "#ff9d00")]
     public class BindDialogueWindowComponent : INodeEventComponent { public EDialogueWindowType Value;}
+    
+    [NodeSystem, NodeComponent("DialogueSystem. Show Actor", "#ff9d00")]
+    public class DialogueActorComponent : INodeEventComponent { public LocalizedStringData Value = new(); }
 
     public enum EDialogueWindowType
     {

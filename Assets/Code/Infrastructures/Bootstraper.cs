@@ -1,20 +1,24 @@
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
+using Code.Infrastructures.StateMachine.GameStates;
 using UnityEngine;
 using Zenject;
 
-public class Bootstraper : MonoBehaviour
+namespace Code.Infrastructures
 {
-    private IGameStateMachine _stateMachine;
-    
-    [Inject]
-    private void SetDependencies(IGameStateMachine stateMachine)
+    public class Bootstraper : MonoBehaviour
     {
-        _stateMachine = stateMachine;
-    }
+        private IGameStateMachine _stateMachine;
     
-    private void Awake()
-    {
-        _stateMachine.Enter<BootstrapState>();
+        [Inject]
+        private void SetDependencies(IGameStateMachine stateMachine)
+        {
+            _stateMachine = stateMachine;
+        }
+    
+        private void Awake()
+        {
+            _stateMachine.Enter<BootstrapState>();
+        }
     }
 }

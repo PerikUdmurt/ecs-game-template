@@ -9,4 +9,5 @@ namespace Code.Common.Unity
     public class AudioSource : IComponent { public UnityEngine.AudioSource Value; }
     public class Transform : IComponent { public UnityEngine.Transform Value; }
     public class Rigidbody2D : IComponent { public UnityEngine.Rigidbody2D Value; }
+    public class Rigidbody3D : IComponent { public UnityEngine.Rigidbody Value; }
 }

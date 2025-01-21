@@ -3,10 +3,12 @@ using Code.Gameplay;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructures.Factories;
 using Code.Progress.SaveLoadServices;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
 {
+  [UsedImplicitly]
   public class GameplayLoopState : IState, IUpdateable
   {
     private readonly ISystemFactory _systems;
@@ -24,6 +26,7 @@ namespace Code.Infrastructure.States.GameStates
     public void Enter()
     {
       _gameplayFeature = _systems.Create<GameplayFeature>();
+      _saveLoadService.LoadProgress();
       _gameplayFeature.Initialize();
     }
 
@@ -35,6 +38,7 @@ namespace Code.Infrastructure.States.GameStates
 
     public void Exit()
     {
+      _saveLoadService.SaveProgress();
       _gameplayFeature.DeactivateReactiveSystems();
       _gameplayFeature.ClearReactiveSystems();
 

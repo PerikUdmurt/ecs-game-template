@@ -25,11 +25,10 @@ namespace Code.Gameplay.DialogueSystem
                 switch (entity.BindDialogueWindow)
                 {
                     case EDialogueWindowType.DefaultDialogueWindow:
-                        _uINavigator.Perform<DialogueScreenController>(controller => 
+                        _uINavigator.Perform<DialogueScreenController>(controller =>
                             controller.SetNodePlayer(entity.GraphPlayer));
                         break;
                 }
-                
             }
         }
 

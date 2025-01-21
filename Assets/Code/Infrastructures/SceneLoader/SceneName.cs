@@ -6,5 +6,7 @@ namespace Code.Infrastructures.SceneLoaders
         MainMenu = 1,
         NightCycle = 2,
         DayCycle = 3,
+        
+        CharacterPlayground = 4,
     }
 }

@@ -4,6 +4,7 @@ using Code.UI.Core.Controller;
 using Code.UI.Core.Navigator;
 using Code.UI.Develop;
 using Code.UI.Settings;
+using JetBrains.Annotations;
 using UnityEngine;
 using Zenject;
 
@@ -25,6 +26,7 @@ namespace Code.UI.Core
         }
     }
 
+    [UsedImplicitly]
     public class UICoreInstaller : Installer<UICoreInstaller>
     {
         public override void InstallBindings()

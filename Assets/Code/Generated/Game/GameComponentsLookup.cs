@@ -14,44 +14,46 @@ public static class GameComponentsLookup {
     public const int NavMeshAgent = 3;
     public const int Rigidbody = 4;
     public const int Rigidbody2D = 5;
-    public const int SpriteRenderer = 6;
-    public const int Transform = 7;
-    public const int View = 8;
-    public const int ViewPath = 9;
-    public const int ViewPrefab = 10;
-    public const int Id = 11;
-    public const int WorldPosition = 12;
-    public const int Card = 13;
-    public const int Dragable = 14;
-    public const int Dragging = 15;
-    public const int DragLerp = 16;
-    public const int BleedingEffect = 17;
-    public const int BurningEffect = 18;
-    public const int DamageEffect = 19;
-    public const int Effect = 20;
-    public const int EffectProducerId = 21;
-    public const int EffectSetups = 22;
-    public const int EffectTargetId = 23;
-    public const int EffectValue = 24;
-    public const int CurrentHp = 25;
-    public const int Dead = 26;
-    public const int MaxHp = 27;
-    public const int ProcessingDeath = 28;
-    public const int Acceleration = 29;
-    public const int Direction = 30;
-    public const int MoveTargetPosition = 31;
-    public const int Moving = 32;
-    public const int Speed = 33;
-    public const int AxisInput = 34;
-    public const int Input = 35;
-    public const int Clackable = 36;
-    public const int Clicked = 37;
-    public const int Selectable = 38;
-    public const int MousePosition = 39;
-    public const int AssetIsLoading = 40;
-    public const int Selected = 41;
+    public const int Rigidbody3D = 6;
+    public const int SpriteRenderer = 7;
+    public const int Transform = 8;
+    public const int View = 9;
+    public const int ViewPath = 10;
+    public const int ViewPrefab = 11;
+    public const int Id = 12;
+    public const int WorldPosition = 13;
+    public const int Card = 14;
+    public const int Character = 15;
+    public const int Dragable = 16;
+    public const int Dragging = 17;
+    public const int DragLerp = 18;
+    public const int BleedingEffect = 19;
+    public const int BurningEffect = 20;
+    public const int DamageEffect = 21;
+    public const int Effect = 22;
+    public const int EffectProducerId = 23;
+    public const int EffectSetups = 24;
+    public const int EffectTargetId = 25;
+    public const int EffectValue = 26;
+    public const int CurrentHp = 27;
+    public const int Dead = 28;
+    public const int MaxHp = 29;
+    public const int ProcessingDeath = 30;
+    public const int Acceleration = 31;
+    public const int Direction = 32;
+    public const int MoveTargetPosition = 33;
+    public const int Moving = 34;
+    public const int Speed = 35;
+    public const int AxisInput = 36;
+    public const int Input = 37;
+    public const int Clackable = 38;
+    public const int Clicked = 39;
+    public const int Selectable = 40;
+    public const int MousePosition = 41;
+    public const int AssetIsLoading = 42;
+    public const int Selected = 43;
 
-    public const int TotalComponents = 42;
+    public const int TotalComponents = 44;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -60,6 +62,7 @@ public static class GameComponentsLookup {
         "NavMeshAgent",
         "Rigidbody",
         "Rigidbody2D",
+        "Rigidbody3D",
         "SpriteRenderer",
         "Transform",
         "View",
@@ -68,6 +71,7 @@ public static class GameComponentsLookup {
         "Id",
         "WorldPosition",
         "Card",
+        "Character",
         "Dragable",
         "Dragging",
         "DragLerp",
@@ -105,6 +109,7 @@ public static class GameComponentsLookup {
         typeof(Code.Common.Unity.NavMeshAgent),
         typeof(Code.Common.Unity.Rigidbody),
         typeof(Code.Common.Unity.Rigidbody2D),
+        typeof(Code.Common.Unity.Rigidbody3D),
         typeof(Code.Common.Unity.SpriteRenderer),
         typeof(Code.Common.Unity.Transform),
         typeof(Code.Common.View),
@@ -113,6 +118,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Cards.CardComponent),
+        typeof(Code.Gameplay.Features.Characters.CharacterComponent),
         typeof(Code.Gameplay.Features.Dragable.DragableComponent),
         typeof(Code.Gameplay.Features.Dragable.DraggingComponent),
         typeof(Code.Gameplay.Features.Dragable.DragLerpComponent),

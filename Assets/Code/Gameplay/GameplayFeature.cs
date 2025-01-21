@@ -2,6 +2,7 @@ using Code.Common.Destruct;
 using Code.Gameplay.DialogueSystem.Systems;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Input;
+using Code.Gameplay.Test;
 using Code.Infrastructures.Factories;
 using Code.Infrastructures.View.Systems;
 using Code.NodeBasedSystem;
@@ -22,6 +23,7 @@ namespace Code.Gameplay
             Add(systemFactory.Create<StorageFeature>());
             Add(systemFactory.Create<InputFeature>());
             Add(systemFactory.Create<ProcessDestuctedFeature>());
+            Add(systemFactory.Create<GameplayTestFeature>());
         }
     }
 }
