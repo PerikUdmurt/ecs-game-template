@@ -20,7 +20,7 @@ namespace Code.Infrastructures.StateMachine.GameStates
     
     public void Enter()
     {
-      _sceneLoader.Load(SceneName.CharacterPlayground, OnSceneLoaded);
+      _sceneLoader.Load(SceneName.NightCycle, OnSceneLoaded);
     }
 
     private void OnSceneLoaded()
