@@ -62,6 +62,8 @@ MonoBehaviour:
     - c8bf265dde0d653429890803a592db61
     - 855f32414cb2daa49b9078cc276d9e05
     - c39b8c77e6b151a47beb39abd798ef04
+    - fd9a471eebeca4c19bc1d886273612b3
+    - f9b7d4f56ea0ee14896383f43e9b4dc8
     values:
     - colorIndex: 1
       iconNameOrGuid: PrefabModel Icon
@@ -159,3 +161,7 @@ MonoBehaviour:
       iconNameOrGuid: 
     - colorIndex: 0
       iconNameOrGuid: SceneAsset Icon
+    - colorIndex: 3
+      iconNameOrGuid: 
+    - colorIndex: 4
+      iconNameOrGuid: 
