@@ -17,7 +17,9 @@ MonoBehaviour:
     \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent, Assembly-CSharp\",\r\n         
     \"Value\": {\r\n            \"entryKey\": \"phrase_bye\",\r\n            \"tableKey\":
     \"TestDialogue\"\r\n          }\r\n        },\r\n        {\r\n          \"$type\":
-    \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n          \"Value\": \"eedaab8c-91cb-4cb6-8dcf-88b3c9e9a943\"\r\n       
+    \"NodeBasedSystem.Nodes.PlayNextGraphComponent, Assembly-CSharp\",\r\n         
+    \"Value\": \"TestGraph\"\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodeId,
+    Assembly-CSharp\",\r\n          \"Value\": \"eedaab8c-91cb-4cb6-8dcf-88b3c9e9a943\"\r\n       
     },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodePosition,
     Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"X\": 1734.4,\r\n           
     \"Y\": 324.800018\r\n          }\r\n        },\r\n        {\r\n          \"$type\":
@@ -27,13 +29,14 @@ MonoBehaviour:
     {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent,
     Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"entryKey\": \"phrase_bye2\",\r\n           
     \"tableKey\": \"TestDialogue\"\r\n          }\r\n        },\r\n        {\r\n         
-    \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n          \"Value\":
-    \"29407e27-3a58-4971-bd76-2352c67a775f\"\r\n        },\r\n        {\r\n         
-    \"$type\": \"NodeBasedSystem.Nodes.NodePosition, Assembly-CSharp\",\r\n         
-    \"Value\": {\r\n            \"X\": 1734.4,\r\n            \"Y\": 632.0\r\n         
-    }\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.Node,
-    Assembly-CSharp\",\r\n          \"Value\": 0\r\n        },\r\n        {\r\n         
-    \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.PlayNextGraphComponent, Assembly-CSharp\",\r\n         
+    \"Value\": \"TestGraph\"\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodeId,
+    Assembly-CSharp\",\r\n          \"Value\": \"29407e27-3a58-4971-bd76-2352c67a775f\"\r\n       
+    },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodePosition,
+    Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"X\": 1734.4,\r\n           
+    \"Y\": 632.0\r\n          }\r\n        },\r\n        {\r\n          \"$type\":
+    \"NodeBasedSystem.Nodes.Node, Assembly-CSharp\",\r\n          \"Value\": 0\r\n       
+    },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
     \"Value\": []\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"c\": [\r\n       
     {\r\n          \"$type\": \"NodeBasedSystem.Nodes.StartNodeComponent, Assembly-CSharp\"\r\n       
     },\r\n        {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.BindDialogueWindowComponent,

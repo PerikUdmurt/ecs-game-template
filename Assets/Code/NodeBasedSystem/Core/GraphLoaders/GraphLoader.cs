@@ -4,11 +4,13 @@ using Code.Common.Extensions;
 using Code.NodeBasedSystem.Core.StaticDatas;
 using Code.Services.StaticDataServices;
 using Entitas;
+using JetBrains.Annotations;
 using NodeBasedSystem.Nodes;
 using UnityEngine;
 
 namespace Code.NodeBasedSystem.GraphLoaders
 {
+    [UsedImplicitly]
     public class GraphLoader : IGraphLoader
     {
         private readonly NodeSystemContext _context;

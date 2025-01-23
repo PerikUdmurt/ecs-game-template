@@ -9,6 +9,7 @@ using Code.NodeBasedSystem.GraphPlayer;
 using Code.UI.Core.Controller;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
+using SABI;
 using UniRx;
 using UnityEngine;
 
@@ -21,6 +22,7 @@ namespace Code.Gameplay.DialogueSystem.UI.Controller
     {
         private readonly IObjectPool<DialogueBlockUIView> _blockPool;
         private readonly IAsyncMonoFactory _factory;
+        private readonly List<DialogueChoicesUIView> _choicesUIViews; 
         private readonly List<DialogueBlockUIView> _instantiatedBlocks;
         private readonly Dictionary<MyButton, IDisposable> _buttonDisposables;
         
@@ -31,6 +33,7 @@ namespace Code.Gameplay.DialogueSystem.UI.Controller
             IAsyncMonoFactory factory,
             NodeSystemContext nodeSystemContext)
         {
+            _choicesUIViews = new List<DialogueChoicesUIView>();
             _blockPool = blockPool;
             _factory = factory;
             _buttonDisposables = new();
@@ -48,7 +51,7 @@ namespace Code.Gameplay.DialogueSystem.UI.Controller
                 .AddTo(disposables);
             
             _view.OnClearButtonClicked
-                .Subscribe(_ => OnClearButtonClicked())
+                .Subscribe(_ => Clear())
                 .AddTo(disposables);
 
             return UniTask.CompletedTask;
@@ -60,18 +63,18 @@ namespace Code.Gameplay.DialogueSystem.UI.Controller
             return UniTask.CompletedTask;
         }
 
-        private void OnClearButtonClicked()
+        private void OnSkipClicked()
         {
-            Debug.LogWarning("[DialogueScreenController] OnClearButtonClicked not implemented");
-        }
-
-        private void OnSkipClicked() =>
+            foreach (DialogueBlockUIView block in _instantiatedBlocks)
+            {
+                block.SkipTypewriterAnimation();
+            }
+            
             _graphPlayer.PlayNextNode();
-
-        private void OnShowHistoryClicked()
-        {
-            HideView().Forget();
         }
+
+        private void OnShowHistoryClicked() =>
+            HideView().Forget();
         
         public void SetNodePlayer(IGraphPlayer graphPlayer)
         {
@@ -83,6 +86,8 @@ namespace Code.Gameplay.DialogueSystem.UI.Controller
             DialogueBlockUIView block = await _blockPool.Get();
             block.transform.SetParent(_view.BlockContainer);
             block.SetDialogueText(text);
+            block.PlayTypewriterAnimation();
+            _view.SetScrollbarValue(1);
             _instantiatedBlocks.Add(block);
         }
 
@@ -92,6 +97,7 @@ namespace Code.Gameplay.DialogueSystem.UI.Controller
                 return;
 
             await CreateChoicesBlock(choicesDatas);
+            _view.SetScrollbarValue(1);
         }
 
         private async UniTask CreateChoicesBlock(List<NextChoiceData> choicesDatas)
@@ -107,12 +113,15 @@ namespace Code.Gameplay.DialogueSystem.UI.Controller
             }
 
             choicesBlock.transform.SetParent(_view.BlockContainer);
+            _choicesUIViews.Add(choicesBlock);
         }
 
         private void OnButtonClick(NextChoiceData nextChoicesData)
         {
+            ShowPhrase(nextChoicesData.text).Forget();
             _graphPlayer.PlayNode(nextChoicesData.nextNodeId);
             ClearButtonDisposables();
+            ClearChoicesBlocks();
         }
 
         private void ClearButtonDisposables()
@@ -121,6 +130,32 @@ namespace Code.Gameplay.DialogueSystem.UI.Controller
                 buttonDisposable?.Dispose();
             
             _buttonDisposables.Clear();
+        }
+        
+        private void Clear()
+        {
+            ReleaseDialogueBlocks();
+            ClearChoicesBlocks();
+        }
+
+        private void ReleaseDialogueBlocks()
+        {
+            foreach (DialogueBlockUIView block in _instantiatedBlocks)
+            {
+                _blockPool.Release(block);
+            }
+
+            _instantiatedBlocks.Clear();
+        }
+
+        private void ClearChoicesBlocks()
+        {
+            for (int i = 0; i < _choicesUIViews.Count; i++)
+            {
+                _choicesUIViews[i].DestroyGameObject();
+            }
+
+            _choicesUIViews.Clear();
         }
     }
 }

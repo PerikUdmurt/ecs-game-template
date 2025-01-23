@@ -146,7 +146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: "\u041E\u0447\u0438\u0441\u0442\u0438\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -528,8 +528,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.321106, y: -449.6086}
-  m_SizeDelta: {x: -45.7546, y: 854.1478}
+  m_AnchoredPosition: {x: 2.321106, y: -266.52765}
+  m_SizeDelta: {x: -45.7546, y: 487.986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5877435548169062990
 CanvasRenderer:
@@ -555,6 +555,8 @@ MonoBehaviour:
   _blockContainer: {fileID: 3119954904933605598}
   _skipZone: {fileID: 8648593858272299058}
   _clearHistoryButton: {fileID: 5975117464440073591}
+  _scrollbar: {fileID: 3671277531327436194}
+  _lerpSpeed: 1
 --- !u!1 &1615812755465082310
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +623,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: "\u0421\u0432\u0435\u0440\u043D\u0443\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1120,7 +1122,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: "\u041F\u0440\u043E\u043F\u0443\u0441\u0442\u0438\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1402,11 +1404,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 603399051149726174, guid: 47b4e73375595574ca2e8e33050dac75, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 603399051149726174, guid: 47b4e73375595574ca2e8e33050dac75, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 603399051149726174, guid: 47b4e73375595574ca2e8e33050dac75, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1546,6 +1548,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5405811173982432201, guid: 47b4e73375595574ca2e8e33050dac75, type: 3}
       propertyPath: m_VerticalScrollbarVisibility
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405811173982432201, guid: 47b4e73375595574ca2e8e33050dac75, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405811173982432201, guid: 47b4e73375595574ca2e8e33050dac75, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405811173982432201, guid: 47b4e73375595574ca2e8e33050dac75, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5680291141406962861, guid: 47b4e73375595574ca2e8e33050dac75, type: 3}
@@ -1613,6 +1627,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5961637382865575605, guid: 47b4e73375595574ca2e8e33050dac75, type: 3}
   m_PrefabInstance: {fileID: 8788691014277299819}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3671277531327436194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5405811173982432201, guid: 47b4e73375595574ca2e8e33050dac75, type: 3}
+  m_PrefabInstance: {fileID: 8788691014277299819}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7408837624363775752 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2244702987772103011, guid: 47b4e73375595574ca2e8e33050dac75, type: 3}

@@ -24,19 +24,17 @@ namespace Code.UI.Develop
                 .BindController<DevelopUIController>()
                 .WithViewFromResourcePath(UIConstants.DevelopDisplay)
                 .InLayer(EUILayerType.Develop);
-
-            /*
+            
             Container
                 .BindController<DevelopUiShowerController>()
                 .WithViewFromResourcePath(UIConstants.DevelopShower)
                 .InLayer(EUILayerType.Develop)
                 .OnInstantiated<DevelopUiShowerController>((o,controller) => controller.Show().Forget());
-            */
-
+            /*
             Container.BindInterfacesAndSelfTo<DevelopHUDController>()
                 .AsSingle()
                 .NonLazy();
-
+            */
             Container
                 .BindInterfacesAndSelfTo<DevelopHUDModel>()
                 .AsSingle();

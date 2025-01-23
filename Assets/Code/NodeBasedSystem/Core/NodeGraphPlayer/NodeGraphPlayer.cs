@@ -97,25 +97,43 @@ namespace Code.NodeBasedSystem.Core.NodeGraphPlayer
                 Debug.LogWarning($"Not found next available node in graph {_graphID}");
                 return;
             }
-            
-            if (currentNode.Node == ENodeType.Simple)
-            {
-                PlayNode(currentNode.NextNodes.First().NodeId);
-            }
-            
-            if (currentNode.Node == ENodeType.Conditional)
-            {
-                ConditionNodeLink link = currentNode.NextNodes
-                    .FirstOrDefault(n => _verifier.Check(n.Conditions.ToArray()));
 
-                if (link == null)
-                {
-                    Debug.LogError($"[NodeGraphPlayer] Not found next available node by conditions in graph {_graphID}");
-                    return;
-                }
-                string nextNodeId = link.NodeId;
-                PlayNode(nextNodeId);
+            switch (currentNode.Node)
+            {
+                case ENodeType.Simple:
+                    PlaySimpleNode(currentNode);
+                    break;
+                case ENodeType.Conditional:
+                    PlayConditionedNode(currentNode);
+                    break;
             }
+        }
+
+        private void PlayConditionedNode(NodeSystemEntity currentNode)
+        {
+            ConditionNodeLink link = currentNode.NextNodes
+                .FirstOrDefault(n => _verifier.Check(n.Conditions.ToArray()));
+
+            if (link == null)
+            {
+                Debug.LogError($"[NodeGraphPlayer] Not found next available node by conditions in graph {_graphID}");
+                return;
+            }
+            string nextNodeId = link.NodeId;
+            PlayNode(nextNodeId);
+        }
+
+        private void PlaySimpleNode(NodeSystemEntity currentNode)
+        {
+            ConditionNodeLink nextLink = currentNode.NextNodes.FirstOrDefault();
+                
+            if (nextLink == null)
+            {
+                Debug.LogWarning($"[NodeGraphPlayer] Not found next available node in graph {_graphID}");
+                return;
+            }
+                
+            PlayNode(nextLink.NodeId); 
         }
 
         private void MarkTargetNode(string nodeId)
