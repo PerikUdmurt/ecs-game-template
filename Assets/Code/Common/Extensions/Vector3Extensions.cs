@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SABI
+namespace Extensions
 {
     public static class Vector3Extensions
     {

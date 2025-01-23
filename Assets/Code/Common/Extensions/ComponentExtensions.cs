@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SABI
+namespace Extensions
 {
     public static class ComponentExtensions
     {

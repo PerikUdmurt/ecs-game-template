@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace SABI
+namespace Extensions
 {
     public static class MonoBehaviourExtensions
     {

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace SABI
+namespace Extensions
 {
     public static class FloatExtenssions
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace SABI
+namespace Extensions
 {
     public static class DecimalExtensions
     {

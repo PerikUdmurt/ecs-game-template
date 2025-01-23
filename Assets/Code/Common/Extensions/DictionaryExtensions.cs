@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace SABI
+namespace Extensions
 {
     public static class DictionaryExtensions
     {

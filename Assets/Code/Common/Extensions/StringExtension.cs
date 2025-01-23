@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace SABI
+namespace Extensions
 {
     public static class StringExtension
     {
