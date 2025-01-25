@@ -46,8 +46,8 @@ MonoBehaviour:
     \"TestDialogue\"\r\n          }\r\n        },\r\n        {\r\n          \"$type\":
     \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n          \"Value\": \"a4d05da7-7e0a-4d48-9529-5b7b71cc03e5\"\r\n       
     },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodePosition,
-    Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"X\": 1255.2,\r\n           
-    \"Y\": 324.800018\r\n          }\r\n        },\r\n        {\r\n          \"$type\":
+    Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"X\": 1168.8,\r\n           
+    \"Y\": 370.400024\r\n          }\r\n        },\r\n        {\r\n          \"$type\":
     \"NodeBasedSystem.Nodes.Node, Assembly-CSharp\",\r\n          \"Value\": 2\r\n       
     },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
     \"Value\": [\r\n            {\r\n              \"NodeId\": \"eedaab8c-91cb-4cb6-8dcf-88b3c9e9a943\",\r\n             

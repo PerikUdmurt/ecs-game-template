@@ -1,4 +1,5 @@
 using Code.Gameplay.Common.Collisions;
+using Code.Gameplay.Common.Physics;
 using Code.Identifiers;
 using Code.Infrastructures.AssetManagement;
 using Code.Infrastructures.Factories;
@@ -57,6 +58,7 @@ namespace Code.Infrastructures.Installers
             Install<LocalizationInstaller>();
             Install<ScreenResolutionInstaller>();
             Install<PlayerSettingsInstaller>();
+            Install<PhysicsInstaller>();
         }
 
         private void InstallGameplayFactories()

@@ -12,7 +12,7 @@ namespace Code.Infrastructures.View
         public GameEntity Entity => _entity;
 
         [Inject]
-        private void Constuct(ICollisionRegistry collisionRegistry)
+        private void Construct(ICollisionRegistry collisionRegistry)
         {
             _collisionRegistry = collisionRegistry;
         }
@@ -27,8 +27,11 @@ namespace Code.Infrastructures.View
             foreach (IEntityComponentRegistrar registrars in GetComponentsInChildren<IEntityComponentRegistrar>())
                 registrars.RegisterComponent();
 
-            foreach (Collider2D collider in GetComponentsInChildren<Collider2D>(includeInactive: true))
-                _collisionRegistry.Register(collider.GetInstanceID(), _entity);
+            foreach (Collider2D col2D in GetComponentsInChildren<Collider2D>(includeInactive: true))
+                _collisionRegistry.Register(col2D.GetInstanceID(), _entity);
+            
+            foreach (Collider col in GetComponentsInChildren<Collider>(includeInactive: true))
+                _collisionRegistry.Register(col.GetInstanceID(), _entity);
         }
 
         public void ReleaseEntity()
@@ -36,8 +39,11 @@ namespace Code.Infrastructures.View
             foreach (IEntityComponentRegistrar registrars in GetComponentsInChildren<IEntityComponentRegistrar>())
                 registrars.UnregisterComponent();
 
-            foreach (Collider2D collider in GetComponentsInChildren<Collider2D>(includeInactive: true))
-                _collisionRegistry.Unregister(collider.GetInstanceID());
+            foreach (Collider2D col2D in GetComponentsInChildren<Collider2D>(includeInactive: true))
+                _collisionRegistry.Unregister(col2D.GetInstanceID());
+            
+            foreach (Collider col in GetComponentsInChildren<Collider>(includeInactive: true))
+                _collisionRegistry.Unregister(col.GetInstanceID());
             
             _entity.Retain(this);
             _entity = null;

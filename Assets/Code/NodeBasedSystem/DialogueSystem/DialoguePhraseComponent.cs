@@ -17,5 +17,6 @@ namespace Code.NodeBasedSystem.DialogueSystem
     {
         None = 0,
         DefaultDialogueWindow = 1,
+        SmartphoneDialogueWindow = 2,
     }
 }

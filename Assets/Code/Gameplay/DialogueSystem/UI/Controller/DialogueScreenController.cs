@@ -21,7 +21,7 @@ namespace Code.Gameplay.DialogueSystem.UI.Controller
     {
         private readonly IObjectPool<DialogueBlockUIView> _blockPool;
         private readonly IAsyncMonoFactory _factory;
-        private readonly List<DialogueChoicesUIView> _choicesUIViews; 
+        private readonly List<DialogueChoicesUIView> _choicesUIViews;
         private readonly List<DialogueBlockUIView> _instantiatedBlocks;
         private readonly Dictionary<MyButton, IDisposable> _buttonDisposables;
         
@@ -86,7 +86,7 @@ namespace Code.Gameplay.DialogueSystem.UI.Controller
             block.transform.SetParent(_view.BlockContainer);
             block.SetDialogueText(text);
             block.PlayTypewriterAnimation();
-            _view.SetScrollbarValue(1);
+            _view.SetScrollbarValue(float.MaxValue);
             _instantiatedBlocks.Add(block);
         }
 
@@ -96,7 +96,7 @@ namespace Code.Gameplay.DialogueSystem.UI.Controller
                 return;
 
             await CreateChoicesBlock(choicesDatas);
-            _view.SetScrollbarValue(1);
+            _view.SetScrollbarValue(float.MaxValue);
         }
 
         private async UniTask CreateChoicesBlock(List<NextChoiceData> choicesDatas)
@@ -155,6 +155,25 @@ namespace Code.Gameplay.DialogueSystem.UI.Controller
             }
 
             _choicesUIViews.Clear();
+        }
+    }
+
+    public class SmartphoneDialogueScreenController :
+        UIScreenController<DialogueScreenView>,
+        INodeBasedDialogueController
+    {
+        
+        
+        private IGraphPlayer _graphPlayer;
+
+        protected override UniTask BeforeShow(CompositeDisposable disposables)
+        {
+            return UniTask.CompletedTask;
+        }
+
+        public void SetNodePlayer(IGraphPlayer graphPlayer)
+        {
+            _graphPlayer = graphPlayer;
         }
     }
 }

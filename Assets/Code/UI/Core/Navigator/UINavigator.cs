@@ -25,7 +25,8 @@ namespace Code.UI.Core.Navigator
             _container = container;
         }
         
-        public void Show<TUIController>(Action<TUIController> afterShowCallback = null) where TUIController : class, ISimpleScreenController
+        public void Show<TUIController>(Action<TUIController> afterShowCallback = null) 
+            where TUIController : class, ISimpleScreenController
         {
             if (!_createdControllersByType.ContainsKey(typeof(TUIController)))
             {
@@ -41,8 +42,13 @@ namespace Code.UI.Core.Navigator
             else
                 controller.Show().ContinueWith(() => afterShowCallback((TUIController)controller)).Forget();
             
-            
             _openedControllers.TryAdd(controller.GetType(), controller);
+        }
+
+        public void ShowAtWorldPosition<TUIController>(Transform parent, Action<TUIController> afterShowCallback = null)
+            where TUIController : class, ISimpleScreenController
+        {
+            
         }
 
         public void Perform<TUIController>(Action<TUIController> action) where TUIController : class, IUIScreenController

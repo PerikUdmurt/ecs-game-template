@@ -28,6 +28,11 @@ namespace Code.Gameplay.DialogueSystem
                         _uINavigator.Perform<DialogueScreenController>(controller =>
                             controller.SetNodePlayer(entity.GraphPlayer));
                         break;
+                    
+                    case EDialogueWindowType.SmartphoneDialogueWindow:
+                        _uINavigator.Perform<SmartphoneDialogueScreenController>(controller => 
+                            controller.SetNodePlayer(entity.GraphPlayer));
+                        break;
                 }
             }
         }

@@ -5,10 +5,12 @@ using Code.Infrastructures.AssetManagement;
 using Code.Infrastructures.ObjectPool.DiBinding;
 using Code.UI.Core;
 using Code.UI.Core.ContainerBinding;
+using JetBrains.Annotations;
 using Zenject;
 
 namespace Code.Gameplay.DialogueSystem.UI
 {
+    [UsedImplicitly]
     public class DialogueSystemUIInstaller : Installer<DialogueSystemUIInstaller>
     {
         public override void InstallBindings()
