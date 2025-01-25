@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using Entitas;
+using JetBrains.Annotations;
 
 namespace Code.Gameplay.Common.Collisions
 {
+  [UsedImplicitly]
   public class CollisionRegistry : ICollisionRegistry
   {
       private readonly Dictionary<int, IEntity> _entityByInstanceId = new();

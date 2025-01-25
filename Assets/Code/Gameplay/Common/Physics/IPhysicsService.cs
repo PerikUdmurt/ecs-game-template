@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Common.Physics
 {
-  public interface IPhysicsService
+  public interface IPhysics2DService
   {
     GameEntity Raycast(Vector2 worldPosition, Vector2 direction, int layerMask);
     GameEntity LineCast(Vector2 start, Vector2 end, int layerMask);

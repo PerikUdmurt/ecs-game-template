@@ -1,17 +1,19 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Common.Collisions;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Code.Gameplay.Common.Physics
 {
-  public class PhysicsService : IPhysicsService
+  [UsedImplicitly]
+  public class Physics2DService : IPhysics2DService
   {
     private static readonly RaycastHit2D[] Hits = new RaycastHit2D[128];
     private static readonly Collider2D[] OverlapHits = new Collider2D[128];
     
     private readonly ICollisionRegistry _collisionRegistry;
 
-    public PhysicsService(ICollisionRegistry collisionRegistry)
+    public Physics2DService(ICollisionRegistry collisionRegistry)
     {
       _collisionRegistry = collisionRegistry;
     }
