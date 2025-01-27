@@ -43,6 +43,12 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: daf2b85d64bbccd46be7167d03076021
+    m_Address: Assets/Localization/TestDialogue/LittleGirl/little-girl-dialogue1/little_girl_dialogue1
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e91d9177a9d706e41bd524b31387673f
     m_Address: Assets/Localization/UI/Settings/SettingsTable Shared Data.asset
     m_ReadOnly: 1

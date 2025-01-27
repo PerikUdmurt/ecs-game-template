@@ -1,9 +1,11 @@
 using Code.Infrastructures.Time;
 using Entitas;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Movement
 {
+    [UsedImplicitly]
     public class MoveToVector3System : IExecuteSystem
     {
         private readonly ITimeService _timeService;

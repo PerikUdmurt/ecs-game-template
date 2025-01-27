@@ -38,6 +38,10 @@ MonoBehaviour:
     m_Localized: tyuiop
     m_Metadata:
       m_Items: []
+  - m_Id: 2485515231555584
+    m_Localized: I absolutely welcome you.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

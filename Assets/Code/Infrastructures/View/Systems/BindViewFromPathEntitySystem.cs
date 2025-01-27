@@ -1,14 +1,16 @@
 using System.Collections.Generic;
 using Code.Infrastructures.View.Factory;
 using Entitas;
+using JetBrains.Annotations;
 
 namespace Code.Infrastructures.View.Systems
 {
+    [UsedImplicitly]
     public class BindViewFromPathEntitySystem : IExecuteSystem
     {
         private readonly IEntityViewFactory _entityViewFactory;
         private readonly IGroup<GameEntity> _entities;
-        private List<GameEntity> _buffer = new(32);
+        private readonly List<GameEntity> _buffer = new(32);
 
         public BindViewFromPathEntitySystem(GameContext game, IEntityViewFactory entityViewFactory)
         {

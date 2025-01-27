@@ -6,7 +6,8 @@ namespace Code.NodeBasedSystem.Core.StaticDatas
     public class NodeGraphStaticData : ScriptableObject
     {
         public string Id;
-        public string Json;
+        public string Description;
+        [HideInInspector] public string Json;
 
         public NodeGraphStaticData(string json)
         {

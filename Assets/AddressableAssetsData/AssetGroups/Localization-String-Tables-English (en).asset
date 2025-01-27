@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 7b89cbcec1b17b640bc28083634e4104
   m_SerializeEntries:
+  - m_GUID: 3d7bdf9f35a5a124f972cc7f666ff3b3
+    m_Address: little_girl_dialogue1_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6e9444b434f15304683ed55d704c8e89
     m_Address: ProgressTokens_en
     m_ReadOnly: 1

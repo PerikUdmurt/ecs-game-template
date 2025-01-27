@@ -1,9 +1,11 @@
 using Code.Services.InputServices;
 using Entitas;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Code.Gameplay.Input.Systems
 {
+    [UsedImplicitly]
     public class EmitInputSystem : IExecuteSystem
     {
         private readonly IInputService _inputService;

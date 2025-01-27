@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: little_girl_dialogue1_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: daf2b85d64bbccd46be7167d03076021, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1036583825408
+    m_Localized: qwertyuiop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 830739968000
+    m_Localized: lkdfhigladjgag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 750507126784
+    m_Localized: afhadfgadfg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 501256417280
+    m_Localized: adfgadfgadfg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 230077886464
+    m_Localized: adfgadfgadgadg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 200201859072
+    m_Localized: adfgadfgadfgad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147211022336
+    m_Localized: adfgadfgadg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30634536960
+    m_Localized: <shake>qwetqewtqt</shake>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3546547613696
+    m_Localized: qwertyuiop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4317397774336
+    m_Localized: lkdfhigladjgag
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

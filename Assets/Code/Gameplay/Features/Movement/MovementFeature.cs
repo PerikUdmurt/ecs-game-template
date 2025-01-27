@@ -1,7 +1,9 @@
 using Code.Infrastructures.Factories;
+using JetBrains.Annotations;
 
 namespace Code.Gameplay.Features.Movement
 {
+    [UsedImplicitly]
     public class MovementFeature : Feature
     {
         public MovementFeature(ISystemFactory systemFactory)

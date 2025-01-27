@@ -18,9 +18,9 @@ namespace Code.Gameplay.Common.Physics
             _collisionRegistry = collisionRegistry;
         }
 
-        public IEnumerable<GameEntity> RaycastAll(Vector3 worldPosition, Vector3 direction, int layerMask)
+        public IEnumerable<GameEntity> RaycastAll(Vector3 worldPosition, Vector3 direction, float maxDistance, int layerMask)
         {
-            int hitCount = UnityEngine.Physics.RaycastNonAlloc(worldPosition, direction, Hits, layerMask);
+            int hitCount = UnityEngine.Physics.RaycastNonAlloc(worldPosition, direction, Hits, maxDistance, layerMask);
 
             DrawDebugRay(worldPosition, direction, Color.yellow);
             
@@ -38,9 +38,9 @@ namespace Code.Gameplay.Common.Physics
             }
         }
 
-        public GameEntity Raycast(Vector3 worldPosition, Vector3 direction, int layerMask)
+        public GameEntity Raycast(Vector3 worldPosition, Vector3 direction, float maxDistance, int layerMask)
         {
-            int hitCount = UnityEngine.Physics.RaycastNonAlloc(worldPosition, direction, Hits, layerMask);
+            int hitCount = UnityEngine.Physics.RaycastNonAlloc(worldPosition, direction, Hits, maxDistance, layerMask);
 
             DrawDebugRay(worldPosition, direction, Color.green);
             

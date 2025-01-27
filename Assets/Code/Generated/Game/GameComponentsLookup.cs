@@ -22,38 +22,41 @@ public static class GameComponentsLookup {
     public const int ViewPrefab = 11;
     public const int Id = 12;
     public const int WorldPosition = 13;
-    public const int Card = 14;
-    public const int Character = 15;
-    public const int Dragable = 16;
-    public const int Dragging = 17;
-    public const int DragLerp = 18;
-    public const int BleedingEffect = 19;
-    public const int BurningEffect = 20;
-    public const int DamageEffect = 21;
-    public const int Effect = 22;
-    public const int EffectProducerId = 23;
-    public const int EffectSetups = 24;
-    public const int EffectTargetId = 25;
-    public const int EffectValue = 26;
-    public const int CurrentHp = 27;
-    public const int Dead = 28;
-    public const int MaxHp = 29;
-    public const int ProcessingDeath = 30;
-    public const int Acceleration = 31;
-    public const int Direction = 32;
-    public const int MoveTargetPosition = 33;
-    public const int Moving = 34;
-    public const int Speed = 35;
-    public const int AxisInput = 36;
-    public const int Input = 37;
-    public const int Clackable = 38;
-    public const int Clicked = 39;
-    public const int Selectable = 40;
-    public const int MousePosition = 41;
-    public const int AssetIsLoading = 42;
-    public const int Selected = 43;
+    public const int Camera = 14;
+    public const int CameraSelector = 15;
+    public const int Card = 16;
+    public const int Character = 17;
+    public const int Dragable = 18;
+    public const int Dragging = 19;
+    public const int DragLerp = 20;
+    public const int BleedingEffect = 21;
+    public const int BurningEffect = 22;
+    public const int DamageEffect = 23;
+    public const int Effect = 24;
+    public const int EffectProducerId = 25;
+    public const int EffectSetups = 26;
+    public const int EffectTargetId = 27;
+    public const int EffectValue = 28;
+    public const int Interactive = 29;
+    public const int CurrentHp = 30;
+    public const int Dead = 31;
+    public const int MaxHp = 32;
+    public const int ProcessingDeath = 33;
+    public const int Acceleration = 34;
+    public const int Direction = 35;
+    public const int MoveTargetPosition = 36;
+    public const int Moving = 37;
+    public const int Speed = 38;
+    public const int AxisInput = 39;
+    public const int Input = 40;
+    public const int Clackable = 41;
+    public const int Clicked = 42;
+    public const int Selectable = 43;
+    public const int MousePosition = 44;
+    public const int AssetIsLoading = 45;
+    public const int Selected = 46;
 
-    public const int TotalComponents = 44;
+    public const int TotalComponents = 47;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -70,6 +73,8 @@ public static class GameComponentsLookup {
         "ViewPrefab",
         "Id",
         "WorldPosition",
+        "Camera",
+        "CameraSelector",
         "Card",
         "Character",
         "Dragable",
@@ -83,6 +88,7 @@ public static class GameComponentsLookup {
         "EffectSetups",
         "EffectTargetId",
         "EffectValue",
+        "Interactive",
         "CurrentHp",
         "Dead",
         "MaxHp",
@@ -117,6 +123,8 @@ public static class GameComponentsLookup {
         typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.Camera.CameraComponent),
+        typeof(Code.Gameplay.Features.Camera.CameraSelectorComponent),
         typeof(Code.Gameplay.Features.Cards.CardComponent),
         typeof(Code.Gameplay.Features.Characters.CharacterComponent),
         typeof(Code.Gameplay.Features.Dragable.DragableComponent),
@@ -130,6 +138,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Effects.EffectSetupsComponent),
         typeof(Code.Gameplay.Features.Effects.EffectTargetIdComponent),
         typeof(Code.Gameplay.Features.Effects.EffectValueComponent),
+        typeof(Code.Gameplay.Features.InteractiveObjects.InteractiveComponent),
         typeof(Code.Gameplay.Features.LifeTime.CurrentHp),
         typeof(Code.Gameplay.Features.LifeTime.Dead),
         typeof(Code.Gameplay.Features.LifeTime.MaxHp),

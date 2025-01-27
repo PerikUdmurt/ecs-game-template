@@ -35,6 +35,10 @@ MonoBehaviour:
     m_Key: phrase_bye2
     m_Metadata:
       m_Items: []
+  - m_Id: 2485515231555584
+    m_Key: choice_3
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

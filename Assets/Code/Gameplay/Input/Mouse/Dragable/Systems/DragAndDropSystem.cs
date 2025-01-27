@@ -1,14 +1,16 @@
 using Entitas;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Code.Gameplay.Input.Mouse.Dragable.Systems
 {
-    public class DragAndDropSystem : IExecuteSystem
+    [UsedImplicitly]
+    public class MouseDragAndDropSystem : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _draggings;
         private readonly IGroup<GameEntity> _input;
 
-        public DragAndDropSystem(GameContext game)
+        public MouseDragAndDropSystem(GameContext game)
         {
             _draggings = game.GetGroup(GameMatcher
                 .AllOf(

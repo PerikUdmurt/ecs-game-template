@@ -11,41 +11,37 @@ public static class NodeSystemComponentsLookup {
     public const int BindDialogueWindow = 0;
     public const int DialogueActor = 1;
     public const int DialoguePhrase = 2;
-    public const int NextNodeRequest = 3;
-    public const int NextNodeRequestGraphId = 4;
-    public const int AddBenzine = 5;
-    public const int AddItem = 6;
-    public const int AddMoney = 7;
-    public const int AddRating = 8;
-    public const int AddToken = 9;
-    public const int AddVolition = 10;
-    public const int RemoveBenzine = 11;
-    public const int RemoveItem = 12;
-    public const int RemoveMoney = 13;
-    public const int RemoveRating = 14;
-    public const int RemoveToken = 15;
-    public const int RemoveVolition = 16;
-    public const int GraphID = 17;
-    public const int GraphPlayer = 18;
-    public const int NextChoices = 19;
-    public const int NextNodes = 20;
-    public const int Node = 21;
-    public const int NodeId = 22;
-    public const int NodePosition = 23;
-    public const int Played = 24;
-    public const int Playing = 25;
-    public const int PlayNextGraph = 26;
-    public const int SkipTimerNode = 27;
-    public const int StartNode = 28;
+    public const int AddBenzine = 3;
+    public const int AddItem = 4;
+    public const int AddMoney = 5;
+    public const int AddRating = 6;
+    public const int AddToken = 7;
+    public const int AddVolition = 8;
+    public const int RemoveBenzine = 9;
+    public const int RemoveItem = 10;
+    public const int RemoveMoney = 11;
+    public const int RemoveRating = 12;
+    public const int RemoveToken = 13;
+    public const int RemoveVolition = 14;
+    public const int GraphID = 15;
+    public const int GraphPlayer = 16;
+    public const int NextChoices = 17;
+    public const int NextNodes = 18;
+    public const int Node = 19;
+    public const int NodeId = 20;
+    public const int NodePosition = 21;
+    public const int Played = 22;
+    public const int Playing = 23;
+    public const int PlayNextGraph = 24;
+    public const int SkipTimerNode = 25;
+    public const int StartNode = 26;
 
-    public const int TotalComponents = 29;
+    public const int TotalComponents = 27;
 
     public static readonly string[] componentNames = {
         "BindDialogueWindow",
         "DialogueActor",
         "DialoguePhrase",
-        "NextNodeRequest",
-        "NextNodeRequestGraphId",
         "AddBenzine",
         "AddItem",
         "AddMoney",
@@ -76,8 +72,6 @@ public static class NodeSystemComponentsLookup {
         typeof(Code.NodeBasedSystem.DialogueSystem.BindDialogueWindowComponent),
         typeof(Code.NodeBasedSystem.DialogueSystem.DialogueActorComponent),
         typeof(Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent),
-        typeof(Code.NodeBasedSystem.NextNodeRequestComponent),
-        typeof(Code.NodeBasedSystem.NextNodeRequestGraphIdComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddBenzineComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddItemComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddMoneyComponent),

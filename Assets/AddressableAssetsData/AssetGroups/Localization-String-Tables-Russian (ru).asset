@@ -35,6 +35,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ru
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9133c210d61bd094eab6d4fa17f6bd58
+    m_Address: little_girl_dialogue1_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9768d202c798bfe4e9a291e45c634581
     m_Address: ResourceLocalizationTable_ru
     m_ReadOnly: 1
