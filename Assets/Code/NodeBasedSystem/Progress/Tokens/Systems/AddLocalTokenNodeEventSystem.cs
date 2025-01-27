@@ -30,7 +30,7 @@ namespace Code.NodeBasedSystem.Progress.Tokens
         {
             foreach (NodeSystemEntity tokenRequestEntity in entities)
             {
-                string token = tokenRequestEntity.AddToken;
+                string token = tokenRequestEntity.AddLocalProgressToken;
                 NodeSystemEntity[] tokenStorages = _tokensEntityGroup.GetEntities();
 
                 foreach (var tokenStorage in tokenStorages)

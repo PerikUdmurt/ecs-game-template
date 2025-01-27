@@ -4,12 +4,21 @@ using Code.Progress.PlayerStorage;
 
 namespace Code.NodeBasedSystem.Core.Conditions
 {
-    public abstract class BaseConditionData { }
+    public abstract class BaseConditionData
+    {
+        public string GraphPlayerID { get; set; }
+    }
 
-    [NodeCondition("Has Token")]
+    [NodeCondition("Has Global Token")]
     public class HasToken : BaseConditionData
     {
         public string Token;
+    }
+
+    [NodeCondition("Has Local Token")]
+    public class HasLocalToken : BaseConditionData
+    {
+        public string LocalToken;
     }
     
     [NodeCondition("Resources")]

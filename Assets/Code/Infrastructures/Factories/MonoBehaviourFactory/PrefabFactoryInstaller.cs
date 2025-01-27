@@ -1,8 +1,9 @@
-using UnityEngine;
+using JetBrains.Annotations;
 using Zenject;
 
 namespace Code.Infrastructures.Factories
 {
+    [UsedImplicitly]
     public class PrefabFactoryInstaller : Installer<PrefabFactoryInstaller>
     {
         public override void InstallBindings()

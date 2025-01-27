@@ -5,5 +5,6 @@ namespace Code.NodeBasedSystem.GraphPlayer
         void PlayNode(string nodeId);
         void StartGraph(string graphId);
         void PlayNextNode();
+        void Release();
     }
 }

@@ -11,6 +11,11 @@ namespace Code.NodeBasedSystem
         public override void InstallBindings()
         {
             Container
+                .Bind<INodeSystem>()
+                .To<NodeSystem>()
+                .AsCached();
+            
+            Container
                 .BindInterfacesAndSelfTo<GraphLoader>()
                 .AsSingle();
 

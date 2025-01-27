@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Code.NodeBasedSystem.Core.Conditions;
+using Code.NodeBasedSystem.Core.NodeSystemEntities;
 using Code.NodeBasedSystem.GraphLoaders;
 using Code.NodeBasedSystem.GraphPlayer;
 using Entitas;
@@ -14,36 +15,40 @@ namespace Code.NodeBasedSystem.Core.NodeGraphPlayer
         private readonly NodeSystemContext _context;
         private readonly IGraphLoader _graphLoader;
         private readonly INodeConditionVerifyService _verifier;
-        private readonly string _graphID;
+        private readonly string _graphPlayerIdentifier;
         
         private IEnumerable<NodeSystemEntity> _targetGraphGroup;
+        private NodeSystemEntity _localStorage;
 
         public NodeGraphPlayer(
             NodeSystemContext context, 
             INodeConditionVerifyService verifier,
             IGraphLoader graphLoader, 
-            string graphId)
+            string identifier)
         {
-            _graphID = graphId;
+            _graphPlayerIdentifier = identifier;
             _context = context;
             _verifier = verifier;
             _graphLoader = graphLoader;
+            _targetGraphGroup = null;
         }
 
         public void StartGraph(string staticDataId)
         {
-            ReleaseGraph();
+            Release();
 
-            _graphLoader.LoadGraph(staticDataId, _graphID);
+            _graphLoader.LoadGraph(staticDataId, _graphPlayerIdentifier);
             _targetGraphGroup = FindTargetGraph();
             AssignGraphPlayer();
+            
+            _localStorage = CreateNodeSystemEntity.LocalTokenStorage(_graphPlayerIdentifier);
 
             NodeSystemEntity startNode = _targetGraphGroup
                 .FirstOrDefault(entity => entity.isStartNode);
 
             if (startNode == null)
             {
-                Debug.LogError($"[NODE_GRAPH_PLAYER] the starting node was not found in the graph {_graphID} with staticDataID = {staticDataId}");
+                Debug.LogError($"[NODE_GRAPH_PLAYER] the starting node was not found in the graph {_graphPlayerIdentifier} with staticDataID = {staticDataId}");
                 return;
             }
 
@@ -55,6 +60,19 @@ namespace Code.NodeBasedSystem.Core.NodeGraphPlayer
             foreach (NodeSystemEntity entity in _targetGraphGroup)
             {
                 entity.ReplaceGraphPlayer(this);
+                AssignGraphPlayerToConditions(entity);
+            }
+        }
+
+        private void AssignGraphPlayerToConditions(NodeSystemEntity entity)
+        {
+            if (entity.hasNextNodes)
+            {
+                foreach (var nextNode in entity.NextNodes)
+                {
+                    nextNode.Conditions.ForEach(c => 
+                        c.GraphPlayerID = _graphPlayerIdentifier);
+                }
             }
         }
 
@@ -67,10 +85,10 @@ namespace Code.NodeBasedSystem.Core.NodeGraphPlayer
 
             return allNodes
                 .GetEntities()
-                .Where(entity => entity.graphID.Value == _graphID);
+                .Where(entity => entity.graphID.Value == _graphPlayerIdentifier);
         }
 
-        private void ReleaseGraph()
+        public void Release()
         {
             List<NodeSystemEntity> group = FindTargetGraph().ToList();
 
@@ -78,6 +96,8 @@ namespace Code.NodeBasedSystem.Core.NodeGraphPlayer
             {
                 group[i].Destroy();
             }
+            
+            _localStorage?.Destroy();
         }
 
         public void PlayNode(string nodeId)
@@ -94,7 +114,7 @@ namespace Code.NodeBasedSystem.Core.NodeGraphPlayer
 
             if (currentNode == null)
             {
-                Debug.LogWarning($"Not found next available node in graph {_graphID}");
+                Debug.LogWarning($"Not found next available node in graph {_graphPlayerIdentifier}");
                 return;
             }
 
@@ -116,7 +136,7 @@ namespace Code.NodeBasedSystem.Core.NodeGraphPlayer
 
             if (link == null)
             {
-                Debug.LogError($"[NodeGraphPlayer] Not found next available node by conditions in graph {_graphID}");
+                Debug.LogError($"[NodeGraphPlayer] Not found next available node by conditions in graph {_graphPlayerIdentifier}");
                 return;
             }
             string nextNodeId = link.NodeId;
@@ -129,7 +149,7 @@ namespace Code.NodeBasedSystem.Core.NodeGraphPlayer
                 
             if (nextLink == null)
             {
-                Debug.LogWarning($"[NodeGraphPlayer] Not found next available node in graph {_graphID}");
+                Debug.LogWarning($"[NodeGraphPlayer] Not found next available node in graph {_graphPlayerIdentifier}");
                 return;
             }
                 
@@ -143,7 +163,7 @@ namespace Code.NodeBasedSystem.Core.NodeGraphPlayer
 
             if (targetNode == null)
             {
-                Debug.LogError($"[NODE_GRAPH_PLAYER] the node with id = {nodeId} was not found in the graph {_graphID}");
+                Debug.LogError($"[NODE_GRAPH_PLAYER] the node with id = {nodeId} was not found in the graph {_graphPlayerIdentifier}");
                 return;
             }
 

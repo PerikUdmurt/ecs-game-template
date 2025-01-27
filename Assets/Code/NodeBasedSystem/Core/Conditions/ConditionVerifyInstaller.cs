@@ -28,6 +28,11 @@ namespace Code.NodeBasedSystem.Core.Conditions
                 .Bind<IConditionVerifier<HasToken>>()
                 .To<HasTokenConditionVerifier>()
                 .AsTransient();
+            
+            Container
+                .Bind<IConditionVerifier<HasLocalToken>>()
+                .To<HasLocalTokenConditionVerifier>()
+                .AsTransient();
 
             Container
                 .Bind<IConditionVerifier<ResourceCondition>>()

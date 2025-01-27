@@ -51,14 +51,15 @@ MonoBehaviour:
     Assembly-CSharp\",\r\n          \"Value\": 230\r\n        },\r\n        {\r\n         
     \"$type\": \"Code.NodeBasedSystem.ProgressNodeComponents.AddRatingComponent,
     Assembly-CSharp\",\r\n          \"Value\": 5.0\r\n        },\r\n        {\r\n         
-    \"$type\": \"Code.NodeBasedSystem.ProgressNodeComponents.AddTokenComponent, Assembly-CSharp\",\r\n         
-    \"Value\": \"dovezli-devochku\"\r\n        },\r\n        {\r\n          \"$type\":
-    \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n          \"Value\": \"8c78e1dc-af20-4b28-b65d-8416040aa232\"\r\n       
-    },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodePosition,
-    Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"X\": 1398.4,\r\n           
-    \"Y\": -707.2\r\n          }\r\n        },\r\n        {\r\n          \"$type\":
-    \"NodeBasedSystem.Nodes.Node, Assembly-CSharp\",\r\n          \"Value\": 0\r\n       
-    },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
+    \"$type\": \"Code.NodeBasedSystem.ProgressNodeComponents.AddLocalProgressTokenComponent,
+    Assembly-CSharp\",\r\n          \"Value\": \"123\"\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n          \"Value\":
+    \"8c78e1dc-af20-4b28-b65d-8416040aa232\"\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NodePosition, Assembly-CSharp\",\r\n         
+    \"Value\": {\r\n            \"X\": 1398.4,\r\n            \"Y\": -707.2\r\n         
+    }\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.Node,
+    Assembly-CSharp\",\r\n          \"Value\": 0\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
     \"Value\": [\r\n            {\r\n              \"NodeId\": \"db7c275c-e52d-448a-b8be-83cb54267e7e\",\r\n             
     \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
     },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.PlayNextGraphComponent,
@@ -155,8 +156,9 @@ MonoBehaviour:
     \"NodeBasedSystem.Nodes.Node, Assembly-CSharp\",\r\n          \"Value\": 1\r\n       
     },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
     \"Value\": [\r\n            {\r\n              \"NodeId\": \"2a39bf6a-d55d-4f3f-b6b7-86f8c904dc84\",\r\n             
-    \"Conditions\": [\r\n                {\r\n                  \"$type\": \"Code.NodeBasedSystem.Core.Conditions.HasToken,
-    Assembly-CSharp\",\r\n                  \"Token\": \"dovezli-devochku\"\r\n               
-    }\r\n              ]\r\n            },\r\n            {\r\n              \"NodeId\":
-    \"ea0c0b7e-65df-4e1f-9a3c-44e9f2c17cbe\",\r\n              \"Conditions\": []\r\n           
-    }\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}"
+    \"Conditions\": [\r\n                {\r\n                  \"$type\": \"Code.NodeBasedSystem.Core.Conditions.HasLocalToken,
+    Assembly-CSharp\",\r\n                  \"LocalToken\": \"123\",\r\n                 
+    \"GraphPlayerID\": null\r\n                }\r\n              ]\r\n           
+    },\r\n            {\r\n              \"NodeId\": \"ea0c0b7e-65df-4e1f-9a3c-44e9f2c17cbe\",\r\n             
+    \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
+    }\r\n  ]\r\n}"

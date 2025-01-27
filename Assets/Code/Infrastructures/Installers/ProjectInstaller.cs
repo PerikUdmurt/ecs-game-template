@@ -38,8 +38,8 @@ namespace Code.Infrastructures.Installers
             Install<CollisionRegistryInstaller>();
             Install<AssetManagementInstaller>();
             Install<SceneLoaderInstaller>();
-            Install<NodeSystemInstaller>();
             Install<PrefabFactoryInstaller>();
+            Install<NodeSystemInstaller>();
         }
 
         private void InstallSelfAsCourutineRunner()

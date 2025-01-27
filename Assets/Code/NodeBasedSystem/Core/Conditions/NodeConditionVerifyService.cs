@@ -27,7 +27,6 @@ namespace Code.NodeBasedSystem.Core.Conditions
             return result;
         }
 
-        //ToDo: odnazdy ty eto otrefactorish
         private bool VerifyCondition<TConditionData>(TConditionData condition)
             where TConditionData : BaseConditionData
         {
@@ -38,10 +37,15 @@ namespace Code.NodeBasedSystem.Core.Conditions
                         _factory.GetVerifierForConditionData<HasToken>();
                     return verifier1.CheckCondition(targetCond);
 
-                case ResourceCondition targetCond2:
+                case ResourceCondition targetCond:
                     IConditionVerifier<ResourceCondition> verifier2 =
                         _factory.GetVerifierForConditionData<ResourceCondition>();
-                    return verifier2.CheckCondition(targetCond2);
+                    return verifier2.CheckCondition(targetCond);
+                
+                case HasLocalToken targetCond:
+                    IConditionVerifier<HasLocalToken> verifier3 = 
+                        _factory.GetVerifierForConditionData<HasLocalToken>();
+                    return verifier3.CheckCondition(targetCond);
             }
 
             Debug.LogError(
