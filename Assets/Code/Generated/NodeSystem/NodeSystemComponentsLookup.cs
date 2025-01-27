@@ -13,30 +13,33 @@ public static class NodeSystemComponentsLookup {
     public const int DialoguePhrase = 2;
     public const int AddBenzine = 3;
     public const int AddItem = 4;
-    public const int AddMoney = 5;
-    public const int AddRating = 6;
-    public const int AddToken = 7;
-    public const int AddVolition = 8;
-    public const int RemoveBenzine = 9;
-    public const int RemoveItem = 10;
-    public const int RemoveMoney = 11;
-    public const int RemoveRating = 12;
-    public const int RemoveToken = 13;
-    public const int RemoveVolition = 14;
-    public const int GraphID = 15;
-    public const int GraphPlayer = 16;
-    public const int NextChoices = 17;
-    public const int NextNodes = 18;
-    public const int Node = 19;
-    public const int NodeId = 20;
-    public const int NodePosition = 21;
-    public const int Played = 22;
-    public const int Playing = 23;
-    public const int PlayNextGraph = 24;
-    public const int SkipTimerNode = 25;
-    public const int StartNode = 26;
+    public const int AddLocalProgressToken = 5;
+    public const int AddMoney = 6;
+    public const int AddRating = 7;
+    public const int AddToken = 8;
+    public const int AddVolition = 9;
+    public const int RemoveBenzine = 10;
+    public const int RemoveItem = 11;
+    public const int RemoveLocalProgressToken = 12;
+    public const int RemoveMoney = 13;
+    public const int RemoveRating = 14;
+    public const int RemoveToken = 15;
+    public const int RemoveVolition = 16;
+    public const int GraphID = 17;
+    public const int GraphPlayer = 18;
+    public const int NextChoices = 19;
+    public const int NextNodes = 20;
+    public const int Node = 21;
+    public const int NodeDescription = 22;
+    public const int NodeId = 23;
+    public const int NodePosition = 24;
+    public const int Played = 25;
+    public const int Playing = 26;
+    public const int PlayNextGraph = 27;
+    public const int SkipTimerNode = 28;
+    public const int StartNode = 29;
 
-    public const int TotalComponents = 27;
+    public const int TotalComponents = 30;
 
     public static readonly string[] componentNames = {
         "BindDialogueWindow",
@@ -44,12 +47,14 @@ public static class NodeSystemComponentsLookup {
         "DialoguePhrase",
         "AddBenzine",
         "AddItem",
+        "AddLocalProgressToken",
         "AddMoney",
         "AddRating",
         "AddToken",
         "AddVolition",
         "RemoveBenzine",
         "RemoveItem",
+        "RemoveLocalProgressToken",
         "RemoveMoney",
         "RemoveRating",
         "RemoveToken",
@@ -59,6 +64,7 @@ public static class NodeSystemComponentsLookup {
         "NextChoices",
         "NextNodes",
         "Node",
+        "NodeDescription",
         "NodeId",
         "NodePosition",
         "Played",
@@ -74,12 +80,14 @@ public static class NodeSystemComponentsLookup {
         typeof(Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddBenzineComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddItemComponent),
+        typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddLocalProgressTokenComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddMoneyComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddRatingComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddTokenComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddVolitionComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.RemoveBenzineComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.RemoveItemComponent),
+        typeof(Code.NodeBasedSystem.ProgressNodeComponents.RemoveLocalProgressTokenComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.RemoveMoneyComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.RemoveRatingComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.RemoveTokenComponent),
@@ -89,6 +97,7 @@ public static class NodeSystemComponentsLookup {
         typeof(NodeBasedSystem.Nodes.NextChoices),
         typeof(NodeBasedSystem.Nodes.NextNodes),
         typeof(NodeBasedSystem.Nodes.Node),
+        typeof(NodeBasedSystem.Nodes.NodeDescriptionComponent),
         typeof(NodeBasedSystem.Nodes.NodeId),
         typeof(NodeBasedSystem.Nodes.NodePosition),
         typeof(NodeBasedSystem.Nodes.PlayedComponent),

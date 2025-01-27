@@ -6,10 +6,10 @@ using System;
 
 namespace Code.NodeBasedSystem.ProgressNodeComponents
 {
-    [NodeSystem, NodeComponent("Progress. Add Token" ,"#56a6f0")]
+    [NodeSystem, NodeComponent("Progress. Add Global Token" ,"#56a6f0")]
     public class AddTokenComponent : INodeEventComponent { public string Value; }
     
-    [NodeSystem, NodeComponent("Progress. Remove Token" ,"#4151e0")]
+    [NodeSystem, NodeComponent("Progress. Remove Global Token" ,"#4151e0")]
     public class RemoveTokenComponent : INodeEventComponent { public string Value; }
     
     [NodeSystem, NodeComponent("Progress. Add Money", "#4151e0")]
@@ -41,4 +41,11 @@ namespace Code.NodeBasedSystem.ProgressNodeComponents
     
     [NodeSystem, NodeComponent("Progress. Remove Item", "#b941e0"), Serializable]
     public class RemoveItemComponent : INodeEventComponent { public PlayerItemRequest Value = new(); }
+    
+    [NodeSystem, NodeComponent("Progress. Add Local Token" ,"#56a6f0")]
+    public class AddLocalProgressTokenComponent : INodeEventComponent { public string Value; }
+    [NodeSystem, NodeComponent("Progress. Remove Local Token" ,"#56a6f0")]
+    public class RemoveLocalProgressTokenComponent : INodeEventComponent { public string Value; }
+    
+    public class LocalProgressTokenStorageComponent : INodeComponent { public string Value; }
 }

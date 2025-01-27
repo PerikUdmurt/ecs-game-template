@@ -54,9 +54,10 @@ public static class GameComponentsLookup {
     public const int Selectable = 43;
     public const int MousePosition = 44;
     public const int AssetIsLoading = 45;
-    public const int Selected = 46;
+    public const int LocalProgressTokenStorage = 46;
+    public const int Selected = 47;
 
-    public const int TotalComponents = 47;
+    public const int TotalComponents = 48;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -105,6 +106,7 @@ public static class GameComponentsLookup {
         "Selectable",
         "MousePosition",
         "AssetIsLoading",
+        "LocalProgressTokenStorage",
         "Selected"
     };
 
@@ -155,6 +157,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Input.Mouse.Selectable.SelectableComponent),
         typeof(Code.Gameplay.Input.MousePosition),
         typeof(Code.Infrastructures.View.AssetIsLoading),
+        typeof(Code.NodeBasedSystem.ProgressNodeComponents.LocalProgressTokenStorageComponent),
         typeof(SelectedComponent)
     };
 }
