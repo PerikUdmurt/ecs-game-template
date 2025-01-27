@@ -92,7 +92,7 @@ namespace NodeBasedEditor.Editors.Nodes
             EventContainer eventContainer = new EventContainer(@event);
             eventsContainer.Add(eventContainer);
 
-            Button removeButton = UIElementUtility.AddButton("Удалить компонент");
+            Button removeButton = UIElementUtility.AddButton("Delete component");
             removeButton.clicked += () => RemoveEventContainer(eventContainer);
             eventContainer.Add(removeButton);
             RefreshExpandedState();
@@ -113,7 +113,7 @@ namespace NodeBasedEditor.Editors.Nodes
 
         private void AddCreateEventButton(DropdownField dropdownField)
         {
-            Button addbutton = UIElementUtility.AddButton("Добавить компонент");
+            Button addbutton = UIElementUtility.AddButton("Add component");
             addbutton.clicked += () => CreateEventByType(dropdownField.value);
 
             extensionContainer.Add(addbutton);

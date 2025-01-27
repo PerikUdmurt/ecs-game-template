@@ -4,7 +4,7 @@ using NodeBasedSystem.Nodes.Attributes;
 
 namespace Code.NodeBasedSystem.DialogueSystem
 {
-    [NodeSystem, NodeComponent("DialogueSystem. Show Phrase","#c1c814")]
+    [NodeSystem, NodeComponent("DialogueSystem. Show Phrase","#ff9d00")]
     public class DialoguePhraseComponent : INodeEventComponent { public LocalizedStringData Value = new(); }
     
     [NodeSystem, NodeComponent("DialogueSystem. Bind Window", "#ff9d00")]

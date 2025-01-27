@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Code.Common.UnityStructs;
 using Code.NodeBasedSystem.Core.Conditions;
 using Code.NodeBasedSystem.Core.NodeGraphPlayer;
-using Code.NodeBasedSystem.GraphPlayer;
 using NodeBasedSystem.Nodes.Attributes;
 
 namespace NodeBasedSystem.Nodes
@@ -25,4 +24,7 @@ namespace NodeBasedSystem.Nodes
     
     [NodeSystem, NodeComponent("Core. Play Graph", "#FF2D00")] 
     public class PlayNextGraphComponent : INodeEventComponent { public string Value; }
+
+    [NodeSystem, NodeComponent("Core. Node Description", "#f8ff00")]
+    public class NodeDescriptionComponent : INodeEventComponent { public string Value; }
 }
