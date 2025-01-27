@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using NodeBasedSystem.Nodes;
 using NodeBasedSystem.Nodes.Attributes;
 using System;
+using System.Collections.Generic;
 
 namespace Code.NodeBasedSystem.ProgressNodeComponents
 {
@@ -44,8 +45,10 @@ namespace Code.NodeBasedSystem.ProgressNodeComponents
     
     [NodeSystem, NodeComponent("Progress. Add Local Token" ,"#56a6f0")]
     public class AddLocalProgressTokenComponent : INodeEventComponent { public string Value; }
+    
     [NodeSystem, NodeComponent("Progress. Remove Local Token" ,"#56a6f0")]
     public class RemoveLocalProgressTokenComponent : INodeEventComponent { public string Value; }
     
-    public class LocalProgressTokenStorageComponent : INodeComponent { public string Value; }
+    [NodeSystem]
+    public class LocalProgressTokenStorageComponent : INodeComponent { public List<string> Value; }
 }

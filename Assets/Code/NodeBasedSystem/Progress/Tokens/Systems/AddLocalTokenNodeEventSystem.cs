@@ -1,16 +1,18 @@
 using System.Collections.Generic;
 using Entitas;
+using JetBrains.Annotations;
 
 namespace Code.NodeBasedSystem.Progress.Tokens
 {
-    public class AddProgressTokenNodeEventSystem : ReactiveSystem<NodeSystemEntity>
+    [UsedImplicitly]
+    public class AddLocalTokenNodeEventSystem : ReactiveSystem<NodeSystemEntity>
     {
-        private readonly IGroup<ProgressEntity> _tokensEntityGroup;
+        private readonly IGroup<NodeSystemEntity> _tokensEntityGroup;
 
-        public AddProgressTokenNodeEventSystem(NodeSystemContext context, ProgressContext progressContext) : base(context)
+        public AddLocalTokenNodeEventSystem(NodeSystemContext context) : base(context)
         {
-            _tokensEntityGroup = progressContext.GetGroup(
-                ProgressMatcher.AllOf(ProgressMatcher.ProgressTokenStorage));
+            _tokensEntityGroup = context.GetGroup(
+                NodeSystemMatcher.AllOf(NodeSystemMatcher.LocalProgressTokenStorage));
         }
         
 
@@ -21,7 +23,7 @@ namespace Code.NodeBasedSystem.Progress.Tokens
 
         protected override bool Filter(NodeSystemEntity entity)
         {
-            return entity.hasAddToken;
+            return entity.hasAddLocalProgressToken;
         }
 
         protected override void Execute(List<NodeSystemEntity> entities)
@@ -29,12 +31,12 @@ namespace Code.NodeBasedSystem.Progress.Tokens
             foreach (NodeSystemEntity tokenRequestEntity in entities)
             {
                 string token = tokenRequestEntity.AddToken;
-                ProgressEntity[] tokenStorages = _tokensEntityGroup.GetEntities();
+                NodeSystemEntity[] tokenStorages = _tokensEntityGroup.GetEntities();
 
                 foreach (var tokenStorage in tokenStorages)
                 {
-                    if (!tokenStorage.ProgressTokenStorage.Contains(token))
-                        tokenStorage.ProgressTokenStorage.Add(token);
+                    if (!tokenStorage.LocalProgressTokenStorage.Contains(token))
+                        tokenStorage.LocalProgressTokenStorage.Add(token);
                 }
             }
         }

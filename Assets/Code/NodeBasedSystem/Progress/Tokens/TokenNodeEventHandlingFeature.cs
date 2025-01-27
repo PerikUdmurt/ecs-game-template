@@ -10,6 +10,8 @@ namespace Code.NodeBasedSystem.Progress.Tokens
         {
             Add(systemFactory.Create<AddProgressTokenNodeEventSystem>());
             Add(systemFactory.Create<RemoveProgressTokenNodeEventSystem>());
+            Add(systemFactory.Create<AddLocalTokenNodeEventSystem>());
+            Add(systemFactory.Create<RemoveLocalTokenNodeEventSystem>());
         }
     }
 }

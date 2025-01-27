@@ -15,11 +15,6 @@ namespace NodeBasedEditor.Editors
             {
                 NodeSystemWindowEditor.Open(target as NodeGraphStaticData);
             }
-
-            if (GUILayout.Button("Clear Sticky Notes"))
-            {
-                
-            }
         }
     }
 }

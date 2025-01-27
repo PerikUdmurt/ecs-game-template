@@ -6,15 +6,15 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public sealed partial class GameMatcher {
+public sealed partial class NodeSystemMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherLocalProgressTokenStorage;
+    static Entitas.IMatcher<NodeSystemEntity> _matcherLocalProgressTokenStorage;
 
-    public static Entitas.IMatcher<GameEntity> LocalProgressTokenStorage {
+    public static Entitas.IMatcher<NodeSystemEntity> LocalProgressTokenStorage {
         get {
             if (_matcherLocalProgressTokenStorage == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.LocalProgressTokenStorage);
-                matcher.componentNames = GameComponentsLookup.componentNames;
+                var matcher = (Entitas.Matcher<NodeSystemEntity>)Entitas.Matcher<NodeSystemEntity>.AllOf(NodeSystemComponentsLookup.LocalProgressTokenStorage);
+                matcher.componentNames = NodeSystemComponentsLookup.componentNames;
                 _matcherLocalProgressTokenStorage = matcher;
             }
 
@@ -31,30 +31,30 @@ public sealed partial class GameMatcher {
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public partial class GameEntity {
+public partial class NodeSystemEntity {
 
-    public Code.NodeBasedSystem.ProgressNodeComponents.LocalProgressTokenStorageComponent localProgressTokenStorage { get { return (Code.NodeBasedSystem.ProgressNodeComponents.LocalProgressTokenStorageComponent)GetComponent(GameComponentsLookup.LocalProgressTokenStorage); } }
-    public string LocalProgressTokenStorage { get { return localProgressTokenStorage.Value; } }
-    public bool hasLocalProgressTokenStorage { get { return HasComponent(GameComponentsLookup.LocalProgressTokenStorage); } }
+    public Code.NodeBasedSystem.ProgressNodeComponents.LocalProgressTokenStorageComponent localProgressTokenStorage { get { return (Code.NodeBasedSystem.ProgressNodeComponents.LocalProgressTokenStorageComponent)GetComponent(NodeSystemComponentsLookup.LocalProgressTokenStorage); } }
+    public System.Collections.Generic.List<string> LocalProgressTokenStorage { get { return localProgressTokenStorage.Value; } }
+    public bool hasLocalProgressTokenStorage { get { return HasComponent(NodeSystemComponentsLookup.LocalProgressTokenStorage); } }
 
-    public GameEntity AddLocalProgressTokenStorage(string newValue) {
-        var index = GameComponentsLookup.LocalProgressTokenStorage;
+    public NodeSystemEntity AddLocalProgressTokenStorage(System.Collections.Generic.List<string> newValue) {
+        var index = NodeSystemComponentsLookup.LocalProgressTokenStorage;
         var component = (Code.NodeBasedSystem.ProgressNodeComponents.LocalProgressTokenStorageComponent)CreateComponent(index, typeof(Code.NodeBasedSystem.ProgressNodeComponents.LocalProgressTokenStorageComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceLocalProgressTokenStorage(string newValue) {
-        var index = GameComponentsLookup.LocalProgressTokenStorage;
+    public NodeSystemEntity ReplaceLocalProgressTokenStorage(System.Collections.Generic.List<string> newValue) {
+        var index = NodeSystemComponentsLookup.LocalProgressTokenStorage;
         var component = (Code.NodeBasedSystem.ProgressNodeComponents.LocalProgressTokenStorageComponent)CreateComponent(index, typeof(Code.NodeBasedSystem.ProgressNodeComponents.LocalProgressTokenStorageComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
     }
 
-    public GameEntity RemoveLocalProgressTokenStorage() {
-        RemoveComponent(GameComponentsLookup.LocalProgressTokenStorage);
+    public NodeSystemEntity RemoveLocalProgressTokenStorage() {
+        RemoveComponent(NodeSystemComponentsLookup.LocalProgressTokenStorage);
         return this;
     }
 }

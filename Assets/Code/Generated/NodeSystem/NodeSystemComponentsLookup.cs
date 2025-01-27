@@ -18,28 +18,29 @@ public static class NodeSystemComponentsLookup {
     public const int AddRating = 7;
     public const int AddToken = 8;
     public const int AddVolition = 9;
-    public const int RemoveBenzine = 10;
-    public const int RemoveItem = 11;
-    public const int RemoveLocalProgressToken = 12;
-    public const int RemoveMoney = 13;
-    public const int RemoveRating = 14;
-    public const int RemoveToken = 15;
-    public const int RemoveVolition = 16;
-    public const int GraphID = 17;
-    public const int GraphPlayer = 18;
-    public const int NextChoices = 19;
-    public const int NextNodes = 20;
-    public const int Node = 21;
-    public const int NodeDescription = 22;
-    public const int NodeId = 23;
-    public const int NodePosition = 24;
-    public const int Played = 25;
-    public const int Playing = 26;
-    public const int PlayNextGraph = 27;
-    public const int SkipTimerNode = 28;
-    public const int StartNode = 29;
+    public const int LocalProgressTokenStorage = 10;
+    public const int RemoveBenzine = 11;
+    public const int RemoveItem = 12;
+    public const int RemoveLocalProgressToken = 13;
+    public const int RemoveMoney = 14;
+    public const int RemoveRating = 15;
+    public const int RemoveToken = 16;
+    public const int RemoveVolition = 17;
+    public const int GraphID = 18;
+    public const int GraphPlayer = 19;
+    public const int NextChoices = 20;
+    public const int NextNodes = 21;
+    public const int Node = 22;
+    public const int NodeDescription = 23;
+    public const int NodeId = 24;
+    public const int NodePosition = 25;
+    public const int Played = 26;
+    public const int Playing = 27;
+    public const int PlayNextGraph = 28;
+    public const int SkipTimerNode = 29;
+    public const int StartNode = 30;
 
-    public const int TotalComponents = 30;
+    public const int TotalComponents = 31;
 
     public static readonly string[] componentNames = {
         "BindDialogueWindow",
@@ -52,6 +53,7 @@ public static class NodeSystemComponentsLookup {
         "AddRating",
         "AddToken",
         "AddVolition",
+        "LocalProgressTokenStorage",
         "RemoveBenzine",
         "RemoveItem",
         "RemoveLocalProgressToken",
@@ -85,6 +87,7 @@ public static class NodeSystemComponentsLookup {
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddRatingComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddTokenComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.AddVolitionComponent),
+        typeof(Code.NodeBasedSystem.ProgressNodeComponents.LocalProgressTokenStorageComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.RemoveBenzineComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.RemoveItemComponent),
         typeof(Code.NodeBasedSystem.ProgressNodeComponents.RemoveLocalProgressTokenComponent),
