@@ -10,21 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 224670ff027f66243a7b9a5899b19f2d, type: 3}
-  m_Name: NodeGraphStaticData
+  m_Name: LittleGirlDialogue1
   m_EditorClassIdentifier: 
   Id: qwerty
+  Description: "\u0422\u0435\u0441\u0442\u043E\u0432\u044B\u0439 \u0434\u0438\u0430\u043B\u043E\u0433
+    \u0434\u043B\u044F \u0434\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0430\u0446\u0438\u0438
+    \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u0435\u0439 \u043D\u043E\u0434\u043E\u0432\u043E\u0433\u043E
+    \u0433\u0440\u0430\u0444\u0430"
   Json: "{\r\n  \"nodes\": [\r\n    {\r\n      \"c\": [\r\n        {\r\n         
     \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent, Assembly-CSharp\",\r\n         
     \"Value\": {\r\n            \"entryKey\": \"otgovori-final\",\r\n           
     \"tableKey\": \"little_girl_dialogue1\"\r\n          }\r\n        },\r\n       
-    {\r\n          \"$type\": \"PlayMiniGame, Assembly-CSharp\",\r\n          \"Value\":
-    1\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodeId,
-    Assembly-CSharp\",\r\n          \"Value\": \"cd9ee904-bbbf-4e68-8c42-b56da2705443\"\r\n       
-    },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodePosition,
-    Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"X\": 1398.4,\r\n           
-    \"Y\": 102.399994\r\n          }\r\n        },\r\n        {\r\n          \"$type\":
-    \"NodeBasedSystem.Nodes.Node, Assembly-CSharp\",\r\n          \"Value\": 0\r\n       
-    },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
+    {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n         
+    \"Value\": \"cd9ee904-bbbf-4e68-8c42-b56da2705443\"\r\n        },\r\n       
+    {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodePosition, Assembly-CSharp\",\r\n         
+    \"Value\": {\r\n            \"X\": 1398.4,\r\n            \"Y\": 102.399994\r\n         
+    }\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.Node,
+    Assembly-CSharp\",\r\n          \"Value\": 0\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
     \"Value\": [\r\n            {\r\n              \"NodeId\": \"db7c275c-e52d-448a-b8be-83cb54267e7e\",\r\n             
     \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
     },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent,
@@ -40,22 +43,6 @@ MonoBehaviour:
     Assembly-CSharp\",\r\n          \"Value\": 0\r\n        },\r\n        {\r\n         
     \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
     \"Value\": [\r\n            {\r\n              \"NodeId\": \"db7c275c-e52d-448a-b8be-83cb54267e7e\",\r\n             
-    \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
-    },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.StartNodeComponent,
-    Assembly-CSharp\"\r\n        },\r\n        {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.BindDialogueWindowComponent,
-    Assembly-CSharp\",\r\n          \"Value\": 1\r\n        },\r\n        {\r\n         
-    \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent, Assembly-CSharp\",\r\n         
-    \"Value\": {\r\n            \"entryKey\": \"phrase-girl1\",\r\n            \"tableKey\":
-    \"little_girl_dialogue1\"\r\n          }\r\n        },\r\n        {\r\n         
-    \"$type\": \"NodeBasedSystem.Nodes.SkipTimerNodeComponent, Assembly-CSharp\",\r\n         
-    \"Value\": 0.0\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodeId,
-    Assembly-CSharp\",\r\n          \"Value\": \"7daebfc2-4f76-4529-b0c2-3567517e331e\"\r\n       
-    },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodePosition,
-    Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"X\": -308.8,\r\n           
-    \"Y\": -318.4\r\n          }\r\n        },\r\n        {\r\n          \"$type\":
-    \"NodeBasedSystem.Nodes.Node, Assembly-CSharp\",\r\n          \"Value\": 0\r\n       
-    },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
-    \"Value\": [\r\n            {\r\n              \"NodeId\": \"f46e0ea4-ca5b-409e-ac43-7ec634680935\",\r\n             
     \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
     },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent,
     Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"entryKey\": \"phrase-final\",\r\n           
@@ -95,6 +82,25 @@ MonoBehaviour:
     Assembly-CSharp\",\r\n          \"Value\": 0\r\n        },\r\n        {\r\n         
     \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
     \"Value\": [\r\n            {\r\n              \"NodeId\": \"ea0c0b7e-65df-4e1f-9a3c-44e9f2c17cbe\",\r\n             
+    \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
+    },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.StartNodeComponent,
+    Assembly-CSharp\"\r\n        },\r\n        {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.BindDialogueWindowComponent,
+    Assembly-CSharp\",\r\n          \"Value\": 1\r\n        },\r\n        {\r\n         
+    \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent, Assembly-CSharp\",\r\n         
+    \"Value\": {\r\n            \"entryKey\": \"phrase-girl1\",\r\n            \"tableKey\":
+    \"little_girl_dialogue1\"\r\n          }\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.SkipTimerNodeComponent, Assembly-CSharp\",\r\n         
+    \"Value\": 0.0\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodeDescriptionComponent,
+    Assembly-CSharp\",\r\n          \"Value\": \"\u0421\u043F\u0440\u0430\u0448\u0438\u0432\u0430\u0435\u043C
+    \u0434\u0435\u0432\u043E\u0447\u043A\u0443\"\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n          \"Value\":
+    \"7daebfc2-4f76-4529-b0c2-3567517e331e\"\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NodePosition, Assembly-CSharp\",\r\n         
+    \"Value\": {\r\n            \"X\": -296.0,\r\n            \"Y\": -318.4\r\n         
+    }\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.Node,
+    Assembly-CSharp\",\r\n          \"Value\": 0\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
+    \"Value\": [\r\n            {\r\n              \"NodeId\": \"f46e0ea4-ca5b-409e-ac43-7ec634680935\",\r\n             
     \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
     },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent,
     Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"entryKey\": \"phrase-girl-2\",\r\n           

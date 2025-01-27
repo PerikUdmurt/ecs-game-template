@@ -22,7 +22,13 @@ namespace Code.Gameplay.Test.Systems
 
         protected override ICollector<ProgressEntity> GetTrigger(IContext<ProgressEntity> context)
         {
-            return context.CreateCollector(ProgressMatcher.PlayerResources);
+            return context.CreateCollector(ProgressMatcher.AllOf(
+                ProgressMatcher.PlayerResources, 
+                ProgressMatcher.Benzine,
+                ProgressMatcher.Money,
+                ProgressMatcher.Rating,
+                ProgressMatcher.Volition,
+                ProgressMatcher.ProgressTokenStorage));
         }
 
         protected override bool Filter(ProgressEntity entity) => true;
