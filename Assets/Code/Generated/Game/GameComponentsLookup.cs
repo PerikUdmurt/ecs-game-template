@@ -23,7 +23,7 @@ public static class GameComponentsLookup {
     public const int Id = 12;
     public const int WorldPosition = 13;
     public const int Camera = 14;
-    public const int CameraSelector = 15;
+    public const int LookToCamera = 15;
     public const int Card = 16;
     public const int Character = 17;
     public const int Dragable = 18;
@@ -49,14 +49,25 @@ public static class GameComponentsLookup {
     public const int Speed = 38;
     public const int AxisInput = 39;
     public const int Input = 40;
-    public const int Clackable = 41;
-    public const int Clicked = 42;
-    public const int Selectable = 43;
-    public const int MousePosition = 44;
-    public const int AssetIsLoading = 45;
-    public const int Selected = 46;
+    public const int LeftMouseButtonDown = 41;
+    public const int LeftMouseButtonDownPressed = 42;
+    public const int LeftMouseButtonHold = 43;
+    public const int LeftMouseButtonUp = 44;
+    public const int Clackable = 45;
+    public const int Clicked = 46;
+    public const int Selectable = 47;
+    public const int MouseAxisInput = 48;
+    public const int MousePosition = 49;
+    public const int RightMouseButtonDown = 50;
+    public const int RightMouseButtonHold = 51;
+    public const int RightMouseButtonPressed = 52;
+    public const int RightMouseButtonUp = 53;
+    public const int ScrollWheelAxis = 54;
+    public const int SpaceButtonPressed = 55;
+    public const int AssetIsLoading = 56;
+    public const int Selected = 57;
 
-    public const int TotalComponents = 47;
+    public const int TotalComponents = 58;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -74,7 +85,7 @@ public static class GameComponentsLookup {
         "Id",
         "WorldPosition",
         "Camera",
-        "CameraSelector",
+        "LookToCamera",
         "Card",
         "Character",
         "Dragable",
@@ -100,10 +111,21 @@ public static class GameComponentsLookup {
         "Speed",
         "AxisInput",
         "Input",
+        "LeftMouseButtonDown",
+        "LeftMouseButtonDownPressed",
+        "LeftMouseButtonHold",
+        "LeftMouseButtonUp",
         "Clackable",
         "Clicked",
         "Selectable",
+        "MouseAxisInput",
         "MousePosition",
+        "RightMouseButtonDown",
+        "RightMouseButtonHold",
+        "RightMouseButtonPressed",
+        "RightMouseButtonUp",
+        "ScrollWheelAxis",
+        "SpaceButtonPressed",
         "AssetIsLoading",
         "Selected"
     };
@@ -124,7 +146,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Camera.CameraComponent),
-        typeof(Code.Gameplay.Features.Camera.CameraSelectorComponent),
+        typeof(Code.Gameplay.Features.Camera.LookToCameraComponent),
         typeof(Code.Gameplay.Features.Cards.CardComponent),
         typeof(Code.Gameplay.Features.Characters.CharacterComponent),
         typeof(Code.Gameplay.Features.Dragable.DragableComponent),
@@ -150,10 +172,21 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Input.AxisInput),
         typeof(Code.Gameplay.Input.Input),
+        typeof(Code.Gameplay.Input.LeftMouseButtonDown),
+        typeof(Code.Gameplay.Input.LeftMouseButtonDownPressed),
+        typeof(Code.Gameplay.Input.LeftMouseButtonHold),
+        typeof(Code.Gameplay.Input.LeftMouseButtonUp),
         typeof(Code.Gameplay.Input.Mouse.Clickable.ClackableComponent),
         typeof(Code.Gameplay.Input.Mouse.Clickable.ClickedComponent),
         typeof(Code.Gameplay.Input.Mouse.Selectable.SelectableComponent),
+        typeof(Code.Gameplay.Input.MouseAxisInput),
         typeof(Code.Gameplay.Input.MousePosition),
+        typeof(Code.Gameplay.Input.RightMouseButtonDown),
+        typeof(Code.Gameplay.Input.RightMouseButtonHold),
+        typeof(Code.Gameplay.Input.RightMouseButtonPressed),
+        typeof(Code.Gameplay.Input.RightMouseButtonUp),
+        typeof(Code.Gameplay.Input.ScrollWheelAxis),
+        typeof(Code.Gameplay.Input.SpaceButtonPressed),
         typeof(Code.Infrastructures.View.AssetIsLoading),
         typeof(SelectedComponent)
     };

@@ -33,24 +33,28 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Camera.CameraComponent cameraComponent = new Code.Gameplay.Features.Camera.CameraComponent();
+    public Code.Gameplay.Features.Camera.CameraComponent camera { get { return (Code.Gameplay.Features.Camera.CameraComponent)GetComponent(GameComponentsLookup.Camera); } }
+    public UnityEngine.Camera Camera { get { return camera.Value; } }
+    public bool hasCamera { get { return HasComponent(GameComponentsLookup.Camera); } }
 
-    public bool isCamera {
-        get { return HasComponent(GameComponentsLookup.Camera); }
-        set {
-            if (value != isCamera) {
-                var index = GameComponentsLookup.Camera;
-                if (value) {
-                    var componentPool = GetComponentPool(index);
-                    var component = componentPool.Count > 0
-                            ? componentPool.Pop()
-                            : cameraComponent;
+    public GameEntity AddCamera(UnityEngine.Camera newValue) {
+        var index = GameComponentsLookup.Camera;
+        var component = (Code.Gameplay.Features.Camera.CameraComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Camera.CameraComponent));
+        component.Value = newValue;
+        AddComponent(index, component);
+        return this;
+    }
 
-                    AddComponent(index, component);
-                } else {
-                    RemoveComponent(index);
-                }
-            }
-        }
+    public GameEntity ReplaceCamera(UnityEngine.Camera newValue) {
+        var index = GameComponentsLookup.Camera;
+        var component = (Code.Gameplay.Features.Camera.CameraComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Camera.CameraComponent));
+        component.Value = newValue;
+        ReplaceComponent(index, component);
+        return this;
+    }
+
+    public GameEntity RemoveCamera() {
+        RemoveComponent(GameComponentsLookup.Camera);
+        return this;
     }
 }

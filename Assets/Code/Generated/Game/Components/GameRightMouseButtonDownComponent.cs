@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherCameraSelector;
+    static Entitas.IMatcher<GameEntity> _matcherRightMouseButtonDown;
 
-    public static Entitas.IMatcher<GameEntity> CameraSelector {
+    public static Entitas.IMatcher<GameEntity> RightMouseButtonDown {
         get {
-            if (_matcherCameraSelector == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.CameraSelector);
+            if (_matcherRightMouseButtonDown == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.RightMouseButtonDown);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherCameraSelector = matcher;
+                _matcherRightMouseButtonDown = matcher;
             }
 
-            return _matcherCameraSelector;
+            return _matcherRightMouseButtonDown;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Camera.CameraSelectorComponent cameraSelectorComponent = new Code.Gameplay.Features.Camera.CameraSelectorComponent();
+    static readonly Code.Gameplay.Input.RightMouseButtonDown rightMouseButtonDownComponent = new Code.Gameplay.Input.RightMouseButtonDown();
 
-    public bool isCameraSelector {
-        get { return HasComponent(GameComponentsLookup.CameraSelector); }
+    public bool isRightMouseButtonDown {
+        get { return HasComponent(GameComponentsLookup.RightMouseButtonDown); }
         set {
-            if (value != isCameraSelector) {
-                var index = GameComponentsLookup.CameraSelector;
+            if (value != isRightMouseButtonDown) {
+                var index = GameComponentsLookup.RightMouseButtonDown;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : cameraSelectorComponent;
+                            : rightMouseButtonDownComponent;
 
                     AddComponent(index, component);
                 } else {

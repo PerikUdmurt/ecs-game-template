@@ -12,10 +12,10 @@ namespace Code.Gameplay.Input.Mouse
     {
         public MouseFeature(ISystemFactory factory)
         {
-            Add(factory.Create<MouseInputSystem>());
-            //Add(factory.Create<MouseDragAndDropSystem>());
-            //Add(factory.Create<SelectableSystem>());
-            //Add(factory.Create<ClickableSystem>());
+            Add(factory.Create<MousePositionInputSystem>());
+            Add(factory.Create<MouseScrollWheelInputSystem>());
+            Add(factory.Create<MouseButtonInputSystem>());
+            Add(factory.Create<MouseAxisInputSystem>());
         }
     }
 }

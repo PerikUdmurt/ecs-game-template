@@ -9,7 +9,8 @@ namespace Code.Gameplay.Features.Camera
     {
         public CameraFeature(ISystemFactory systemFactory)
         {
-            
+            Add(systemFactory.Create<CameraInitializeSystem>());
+            Add(systemFactory.Create<LookToCameraSystem>());
         }
     }
 }

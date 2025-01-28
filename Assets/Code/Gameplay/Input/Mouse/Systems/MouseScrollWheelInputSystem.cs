@@ -5,12 +5,12 @@ using JetBrains.Annotations;
 namespace Code.Gameplay.Input.Mouse.Systems
 {
     [UsedImplicitly]
-    public class MousePositionInputSystem : IExecuteSystem
+    public class MouseScrollWheelInputSystem : IExecuteSystem
     {
         private readonly IInputService _inputService;
         private readonly IGroup<GameEntity> _inputs;
 
-        public MousePositionInputSystem(IInputService inputService, GameContext game)
+        public MouseScrollWheelInputSystem(IInputService inputService, GameContext game)
         {
             _inputService = inputService;
             _inputs = game.GetGroup(GameMatcher.Input);
@@ -20,7 +20,7 @@ namespace Code.Gameplay.Input.Mouse.Systems
         {
             foreach (GameEntity input in _inputs)
             {
-                input.ReplaceMousePosition(_inputService.GetMouseScreenPosition());
+                input.ReplaceScrollWheelAxis(_inputService.GetWheelScrollAxis());
             }
         }
     }

@@ -1,16 +1,17 @@
 using Code.Services.InputServices;
 using Entitas;
 using JetBrains.Annotations;
+using UnityEngine;
 
 namespace Code.Gameplay.Input.Mouse.Systems
 {
     [UsedImplicitly]
-    public class MousePositionInputSystem : IExecuteSystem
+    public class MouseAxisInputSystem : IExecuteSystem
     {
         private readonly IInputService _inputService;
         private readonly IGroup<GameEntity> _inputs;
 
-        public MousePositionInputSystem(IInputService inputService, GameContext game)
+        public MouseAxisInputSystem(IInputService inputService, GameContext game)
         {
             _inputService = inputService;
             _inputs = game.GetGroup(GameMatcher.Input);
@@ -20,7 +21,9 @@ namespace Code.Gameplay.Input.Mouse.Systems
         {
             foreach (GameEntity input in _inputs)
             {
-                input.ReplaceMousePosition(_inputService.GetMouseScreenPosition());
+                input.ReplaceMouseAxisInput(new Vector2(
+                    _inputService.GetMouseAxisHorizontal(), 
+                    _inputService.GetMouseAxisVertical()));
             }
         }
     }
