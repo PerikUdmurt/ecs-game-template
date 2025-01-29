@@ -8,6 +8,7 @@ using Code.Infrastructures.Time;
 using Code.Infrastructures.View.Factory;
 using Code.NodeBasedSystem;
 using Code.Progress;
+using Code.Services.AnalyticService;
 using Code.Services.InputServices;
 using Code.Services.LocalizationServices;
 using Code.Services.PlayerSettingsServices;
@@ -59,6 +60,7 @@ namespace Code.Infrastructures.Installers
             Install<ScreenResolutionInstaller>();
             Install<PlayerSettingsInstaller>();
             Install<PhysicsInstaller>();
+            Install<GameAnalyticInstaller>();
         }
 
         private void InstallGameplayFactories()

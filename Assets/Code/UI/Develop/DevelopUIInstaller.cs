@@ -1,12 +1,9 @@
 ﻿using Code.UI.Core;
 using Code.UI.Core.ContainerBinding;
-using Code.UI.Core.Navigator;
 using Code.UI.Develop.Debugger;
 using Cysharp.Threading.Tasks;
-using System;
 using Code.Gameplay.Test.UI;
 using JetBrains.Annotations;
-using UnityEditor.AddressableAssets.Build.BuildPipelineTasks;
 using UnityEngine;
 using Zenject;
 
