@@ -9,13 +9,17 @@ namespace Code.Services.PlayerSettingsServices
         public override void InstallBindings()
         {
             Container
-                .Bind<IPlayerSettingService>()
-                .To<PlayerSettingsService>()
+                .BindInterfacesAndSelfTo<PlayerSettingsService>()
                 .AsSingle();
             
             Container
                 .Bind<IPlayerSettingProvider>()
                 .To<PlayerSettingsProvider>()
+                .AsSingle();
+            
+            Container
+                .Bind<IInitialPlayerSettingProvider>()
+                .To<InitialPlayerSettingsDataProvider>()
                 .AsSingle();
         }
     }

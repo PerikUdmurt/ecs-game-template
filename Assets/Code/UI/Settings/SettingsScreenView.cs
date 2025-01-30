@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Code.UI.Core;
 using UniRx;
 using UnityEngine;
@@ -27,5 +28,12 @@ namespace Code.UI.Settings
         public IObservable<float> OnMusicValueChanged => _musicSlider.OnValueChangedAsObservable();
         public IObservable<int> OnResolutionValueChanged => _resolutionDropdown.OnValueChangedAsObservable();
         public IObservable<int> OnLanguageValueChanged => _languageDropdown.OnValueChangedAsObservable();
+
+        public void SetLanguageDropdownOptions(List<Dropdown.OptionData> options, int value)
+        {
+            _languageDropdown.ClearOptions();
+            _languageDropdown.options = options;
+            _languageDropdown.value = value;
+        }
     }
 }

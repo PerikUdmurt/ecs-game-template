@@ -1,9 +1,14 @@
+using System.Collections.Generic;
+using System.Linq;
+using Code.Services.LocalizationServices;
 using Code.Services.PlayerSettingsServices;
 using Code.UI.Core.Controller;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
+using TMPro;
 using UniRx;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Code.UI.Settings
 {
@@ -19,6 +24,17 @@ namespace Code.UI.Settings
         
         protected override UniTask BeforeShow(CompositeDisposable disposables)
         {
+            List<Dropdown.OptionData> locales = _playerSettingService
+                .GetAvailableLocale().Item1
+                .Select(l => new Dropdown.OptionData(l.ToString()))
+                .ToList();
+
+            ELocaleType currentLocale = _playerSettingService.GetAvailableLocale().Item2;
+            var op = locales.First(o => o.text == currentLocale.ToString());
+            int index = locales.IndexOf(op);
+            
+            _view.SetLanguageDropdownOptions(locales, index);
+            
             _view.OnCloseClicked
                 .Subscribe(_ => HideView().Forget())
                 .AddTo(disposables);
@@ -56,6 +72,12 @@ namespace Code.UI.Settings
             //_playerSettingService.SetResolution();
         }
 
+        private void OnFullScreenChange(bool value)
+        {
+            Debug.LogWarning($"$[SettingsScreenController] OnFullScreenChange not assigned. Value = {value}");
+            //_playerSettingService.SetResolution();
+        }
+
         private void OnMusicChange(float value)
         {
             _playerSettingService.SetMusicVolume(value);
@@ -68,17 +90,13 @@ namespace Code.UI.Settings
 
         private void OnLanguageChange(int value)
         {
-            Debug.LogWarning($"$[SettingsScreenController] OnLanguageChange not assigned. Value = {value}");
+            _playerSettingService.SetLocale((ELocaleType)value);
         }
 
-        private void OnCancelClicked()
-        {
-            Debug.LogWarning("[SettingsScreenController] OnCancelClicked not assigned");
-        }
+        private void OnCancelClicked() =>
+            _playerSettingService.CancelModifications();
         
-        private void OnSaveClicked()
-        {
-            Debug.LogWarning("[SettingsScreenController] OnSaveClicked not assigned");
-        }
+        private void OnSaveClicked() =>
+            _playerSettingService.SaveSettings();
     }
 }

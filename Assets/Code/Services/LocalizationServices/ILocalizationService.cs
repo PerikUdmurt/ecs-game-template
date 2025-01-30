@@ -10,5 +10,6 @@ namespace Code.Services.LocalizationServices
         List<ELocaleType> GetAvailableLocale();
         string GetLocalizedString(string entryKey, string tableKey);
         string GetLocalizedString(LocalizedStringData data);
+        ELocaleType GetCurrentLocale();
     }
 }

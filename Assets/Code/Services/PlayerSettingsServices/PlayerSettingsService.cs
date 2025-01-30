@@ -1,18 +1,22 @@
 using System.Collections.Generic;
 using Code.Services.LocalizationServices;
+using Code.Services.PlayerSettingsServices.Datas;
 using Code.Services.ScreenResolutionService;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine;
+using Zenject;
 
 namespace Code.Services.PlayerSettingsServices
 {
     [UsedImplicitly]
-    public class PlayerSettingsService : IPlayerSettingService
+    public class PlayerSettingsService : IPlayerSettingService, IInitializable
     {
         private readonly ILocalizationService _localizationService;
         private readonly IPlayerSettingProvider _settingsProvider;
         private readonly IScreenResolutionService _screenResolutionService;
+        
+        private PlayerSettingsData _tempSettings;
 
         public PlayerSettingsService(
             ILocalizationService localizationService, 
@@ -23,49 +27,75 @@ namespace Code.Services.PlayerSettingsServices
             _settingsProvider = settingsProvider;
             _screenResolutionService = screenResolutionService;
         }
-        
+
+        public void Initialize()
+        {
+            SetSavedSettings();
+        }
+
         public void SetResolution(int width, int height, bool isFullscreen)
         {
+            _tempSettings.ScreenResolution.Width = width;
+            _tempSettings.ScreenResolution.Height = height;
+            _tempSettings.ScreenResolution.Fullscreen = isFullscreen;
             _screenResolutionService.SetResolution(width, height, isFullscreen);
         }
 
         public void SetSoundVolume(float volume)
         {
+            _tempSettings.SoundsVolume = volume;
             Debug.LogWarning("[PlayerSettingsService] SetSoundVolume called but not assigned]");
         }
 
         public void SetMusicVolume(float volume)
         {
+            _tempSettings.MusicVolume = volume;
             Debug.LogWarning("[PlayerSettingsService] SetMusicVolume called but not assigned]");
         }
 
         public void SetLocale(ELocaleType localeType)
         {
+            _tempSettings.LocaleType = localeType;
             _localizationService.SetLocale(localeType).Forget();
         }
 
-        public List<ELocaleType> GetAvailableLocale() =>
-            _localizationService.GetAvailableLocale();
+        public (List<ELocaleType>, ELocaleType) GetAvailableLocale() =>
+            (_localizationService.GetAvailableLocale(), _localizationService.GetCurrentLocale());
 
         public void SetGamepadVibration(bool vibrate)
         {
+            _tempSettings.GamepadVibrateEnabled = vibrate;
             Debug.LogWarning("[PlayerSettingsService] SetGamepadVibration called but not assigned]");
         }
 
         public void SetShowTutorial(bool showTutorial)
         {
+            _tempSettings.ShowTutorial = showTutorial;
             Debug.LogWarning("[PlayerSettingsService] SetShowTutorial called but not assigned]");
         }
-    }
 
-    public interface IPlayerSettingService
-    {
-        void SetResolution(int width, int height, bool isFullscreen);
-        void SetSoundVolume(float volume);
-        void SetMusicVolume(float volume);
-        void SetLocale(ELocaleType localeType);
-        List<ELocaleType> GetAvailableLocale();
-        void SetGamepadVibration(bool vibrate);
-        void SetShowTutorial(bool showTutorial);
+        public void SaveSettings() =>
+            _settingsProvider.SetData(_tempSettings);
+
+        public void CancelModifications() =>
+            SetSavedSettings();
+            
+        public void SetDefaultSettings()
+        {
+            _settingsProvider.SetDefaultSettings();
+            SetSavedSettings();
+        }
+        
+        private void SetSavedSettings()
+        {
+            PlayerSettingsData data = _settingsProvider.SettingsData;
+            _tempSettings = data;
+            SetResolution(data.ScreenResolution.Width, data.ScreenResolution.Height, data.ScreenResolution.Fullscreen);
+            SetSoundVolume(data.SoundsVolume);
+            SetMusicVolume(data.MusicVolume);
+            SetLocale(data.LocaleType);
+            SetGamepadVibration(data.GamepadVibrateEnabled);
+            SetShowTutorial(data.ShowTutorial);
+        }
     }
 }

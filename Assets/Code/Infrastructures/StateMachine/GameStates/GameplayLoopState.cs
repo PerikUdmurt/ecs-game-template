@@ -16,20 +16,16 @@ namespace Code.Infrastructure.States.GameStates
     private GameplayFeature _gameplayFeature;
     private readonly GameContext _gameContext;
     private readonly ISaveLoadService _saveLoadService;
-    private readonly IAnalyticService _analyticService;
 
-    public GameplayLoopState(ISystemFactory systems, GameContext gameContext, ISaveLoadService saveLoadService, IAnalyticService analyticService)
+    public GameplayLoopState(ISystemFactory systems, GameContext gameContext, ISaveLoadService saveLoadService)
     {
       _systems = systems;
       _gameContext = gameContext;
       _saveLoadService = saveLoadService;
-      _analyticService = analyticService;
     }
     
     public void Enter()
     {
-      _analyticService.SendEvent("kjkjk");
-      _analyticService.StartTestTimer();
       _gameplayFeature = _systems.Create<GameplayFeature>();
       _saveLoadService.LoadProgress();
       _gameplayFeature.Initialize();

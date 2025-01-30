@@ -6,5 +6,6 @@ namespace Code.Services.PlayerSettingsServices
     {
         PlayerSettingsData SettingsData { get; }
         void SetData(PlayerSettingsData data);
+        void SetDefaultSettings();
     }
 }

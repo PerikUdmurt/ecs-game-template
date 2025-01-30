@@ -19,10 +19,13 @@ namespace Code.Services.LocalizationServices
                     .First(l => l.CustomFormatterCode == locale.ToSimpleString());
         }
 
-        public List<ELocaleType> GetAvailableLocale() 
+        public List<ELocaleType> GetAvailableLocale()
             => LocalizationSettings.AvailableLocales.Locales
                 .Select(l => l.CustomFormatterCode.ToLocaleType())
                 .ToList();
+        
+        public ELocaleType GetCurrentLocale() => 
+            LocalizationSettings.SelectedLocale.CustomFormatterCode.ToLocaleType();
         
         public string GetLocalizedString(string entryKey, string tableKey)
             => LocalizationSettings.StringDatabase.GetLocalizedString(tableKey, entryKey);
