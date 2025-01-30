@@ -19,7 +19,7 @@ namespace Code.Services.PlayerSettingsServices
         private PlayerSettingsData _tempSettings;
 
         public PlayerSettingsService(
-            ILocalizationService localizationService, 
+            ILocalizationService localizationService,
             IPlayerSettingProvider settingsProvider,
             IScreenResolutionService screenResolutionService)
         {
@@ -33,12 +33,24 @@ namespace Code.Services.PlayerSettingsServices
             SetSavedSettings();
         }
 
-        public void SetResolution(int width, int height, bool isFullscreen)
+        public void SetResolution(int width, int height)
         {
             _tempSettings.ScreenResolution.Width = width;
             _tempSettings.ScreenResolution.Height = height;
-            _tempSettings.ScreenResolution.Fullscreen = isFullscreen;
-            _screenResolutionService.SetResolution(width, height, isFullscreen);
+            _screenResolutionService.SetResolution(width, height, _tempSettings.ScreenResolution.Fullscreen);
+        }
+
+        public (Resolution[] resolutions, int currentIndex) GetAvailableResolutions()
+        {
+             Resolution[] resolutions = _screenResolutionService.GetAvailableResolutions();
+             int currentResolutionIndex = _screenResolutionService.GetCurrentResolutionIndex();
+             return (resolutions, currentResolutionIndex);
+        }
+
+        public void SetFullscreen(bool value)
+        {
+            _tempSettings.ScreenResolution.Fullscreen = value;
+            _screenResolutionService.SetFullscreen(value);
         }
 
         public void SetSoundVolume(float volume)
@@ -90,7 +102,8 @@ namespace Code.Services.PlayerSettingsServices
         {
             PlayerSettingsData data = _settingsProvider.SettingsData;
             _tempSettings = data;
-            SetResolution(data.ScreenResolution.Width, data.ScreenResolution.Height, data.ScreenResolution.Fullscreen);
+            SetResolution(data.ScreenResolution.Width, data.ScreenResolution.Height);
+            SetFullscreen(data.ScreenResolution.Fullscreen);
             SetSoundVolume(data.SoundsVolume);
             SetMusicVolume(data.MusicVolume);
             SetLocale(data.LocaleType);

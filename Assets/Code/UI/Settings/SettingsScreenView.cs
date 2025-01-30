@@ -29,6 +29,21 @@ namespace Code.UI.Settings
         public IObservable<int> OnResolutionValueChanged => _resolutionDropdown.OnValueChangedAsObservable();
         public IObservable<int> OnLanguageValueChanged => _languageDropdown.OnValueChangedAsObservable();
 
+        public void SetMusicSliderValue(float musicValue) =>
+            _musicSlider.value = musicValue;
+        
+        public void SetSoundsSliderValue(float soundsValue) =>
+            _coundsSlider.value = soundsValue;
+        
+        
+        
+        public void SetResolutionDropdownOptions(List<Dropdown.OptionData> options, int value)
+        {
+            _resolutionDropdown.ClearOptions();
+            _resolutionDropdown.options = options;
+            _resolutionDropdown.value = value;
+        }
+        
         public void SetLanguageDropdownOptions(List<Dropdown.OptionData> options, int value)
         {
             _languageDropdown.ClearOptions();

@@ -4,7 +4,7 @@ using Code.Services.LocalizationServices;
 namespace Code.Services.PlayerSettingsServices.Datas
 {
     [Serializable]
-    public class PlayerSettingsData
+    public struct PlayerSettingsData
     {
         public float MusicVolume;
         public float SoundsVolume;
@@ -15,7 +15,7 @@ namespace Code.Services.PlayerSettingsServices.Datas
     }
 
     [Serializable]
-    public class ScreenResolutionData
+    public struct ScreenResolutionData
     {
         public int Width;
         public int Height;
