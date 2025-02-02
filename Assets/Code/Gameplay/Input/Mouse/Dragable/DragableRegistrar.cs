@@ -4,26 +4,38 @@ using UnityEngine.EventSystems;
 
 namespace Code.Gameplay.Input.Mouse.Dragable
 {
-    public class DragableRegistrar : EntityComponentRegistrar, IDragHandler, IPointerUpHandler
+    public class DragableRegistrar : EntityComponentRegistrar, IDragHandler, IDropHandler, IPointerUpHandler
     {
         [SerializeField] private float _dragLerp;
 
         public override void RegisterComponent()
         {
-            Entity.AddDragable(true);
+            Entity.isDragable = true;
             Entity.AddDragLerp(_dragLerp);
         }
 
         public override void UnregisterComponent()
         {
-            Entity.RemoveDragable();
+            Entity.isDragable = false;
             Entity.RemoveDragLerp();
         }
 
-        public void OnDrag(PointerEventData eventData) =>
+        public void OnDrag(PointerEventData eventData)
+        {
+            Entity.isStartDragging = true;
             Entity.isDragging = true;
+        }
 
-        public void OnPointerUp(PointerEventData eventData) =>
+        public void OnDrop(PointerEventData eventData)
+        {
             Entity.isDragging = false;
+            Entity.isDropped = true;
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            Entity.isDragging = false;
+            Entity.isDropped = true;
+        }
     }
 }

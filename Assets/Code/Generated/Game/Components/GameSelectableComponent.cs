@@ -33,28 +33,24 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Input.Mouse.Selectable.SelectableComponent selectable { get { return (Code.Gameplay.Input.Mouse.Selectable.SelectableComponent)GetComponent(GameComponentsLookup.Selectable); } }
-    public bool Selectable { get { return selectable.Value; } }
-    public bool hasSelectable { get { return HasComponent(GameComponentsLookup.Selectable); } }
+    static readonly Code.Gameplay.Input.Mouse.Selectable.SelectableComponent selectableComponent = new Code.Gameplay.Input.Mouse.Selectable.SelectableComponent();
 
-    public GameEntity AddSelectable(bool newValue) {
-        var index = GameComponentsLookup.Selectable;
-        var component = (Code.Gameplay.Input.Mouse.Selectable.SelectableComponent)CreateComponent(index, typeof(Code.Gameplay.Input.Mouse.Selectable.SelectableComponent));
-        component.Value = newValue;
-        AddComponent(index, component);
-        return this;
-    }
+    public bool isSelectable {
+        get { return HasComponent(GameComponentsLookup.Selectable); }
+        set {
+            if (value != isSelectable) {
+                var index = GameComponentsLookup.Selectable;
+                if (value) {
+                    var componentPool = GetComponentPool(index);
+                    var component = componentPool.Count > 0
+                            ? componentPool.Pop()
+                            : selectableComponent;
 
-    public GameEntity ReplaceSelectable(bool newValue) {
-        var index = GameComponentsLookup.Selectable;
-        var component = (Code.Gameplay.Input.Mouse.Selectable.SelectableComponent)CreateComponent(index, typeof(Code.Gameplay.Input.Mouse.Selectable.SelectableComponent));
-        component.Value = newValue;
-        ReplaceComponent(index, component);
-        return this;
-    }
-
-    public GameEntity RemoveSelectable() {
-        RemoveComponent(GameComponentsLookup.Selectable);
-        return this;
+                    AddComponent(index, component);
+                } else {
+                    RemoveComponent(index);
+                }
+            }
+        }
     }
 }

@@ -1,13 +1,13 @@
 using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
-using Code.Infrastructures.AssetManagement;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Cards.Factory
 {
-    public class CardFactory
+    [UsedImplicitly]
+    public class CardFactory : ICardFactory
     {
         private readonly IIdentifierService _identifierService;
 
@@ -22,7 +22,13 @@ namespace Code.Gameplay.Features.Cards.Factory
                 .AddId(_identifierService.Next())
                 .AddWorldPosition(atPosition)
                 .AddSpeed(2)
+                .AddViewPath("Card")
                 .With(entity => entity.isCard = true);
         }
+    }
+
+    public interface ICardFactory
+    {
+        GameEntity CreateCard(ECardType cardType, Vector3 atPosition);
     }
 }

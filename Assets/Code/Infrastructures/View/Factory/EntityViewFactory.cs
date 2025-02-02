@@ -1,10 +1,12 @@
 using Code.Infrastructures.AssetManagement;
 using Cysharp.Threading.Tasks;
+using JetBrains.Annotations;
 using UnityEngine;
 using Zenject;
 
 namespace Code.Infrastructures.View.Factory
 {
+  [UsedImplicitly]
   public class EntityViewFactory : IEntityViewFactory
   {
     private readonly IAssetProvider _assetProvider;

@@ -1,5 +1,5 @@
 using Code.Gameplay.Input.Mouse.Clickable.Systems;
-using Code.Gameplay.Input.Mouse.Dragable.Systems;
+using Code.Gameplay.Input.Mouse.Dragable;
 using Code.Gameplay.Input.Mouse.Selectable.Systems;
 using Code.Gameplay.Input.Mouse.Systems;
 using Code.Infrastructures.Factories;
@@ -16,6 +16,9 @@ namespace Code.Gameplay.Input.Mouse
             Add(factory.Create<MouseScrollWheelInputSystem>());
             Add(factory.Create<MouseButtonInputSystem>());
             Add(factory.Create<MouseAxisInputSystem>());
+            Add(factory.Create<DragAndDropFeature>());
+            Add(factory.Create<ClickCleanUpSystem>());
+            Add(factory.Create<DeselectCleanUpSystem>());
         }
     }
 }

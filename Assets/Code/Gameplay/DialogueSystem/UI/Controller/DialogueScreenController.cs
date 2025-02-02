@@ -15,7 +15,7 @@ using UniRx;
 namespace Code.Gameplay.DialogueSystem.UI.Controller
 {
     [UsedImplicitly]
-    public class DialogueScreenController : 
+    public class DialogueScreenController :
         UIScreenController<DialogueScreenView>,
         INodeBasedDialogueController
     {
@@ -28,7 +28,7 @@ namespace Code.Gameplay.DialogueSystem.UI.Controller
         private IGraphPlayer _graphPlayer;
         
         public DialogueScreenController(
-            ObjectPool<DialogueBlockUIView> blockPool, 
+            ObjectPool<DialogueBlockUIView> blockPool,
             IAsyncMonoFactory factory,
             NodeSystemContext nodeSystemContext)
         {

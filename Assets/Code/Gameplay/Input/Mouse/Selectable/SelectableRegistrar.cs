@@ -1,5 +1,4 @@
 using Code.Infrastructures.View;
-using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Code.Gameplay.Input.Mouse.Selectable
@@ -8,22 +7,22 @@ namespace Code.Gameplay.Input.Mouse.Selectable
     {
         public override void RegisterComponent()
         {
-            Entity.AddSelectable(true);
+            Entity.isSelectable = true;
         }
 
         public override void UnregisterComponent()
         {
-            Entity.RemoveSelectable();
+            Entity.isSelectable = false;
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Debug.Log("OnEnter");
+            Entity.isSelected = true;
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-        
+            Entity.isSelected = false;
         }
     }
 }

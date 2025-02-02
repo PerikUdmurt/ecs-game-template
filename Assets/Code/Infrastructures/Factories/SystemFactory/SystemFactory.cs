@@ -1,11 +1,13 @@
 using Entitas;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using Zenject;
 
 namespace Code.Infrastructures.Factories
 {
+    [UsedImplicitly]
     public class SystemFactory : ISystemFactory
     {
         private readonly DiContainer _diContainer;

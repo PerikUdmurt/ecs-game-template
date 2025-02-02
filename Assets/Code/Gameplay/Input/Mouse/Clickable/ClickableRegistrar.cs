@@ -6,10 +6,10 @@ namespace Code.Gameplay.Input.Mouse.Clickable
     public class ClickableRegistrar : EntityComponentRegistrar, IPointerClickHandler
     {
         public override void RegisterComponent() =>
-            Entity.AddClackable(true);
+            Entity.isClickable = true;
 
         public override void UnregisterComponent() =>
-            Entity.RemoveClackable();
+            Entity.isClickable = false;
 
         public void OnPointerClick(PointerEventData eventData)
         {

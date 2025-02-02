@@ -27,12 +27,12 @@ namespace Code.Infrastructures.StateMachine.GameStates
     public void Enter()
     {
       InitializeServices();
-      _sceneLoader.Load(SceneName.NightCycle, OnSceneLoaded);
+      _sceneLoader.Load(SceneName.Bootstrap, OnSceneLoaded);
     }
 
     private void OnSceneLoaded()
     {
-      _stateMachine.Enter<GameplayLoopState>();
+      _stateMachine.Enter<LoadSceneState, SceneName>(SceneName.Gameplay);
     }
 
     public void Exit()
@@ -43,6 +43,37 @@ namespace Code.Infrastructures.StateMachine.GameStates
     private void InitializeServices()
     {
       _analyticService.Initialize();
+    }
+  }
+  
+  [UsedImplicitly]
+  public class LoadSceneState : IPayloadState<SceneName>
+  {
+    private readonly IGameStateMachine _stateMachine;
+    private readonly ISceneLoader _sceneLoader;
+    
+    public LoadSceneState(
+      IGameStateMachine stateMachine, 
+      ISceneLoader sceneLoader, 
+      IAnalyticService analyticService)
+    {
+      _stateMachine = stateMachine;
+      _sceneLoader = sceneLoader;
+    }
+
+    private void OnSceneLoaded()
+    {
+      _stateMachine.Enter<GameplayLoopState>();
+    }
+
+    public void Enter(SceneName payload)
+    {
+      _sceneLoader.Load(payload, OnSceneLoaded);
+    }
+
+    public void Exit()
+    {
+      
     }
   }
 }

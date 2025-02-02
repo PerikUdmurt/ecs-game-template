@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using Code.Infrastructures.View.Factory;
 using Entitas;
+using JetBrains.Annotations;
 
 namespace Code.Infrastructures.View.Systems
 {
+    [UsedImplicitly]
     public class BindViewFromPrefabEntitySystem : IExecuteSystem
     {
         private readonly IEntityViewFactory _entityViewFactory;

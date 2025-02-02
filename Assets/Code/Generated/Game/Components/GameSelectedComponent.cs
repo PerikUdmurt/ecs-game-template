@@ -33,27 +33,24 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public SelectedComponent selected { get { return (SelectedComponent)GetComponent(GameComponentsLookup.Selected); } }
-    public bool hasSelected { get { return HasComponent(GameComponentsLookup.Selected); } }
+    static readonly Code.Gameplay.Input.Mouse.Selectable.SelectedComponent selectedComponent = new Code.Gameplay.Input.Mouse.Selectable.SelectedComponent();
 
-    public GameEntity AddSelected(Code.Gameplay.Input.Mouse.Selectable.SelectedComponent newValue) {
-        var index = GameComponentsLookup.Selected;
-        var component = (SelectedComponent)CreateComponent(index, typeof(SelectedComponent));
-        component.value = newValue;
-        AddComponent(index, component);
-        return this;
-    }
+    public bool isSelected {
+        get { return HasComponent(GameComponentsLookup.Selected); }
+        set {
+            if (value != isSelected) {
+                var index = GameComponentsLookup.Selected;
+                if (value) {
+                    var componentPool = GetComponentPool(index);
+                    var component = componentPool.Count > 0
+                            ? componentPool.Pop()
+                            : selectedComponent;
 
-    public GameEntity ReplaceSelected(Code.Gameplay.Input.Mouse.Selectable.SelectedComponent newValue) {
-        var index = GameComponentsLookup.Selected;
-        var component = (SelectedComponent)CreateComponent(index, typeof(SelectedComponent));
-        component.value = newValue;
-        ReplaceComponent(index, component);
-        return this;
-    }
-
-    public GameEntity RemoveSelected() {
-        RemoveComponent(GameComponentsLookup.Selected);
-        return this;
+                    AddComponent(index, component);
+                } else {
+                    RemoveComponent(index);
+                }
+            }
+        }
     }
 }

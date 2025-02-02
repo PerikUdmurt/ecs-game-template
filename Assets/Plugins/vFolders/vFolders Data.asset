@@ -66,6 +66,7 @@ MonoBehaviour:
     - f9b7d4f56ea0ee14896383f43e9b4dc8
     - c0d066825395fb54cb2fa630abdf8a58
     - 1857a5c95790a4603b443911d9111458
+    - 77eb39284fd37c644af8027c08d64e78
     values:
     - colorIndex: 1
       iconNameOrGuid: PrefabModel Icon
@@ -145,7 +146,7 @@ MonoBehaviour:
       iconNameOrGuid: 
     - colorIndex: 10
       iconNameOrGuid: 
-    - colorIndex: 1
+    - colorIndex: 2
       iconNameOrGuid: 
     - colorIndex: 2
       iconNameOrGuid: 
@@ -170,4 +171,6 @@ MonoBehaviour:
     - colorIndex: 4
       iconNameOrGuid: 
     - colorIndex: 9
+      iconNameOrGuid: 
+    - colorIndex: 1
       iconNameOrGuid: 

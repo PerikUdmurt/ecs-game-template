@@ -21,6 +21,7 @@ namespace Code.Infrastructures.View
         {
             _entity = entity;
             _entity.AddView(this);
+            _entity.AddTransform(transform);
             
             entity.Retain(this);
 

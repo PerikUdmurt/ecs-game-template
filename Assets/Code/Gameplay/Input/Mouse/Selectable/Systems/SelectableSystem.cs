@@ -4,16 +4,21 @@ using JetBrains.Annotations;
 namespace Code.Gameplay.Input.Mouse.Selectable.Systems
 {
     [UsedImplicitly]
-    public class SelectableSystem : IExecuteSystem
+    public class DeselectCleanUpSystem : ICleanupSystem
     {
-        public SelectableSystem(GameContext game)
+        private readonly IGroup<GameEntity> _deselectedGroup;
+        
+        public DeselectCleanUpSystem(GameContext game)
         {
-            
+            _deselectedGroup = game.GetGroup(GameMatcher.Deselected);
         }
 
-        public void Execute()
+        public void Cleanup()
         {
-            
+            foreach (GameEntity entity in _deselectedGroup)
+            {
+                entity.isDeselected = false;
+            }
         }
     }
 }

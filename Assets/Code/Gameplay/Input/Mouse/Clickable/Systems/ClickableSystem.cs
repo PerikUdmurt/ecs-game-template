@@ -4,16 +4,21 @@ using JetBrains.Annotations;
 namespace Code.Gameplay.Input.Mouse.Clickable.Systems
 {
     [UsedImplicitly]
-    public class ClickableSystem : IExecuteSystem
+    public class ClickCleanUpSystem : ICleanupSystem
     {
-        public ClickableSystem(GameContext game)
-        {
-            
-        }
+        private readonly IGroup<GameEntity> _clickedItems;
         
-        public void Execute()
+        public ClickCleanUpSystem(GameContext game)
         {
-            
+            _clickedItems = game.GetGroup(GameMatcher.Clicked);
+        }
+
+        public void Cleanup()
+        {
+            foreach (GameEntity entity in _clickedItems.GetEntities())
+            {
+                entity.isClicked = false;
+            }
         }
     }
 }

@@ -1,11 +1,8 @@
-using Code.Common.Extensions;
 using Code.Gameplay;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructures.Factories;
 using Code.Progress.SaveLoadServices;
-using Code.Services.AnalyticService;
 using JetBrains.Annotations;
-using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
 {

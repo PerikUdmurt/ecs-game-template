@@ -1,9 +1,11 @@
 using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
+using Code.Gameplay.Features.Cards.Factory;
 using Code.Identifiers;
 using Code.Infrastructures.AssetManagement;
 using Code.Infrastructures.Factories;
 using Code.Infrastructures.SceneLoaders;
+using Code.Infrastructures.StateMachine;
 using Code.Infrastructures.Time;
 using Code.Infrastructures.View.Factory;
 using Code.NodeBasedSystem;
@@ -29,6 +31,8 @@ namespace Code.Infrastructures.Installers
             InstallGameplayFactories();
             InstallInfrastuctures();
             InstallUI();
+            
+            Install<CardsInstaller>(); //to gameplay installer
         }
 
         private void InstallInfrastuctures()

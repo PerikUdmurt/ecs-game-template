@@ -33,28 +33,24 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Dragable.DragableComponent dragable { get { return (Code.Gameplay.Features.Dragable.DragableComponent)GetComponent(GameComponentsLookup.Dragable); } }
-    public bool Dragable { get { return dragable.Value; } }
-    public bool hasDragable { get { return HasComponent(GameComponentsLookup.Dragable); } }
+    static readonly Code.Gameplay.Features.Dragable.DragableComponent dragableComponent = new Code.Gameplay.Features.Dragable.DragableComponent();
 
-    public GameEntity AddDragable(bool newValue) {
-        var index = GameComponentsLookup.Dragable;
-        var component = (Code.Gameplay.Features.Dragable.DragableComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Dragable.DragableComponent));
-        component.Value = newValue;
-        AddComponent(index, component);
-        return this;
-    }
+    public bool isDragable {
+        get { return HasComponent(GameComponentsLookup.Dragable); }
+        set {
+            if (value != isDragable) {
+                var index = GameComponentsLookup.Dragable;
+                if (value) {
+                    var componentPool = GetComponentPool(index);
+                    var component = componentPool.Count > 0
+                            ? componentPool.Pop()
+                            : dragableComponent;
 
-    public GameEntity ReplaceDragable(bool newValue) {
-        var index = GameComponentsLookup.Dragable;
-        var component = (Code.Gameplay.Features.Dragable.DragableComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Dragable.DragableComponent));
-        component.Value = newValue;
-        ReplaceComponent(index, component);
-        return this;
-    }
-
-    public GameEntity RemoveDragable() {
-        RemoveComponent(GameComponentsLookup.Dragable);
-        return this;
+                    AddComponent(index, component);
+                } else {
+                    RemoveComponent(index);
+                }
+            }
+        }
     }
 }
