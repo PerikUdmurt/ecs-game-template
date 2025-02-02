@@ -22,22 +22,22 @@ public static class GameComponentsLookup {
     public const int ViewPrefab = 11;
     public const int Id = 12;
     public const int WorldPosition = 13;
-    public const int Camera = 14;
-    public const int LookToCamera = 15;
-    public const int Card = 16;
-    public const int Dragable = 17;
-    public const int Dragging = 18;
-    public const int DragLerp = 19;
-    public const int Dropped = 20;
-    public const int StartDragging = 21;
-    public const int BleedingEffect = 22;
-    public const int BurningEffect = 23;
-    public const int DamageEffect = 24;
-    public const int Effect = 25;
-    public const int EffectProducerId = 26;
-    public const int EffectSetups = 27;
-    public const int EffectTargetId = 28;
-    public const int EffectValue = 29;
+    public const int ActionSourceId = 14;
+    public const int ActionTargetId = 15;
+    public const int BattleActionRequest = 16;
+    public const int Bleeding = 17;
+    public const int BleedingResistance = 18;
+    public const int Damage = 19;
+    public const int Executed = 20;
+    public const int Executing = 21;
+    public const int Camera = 22;
+    public const int LookToCamera = 23;
+    public const int Card = 24;
+    public const int Dragable = 25;
+    public const int Dragging = 26;
+    public const int DragLerp = 27;
+    public const int Dropped = 28;
+    public const int StartDragging = 29;
     public const int CurrentHp = 30;
     public const int Dead = 31;
     public const int MaxHp = 32;
@@ -47,29 +47,40 @@ public static class GameComponentsLookup {
     public const int MoveTargetPosition = 36;
     public const int Moving = 37;
     public const int Speed = 38;
-    public const int CardSlot = 39;
-    public const int AxisInput = 40;
-    public const int Input = 41;
-    public const int LeftMouseButtonDown = 42;
-    public const int LeftMouseButtonDownPressed = 43;
-    public const int LeftMouseButtonHold = 44;
-    public const int LeftMouseButtonUp = 45;
-    public const int Clickable = 46;
-    public const int Clicked = 47;
-    public const int Deselected = 48;
-    public const int Selectable = 49;
-    public const int Selected = 50;
-    public const int MouseAxisInput = 51;
-    public const int MousePosition = 52;
-    public const int RightMouseButtonDown = 53;
-    public const int RightMouseButtonHold = 54;
-    public const int RightMouseButtonPressed = 55;
-    public const int RightMouseButtonUp = 56;
-    public const int ScrollWheelAxis = 57;
-    public const int SpaceButtonPressed = 58;
-    public const int AssetIsLoading = 59;
+    public const int CardDeck = 39;
+    public const int CardHand = 40;
+    public const int CardReset = 41;
+    public const int HorizontalElementArrangement = 42;
+    public const int ShowStackElements = 43;
+    public const int Stackable = 44;
+    public const int Stack = 45;
+    public const int StackCount = 46;
+    public const int StackedEntitiesIds = 47;
+    public const int StackMaxCount = 48;
+    public const int StackTypes = 49;
+    public const int AxisInput = 50;
+    public const int Input = 51;
+    public const int LeftMouseButtonDown = 52;
+    public const int LeftMouseButtonDownPressed = 53;
+    public const int LeftMouseButtonHold = 54;
+    public const int LeftMouseButtonUp = 55;
+    public const int Clickable = 56;
+    public const int Clicked = 57;
+    public const int Deselected = 58;
+    public const int Selectable = 59;
+    public const int Selected = 60;
+    public const int MouseAxisInput = 61;
+    public const int MousePosition = 62;
+    public const int RightMouseButtonDown = 63;
+    public const int RightMouseButtonHold = 64;
+    public const int RightMouseButtonPressed = 65;
+    public const int RightMouseButtonUp = 66;
+    public const int ScrollWheelAxis = 67;
+    public const int SpaceButtonPressed = 68;
+    public const int AssetIsLoading = 69;
+    public const int Invincible = 70;
 
-    public const int TotalComponents = 60;
+    public const int TotalComponents = 71;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -86,6 +97,14 @@ public static class GameComponentsLookup {
         "ViewPrefab",
         "Id",
         "WorldPosition",
+        "ActionSourceId",
+        "ActionTargetId",
+        "BattleActionRequest",
+        "Bleeding",
+        "BleedingResistance",
+        "Damage",
+        "Executed",
+        "Executing",
         "Camera",
         "LookToCamera",
         "Card",
@@ -94,14 +113,6 @@ public static class GameComponentsLookup {
         "DragLerp",
         "Dropped",
         "StartDragging",
-        "BleedingEffect",
-        "BurningEffect",
-        "DamageEffect",
-        "Effect",
-        "EffectProducerId",
-        "EffectSetups",
-        "EffectTargetId",
-        "EffectValue",
         "CurrentHp",
         "Dead",
         "MaxHp",
@@ -111,7 +122,17 @@ public static class GameComponentsLookup {
         "MoveTargetPosition",
         "Moving",
         "Speed",
-        "CardSlot",
+        "CardDeck",
+        "CardHand",
+        "CardReset",
+        "HorizontalElementArrangement",
+        "ShowStackElements",
+        "Stackable",
+        "Stack",
+        "StackCount",
+        "StackedEntitiesIds",
+        "StackMaxCount",
+        "StackTypes",
         "AxisInput",
         "Input",
         "LeftMouseButtonDown",
@@ -131,7 +152,8 @@ public static class GameComponentsLookup {
         "RightMouseButtonUp",
         "ScrollWheelAxis",
         "SpaceButtonPressed",
-        "AssetIsLoading"
+        "AssetIsLoading",
+        "Invincible"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -149,6 +171,14 @@ public static class GameComponentsLookup {
         typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.Battle.ActionSourceIdComponent),
+        typeof(Code.Gameplay.Features.Battle.ActionTargetIdComponent),
+        typeof(Code.Gameplay.Features.Battle.BattleActionRequestComponent),
+        typeof(Code.Gameplay.Features.Battle.Bleeding.BleedingComponent),
+        typeof(Code.Gameplay.Features.Battle.Bleeding.BleedingResistanceComponent),
+        typeof(Code.Gameplay.Features.Battle.Damage.DamageComponent),
+        typeof(Code.Gameplay.Features.Battle.ExecutedComponent),
+        typeof(Code.Gameplay.Features.Battle.ExecutingComponent),
         typeof(Code.Gameplay.Features.Camera.CameraComponent),
         typeof(Code.Gameplay.Features.Camera.LookToCameraComponent),
         typeof(Code.Gameplay.Features.Cards.CardComponent),
@@ -157,14 +187,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Dragable.DragLerpComponent),
         typeof(Code.Gameplay.Features.Dragable.DroppedComponent),
         typeof(Code.Gameplay.Features.Dragable.StartDraggingComponent),
-        typeof(Code.Gameplay.Features.Effects.BleedingEffectComponent),
-        typeof(Code.Gameplay.Features.Effects.BurningEffectComponent),
-        typeof(Code.Gameplay.Features.Effects.DamageEffectComponent),
-        typeof(Code.Gameplay.Features.Effects.EffectComponent),
-        typeof(Code.Gameplay.Features.Effects.EffectProducerIdComponent),
-        typeof(Code.Gameplay.Features.Effects.EffectSetupsComponent),
-        typeof(Code.Gameplay.Features.Effects.EffectTargetIdComponent),
-        typeof(Code.Gameplay.Features.Effects.EffectValueComponent),
         typeof(Code.Gameplay.Features.LifeTime.CurrentHp),
         typeof(Code.Gameplay.Features.LifeTime.Dead),
         typeof(Code.Gameplay.Features.LifeTime.MaxHp),
@@ -174,7 +196,17 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.MoveTargetPosition),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
-        typeof(Code.Gameplay.Features.Slots.CardSlotComponent),
+        typeof(Code.Gameplay.Features.Stack.CardDeck),
+        typeof(Code.Gameplay.Features.Stack.CardHand),
+        typeof(Code.Gameplay.Features.Stack.CardReset),
+        typeof(Code.Gameplay.Features.Stack.HorizontalElementArrangement),
+        typeof(Code.Gameplay.Features.Stack.ShowStackElementsComponent),
+        typeof(Code.Gameplay.Features.Stack.StackableComponent),
+        typeof(Code.Gameplay.Features.Stack.StackComponent),
+        typeof(Code.Gameplay.Features.Stack.StackCountComponent),
+        typeof(Code.Gameplay.Features.Stack.StackedEntitiesIds),
+        typeof(Code.Gameplay.Features.Stack.StackMaxCountComponent),
+        typeof(Code.Gameplay.Features.Stack.StackTypes),
         typeof(Code.Gameplay.Input.AxisInput),
         typeof(Code.Gameplay.Input.Input),
         typeof(Code.Gameplay.Input.LeftMouseButtonDown),
@@ -194,6 +226,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Input.RightMouseButtonUp),
         typeof(Code.Gameplay.Input.ScrollWheelAxis),
         typeof(Code.Gameplay.Input.SpaceButtonPressed),
-        typeof(Code.Infrastructures.View.AssetIsLoading)
+        typeof(Code.Infrastructures.View.AssetIsLoading),
+        typeof(Invincible)
     };
 }

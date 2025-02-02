@@ -1,8 +1,10 @@
 using Code.Common.Destruct;
 using Code.Gameplay.DialogueSystem.Systems;
+using Code.Gameplay.Features.Battle;
 using Code.Gameplay.Features.Camera;
 using Code.Gameplay.Features.Cards;
 using Code.Gameplay.Features.Movement;
+using Code.Gameplay.Features.Stack;
 using Code.Gameplay.Input;
 using Code.Gameplay.Test;
 using Code.Infrastructures.Factories;
@@ -27,6 +29,8 @@ namespace Code.Gameplay
             Add(systemFactory.Create<ProcessDestuctedFeature>());
             Add(systemFactory.Create<GameplayTestFeature>());
             Add(systemFactory.Create<CardFeature>());
+            Add(systemFactory.Create<StackFeature>());
+            Add(systemFactory.Create<BattleFeature>());
             Add(systemFactory.Create<CameraFeature>());
         }
     }

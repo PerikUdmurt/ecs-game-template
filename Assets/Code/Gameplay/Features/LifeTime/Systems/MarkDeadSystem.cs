@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using Entitas;
+using JetBrains.Annotations;
 
 namespace Code.Gameplay.Features.LifeTime.Systems
 {
+    [UsedImplicitly]
     public class MarkDeadSystem : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _entities;
