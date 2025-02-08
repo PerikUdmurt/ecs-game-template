@@ -11,6 +11,7 @@ using Code.Infrastructures.View.Factory;
 using Code.NodeBasedSystem;
 using Code.Progress;
 using Code.Services.AnalyticService;
+using Code.Services.Audio;
 using Code.Services.InputServices;
 using Code.Services.LocalizationServices;
 using Code.Services.PlayerSettingsServices;
@@ -65,6 +66,7 @@ namespace Code.Infrastructures.Installers
             Install<PlayerSettingsInstaller>();
             Install<PhysicsInstaller>();
             Install<GameAnalyticInstaller>();
+            Install<AudioInstaller>();
         }
 
         private void InstallGameplayFactories()

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Code.Services.Audio;
 using Code.Services.LocalizationServices;
 using Code.Services.PlayerSettingsServices.Datas;
 using Code.Services.ScreenResolutionService;
@@ -15,17 +16,20 @@ namespace Code.Services.PlayerSettingsServices
         private readonly ILocalizationService _localizationService;
         private readonly IPlayerSettingProvider _settingsProvider;
         private readonly IScreenResolutionService _screenResolutionService;
+        private readonly IAusioService _ausioService;
         
         private PlayerSettingsData _tempSettings;
 
         public PlayerSettingsService(
             ILocalizationService localizationService,
             IPlayerSettingProvider settingsProvider,
-            IScreenResolutionService screenResolutionService)
+            IScreenResolutionService screenResolutionService, 
+            IAusioService ausioService)
         {
             _localizationService = localizationService;
             _settingsProvider = settingsProvider;
             _screenResolutionService = screenResolutionService;
+            _ausioService = ausioService;
         }
 
         public void Initialize()
@@ -56,13 +60,13 @@ namespace Code.Services.PlayerSettingsServices
         public void SetSoundVolume(float volume)
         {
             _tempSettings.SoundsVolume = volume;
-            Debug.LogWarning("[PlayerSettingsService] SetSoundVolume called but not assigned]");
+            _ausioService.SetSoundVolume(volume);
         }
 
         public void SetMusicVolume(float volume)
         {
             _tempSettings.MusicVolume = volume;
-            Debug.LogWarning("[PlayerSettingsService] SetMusicVolume called but not assigned]");
+            _ausioService.SetMusicVolume(volume);
         }
 
         public void SetLocale(ELocaleType localeType)

@@ -62,17 +62,7 @@ MonoBehaviour:
     \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
     \"Value\": [\r\n            {\r\n              \"NodeId\": \"db7c275c-e52d-448a-b8be-83cb54267e7e\",\r\n             
     \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
-    },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.PlayNextGraphComponent,
-    Assembly-CSharp\",\r\n          \"Value\": \"qwerty\"\r\n        },\r\n       
-    {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n         
-    \"Value\": \"ea0c0b7e-65df-4e1f-9a3c-44e9f2c17cbe\"\r\n        },\r\n       
-    {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodePosition, Assembly-CSharp\",\r\n         
-    \"Value\": {\r\n            \"X\": 2965.6,\r\n            \"Y\": -318.4\r\n         
-    }\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.Node,
-    Assembly-CSharp\",\r\n          \"Value\": 0\r\n        },\r\n        {\r\n         
-    \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
-    \"Value\": []\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"c\": [\r\n       
-    {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent,
+    },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent,
     Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"entryKey\": \"radio\",\r\n           
     \"tableKey\": \"little_girl_dialogue1\"\r\n          }\r\n        },\r\n       
     {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n         
@@ -103,7 +93,17 @@ MonoBehaviour:
     \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
     \"Value\": [\r\n            {\r\n              \"NodeId\": \"f46e0ea4-ca5b-409e-ac43-7ec634680935\",\r\n             
     \"Conditions\": []\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n   
-    },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent,
+    },\r\n    {\r\n      \"c\": [\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.PlayNextGraphComponent,
+    Assembly-CSharp\",\r\n          \"Value\": \"qwerty\"\r\n        },\r\n       
+    {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n         
+    \"Value\": \"ea0c0b7e-65df-4e1f-9a3c-44e9f2c17cbe\"\r\n        },\r\n       
+    {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodePosition, Assembly-CSharp\",\r\n         
+    \"Value\": {\r\n            \"X\": 2946.4,\r\n            \"Y\": -201.6\r\n         
+    }\r\n        },\r\n        {\r\n          \"$type\": \"NodeBasedSystem.Nodes.Node,
+    Assembly-CSharp\",\r\n          \"Value\": 0\r\n        },\r\n        {\r\n         
+    \"$type\": \"NodeBasedSystem.Nodes.NextNodes, Assembly-CSharp\",\r\n         
+    \"Value\": []\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"c\": [\r\n       
+    {\r\n          \"$type\": \"Code.NodeBasedSystem.DialogueSystem.DialoguePhraseComponent,
     Assembly-CSharp\",\r\n          \"Value\": {\r\n            \"entryKey\": \"phrase-girl-2\",\r\n           
     \"tableKey\": \"little_girl_dialogue1\"\r\n          }\r\n        },\r\n       
     {\r\n          \"$type\": \"NodeBasedSystem.Nodes.NodeId, Assembly-CSharp\",\r\n         
