@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Features/Common/Scenes/BootstrapScene.unity
+    path: Assets/Features/Common/Scenes/Bootstrap.unity
     guid: f21b3eb85b37afa4fbf0680d69d0a267
-  - enabled: 1
+  - enabled: 0
     path: Assets/Features/DayCycle/Scenes/DayCycle.unity
     guid: 281d2068206adde4296cc4966fd76ab6
   - enabled: 1
