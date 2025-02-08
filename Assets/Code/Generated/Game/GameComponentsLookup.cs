@@ -47,40 +47,36 @@ public static class GameComponentsLookup {
     public const int MoveTargetPosition = 36;
     public const int Moving = 37;
     public const int Speed = 38;
-    public const int CardDeck = 39;
-    public const int CardHand = 40;
-    public const int CardReset = 41;
-    public const int HorizontalElementArrangement = 42;
-    public const int ShowStackElements = 43;
-    public const int Stackable = 44;
-    public const int Stack = 45;
-    public const int StackCount = 46;
-    public const int StackedEntitiesIds = 47;
-    public const int StackMaxCount = 48;
-    public const int StackTypes = 49;
-    public const int AxisInput = 50;
-    public const int Input = 51;
-    public const int LeftMouseButtonDown = 52;
-    public const int LeftMouseButtonDownPressed = 53;
-    public const int LeftMouseButtonHold = 54;
-    public const int LeftMouseButtonUp = 55;
-    public const int Clickable = 56;
-    public const int Clicked = 57;
-    public const int Deselected = 58;
-    public const int Selectable = 59;
-    public const int Selected = 60;
-    public const int MouseAxisInput = 61;
-    public const int MousePosition = 62;
-    public const int RightMouseButtonDown = 63;
-    public const int RightMouseButtonHold = 64;
-    public const int RightMouseButtonPressed = 65;
-    public const int RightMouseButtonUp = 66;
-    public const int ScrollWheelAxis = 67;
-    public const int SpaceButtonPressed = 68;
-    public const int AssetIsLoading = 69;
-    public const int Invincible = 70;
+    public const int CardStack = 39;
+    public const int CardStackElement = 40;
+    public const int HorizontalLayout = 41;
+    public const int OutOfRangeOfStack = 42;
+    public const int Stackable = 43;
+    public const int StackCount = 44;
+    public const int StackMaxCount = 45;
+    public const int AxisInput = 46;
+    public const int Input = 47;
+    public const int LeftMouseButtonDown = 48;
+    public const int LeftMouseButtonDownPressed = 49;
+    public const int LeftMouseButtonHold = 50;
+    public const int LeftMouseButtonUp = 51;
+    public const int Clickable = 52;
+    public const int Clicked = 53;
+    public const int Deselected = 54;
+    public const int Selectable = 55;
+    public const int Selected = 56;
+    public const int MouseAxisInput = 57;
+    public const int MousePosition = 58;
+    public const int RightMouseButtonDown = 59;
+    public const int RightMouseButtonHold = 60;
+    public const int RightMouseButtonPressed = 61;
+    public const int RightMouseButtonUp = 62;
+    public const int ScrollWheelAxis = 63;
+    public const int SpaceButtonPressed = 64;
+    public const int AssetIsLoading = 65;
+    public const int Invincible = 66;
 
-    public const int TotalComponents = 71;
+    public const int TotalComponents = 67;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -122,17 +118,13 @@ public static class GameComponentsLookup {
         "MoveTargetPosition",
         "Moving",
         "Speed",
-        "CardDeck",
-        "CardHand",
-        "CardReset",
-        "HorizontalElementArrangement",
-        "ShowStackElements",
+        "CardStack",
+        "CardStackElement",
+        "HorizontalLayout",
+        "OutOfRangeOfStack",
         "Stackable",
-        "Stack",
         "StackCount",
-        "StackedEntitiesIds",
         "StackMaxCount",
-        "StackTypes",
         "AxisInput",
         "Input",
         "LeftMouseButtonDown",
@@ -196,17 +188,13 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.MoveTargetPosition),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
-        typeof(Code.Gameplay.Features.Stack.CardDeck),
-        typeof(Code.Gameplay.Features.Stack.CardHand),
-        typeof(Code.Gameplay.Features.Stack.CardReset),
-        typeof(Code.Gameplay.Features.Stack.HorizontalElementArrangement),
-        typeof(Code.Gameplay.Features.Stack.ShowStackElementsComponent),
+        typeof(Code.Gameplay.Features.Stack.CardStack),
+        typeof(Code.Gameplay.Features.Stack.CardStackElement),
+        typeof(Code.Gameplay.Features.Stack.HorizontalLayout),
+        typeof(Code.Gameplay.Features.Stack.OutOfRangeOfStackComponent),
         typeof(Code.Gameplay.Features.Stack.StackableComponent),
-        typeof(Code.Gameplay.Features.Stack.StackComponent),
         typeof(Code.Gameplay.Features.Stack.StackCountComponent),
-        typeof(Code.Gameplay.Features.Stack.StackedEntitiesIds),
         typeof(Code.Gameplay.Features.Stack.StackMaxCountComponent),
-        typeof(Code.Gameplay.Features.Stack.StackTypes),
         typeof(Code.Gameplay.Input.AxisInput),
         typeof(Code.Gameplay.Input.Input),
         typeof(Code.Gameplay.Input.LeftMouseButtonDown),

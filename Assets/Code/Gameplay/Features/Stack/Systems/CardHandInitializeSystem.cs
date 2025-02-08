@@ -12,25 +12,10 @@ namespace Code.Gameplay.Features.Stack.Systems
         public void Initialize()
         {
             CreateEntity.Empty()
-                .With(e => e.isStack = true)
-                .With(e => e.isCardHand = true)
-                .AddStackTypes(new() { EStackType.Card })
-                .With(e => e.isShowStackElements = true)
+                .AddCardStack(EStackType.Hand)
                 .AddStackMaxCount(5) //ToDo: Set from config
-                .AddHorizontalElementArrangement(new Vector3(1f, 0f, 0.5f))
-                .AddWorldPosition(Vector3.zero);
+                .AddHorizontalLayout(new Vector3(1.7f, 0f, 0f))
+                .AddWorldPosition(new Vector3(-3.5f, -2f, 0f));
         }
-    }
-    
-    [UsedImplicitly]
-    public class 
-    {
-    
-    }
-
-    [UsedImplicitly]
-    public class HorizontalLayoutSystem : 
-    {
-        
     }
 }

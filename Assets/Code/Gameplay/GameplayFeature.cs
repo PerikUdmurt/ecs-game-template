@@ -29,7 +29,7 @@ namespace Code.Gameplay
             Add(systemFactory.Create<ProcessDestuctedFeature>());
             Add(systemFactory.Create<GameplayTestFeature>());
             Add(systemFactory.Create<CardFeature>());
-            Add(systemFactory.Create<StackFeature>());
+            Add(systemFactory.Create<CardDecksFeature>());
             Add(systemFactory.Create<BattleFeature>());
             Add(systemFactory.Create<CameraFeature>());
         }

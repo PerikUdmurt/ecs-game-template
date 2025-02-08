@@ -7,14 +7,15 @@ using UnityEngine;
 namespace Code.Gameplay.Features.Stack.Systems
 {
     [UsedImplicitly]
-    public class CardResetInitializeSystem : IInitializeSystem
+    public class ItemDeckInitializeSystem : IInitializeSystem
     {
         public void Initialize()
         {
             CreateEntity.Empty()
-                .AddCardStack(EStackType.Reset)
-                .AddViewPath("CardReset")
-                .AddWorldPosition(new Vector3(-5.65f, -2f, 0f));
+                .AddCardStack(EStackType.ItemDeck)
+                .AddStackMaxCount(3)
+                .AddViewPath("ItemDeck")
+                .AddWorldPosition(new Vector3(-7.5f, 0.5f, 0f)); //ToDo: fill from config
         }
     }
 }
