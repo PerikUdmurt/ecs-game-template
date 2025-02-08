@@ -51,32 +51,31 @@ public static class GameComponentsLookup {
     public const int CardStackElement = 40;
     public const int HorizontalLayout = 41;
     public const int OutOfRangeOfStack = 42;
-    public const int Stackable = 43;
-    public const int StackCount = 44;
-    public const int StackMaxCount = 45;
-    public const int AxisInput = 46;
-    public const int Input = 47;
-    public const int LeftMouseButtonDown = 48;
-    public const int LeftMouseButtonDownPressed = 49;
-    public const int LeftMouseButtonHold = 50;
-    public const int LeftMouseButtonUp = 51;
-    public const int Clickable = 52;
-    public const int Clicked = 53;
-    public const int Deselected = 54;
-    public const int Selectable = 55;
-    public const int Selected = 56;
-    public const int MouseAxisInput = 57;
-    public const int MousePosition = 58;
-    public const int RightMouseButtonDown = 59;
-    public const int RightMouseButtonHold = 60;
-    public const int RightMouseButtonPressed = 61;
-    public const int RightMouseButtonUp = 62;
-    public const int ScrollWheelAxis = 63;
-    public const int SpaceButtonPressed = 64;
-    public const int AssetIsLoading = 65;
-    public const int Invincible = 66;
+    public const int StackCount = 43;
+    public const int StackMaxCount = 44;
+    public const int AxisInput = 45;
+    public const int Input = 46;
+    public const int LeftMouseButtonDown = 47;
+    public const int LeftMouseButtonDownPressed = 48;
+    public const int LeftMouseButtonHold = 49;
+    public const int LeftMouseButtonUp = 50;
+    public const int Clickable = 51;
+    public const int Clicked = 52;
+    public const int Deselected = 53;
+    public const int Selectable = 54;
+    public const int Selected = 55;
+    public const int MouseAxisInput = 56;
+    public const int MousePosition = 57;
+    public const int RightMouseButtonDown = 58;
+    public const int RightMouseButtonHold = 59;
+    public const int RightMouseButtonPressed = 60;
+    public const int RightMouseButtonUp = 61;
+    public const int ScrollWheelAxis = 62;
+    public const int SpaceButtonPressed = 63;
+    public const int AssetIsLoading = 64;
+    public const int Invincible = 65;
 
-    public const int TotalComponents = 67;
+    public const int TotalComponents = 66;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -122,7 +121,6 @@ public static class GameComponentsLookup {
         "CardStackElement",
         "HorizontalLayout",
         "OutOfRangeOfStack",
-        "Stackable",
         "StackCount",
         "StackMaxCount",
         "AxisInput",
@@ -192,7 +190,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Stack.CardStackElement),
         typeof(Code.Gameplay.Features.Stack.HorizontalLayout),
         typeof(Code.Gameplay.Features.Stack.OutOfRangeOfStackComponent),
-        typeof(Code.Gameplay.Features.Stack.StackableComponent),
         typeof(Code.Gameplay.Features.Stack.StackCountComponent),
         typeof(Code.Gameplay.Features.Stack.StackMaxCountComponent),
         typeof(Code.Gameplay.Input.AxisInput),

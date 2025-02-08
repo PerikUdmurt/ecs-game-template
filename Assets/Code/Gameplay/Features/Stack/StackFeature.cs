@@ -44,7 +44,6 @@ namespace Code.Gameplay.Features.Stack
                 switch (stackable.CardStackElement)
                 {
                     case EStackType.Hand:
-                        
                         break;
                     case EStackType.DiceDeck:
                         break;
@@ -53,12 +52,6 @@ namespace Code.Gameplay.Features.Stack
                     case EStackType.ItemDeck:
                         break;
                 }
-        }
-
-        private void AddEntityToHand(GameEntity stackable)
-        {
-            foreach (GameEntity hand in _hands.GetEntities())
-                
         }
     }
 }
