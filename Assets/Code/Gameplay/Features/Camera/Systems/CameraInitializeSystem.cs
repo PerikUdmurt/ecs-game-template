@@ -9,11 +9,12 @@ namespace Code.Gameplay.Features.Camera.Systems
     {
         public void Initialize()
         {
-            UnityEngine.Camera camera = UnityEngine.Camera.main; 
-            
+            UnityEngine.Camera camera = UnityEngine.Camera.main;
+
             CreateEntity.Empty()
                 .AddCamera(camera)
-                .AddTransform(camera.transform);
+                .AddTransform(camera.transform)
+                .isMainCamera = true;
         }
     }
 }

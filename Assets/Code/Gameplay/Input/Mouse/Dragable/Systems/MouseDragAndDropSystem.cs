@@ -19,7 +19,8 @@ namespace Code.Gameplay.Input.Mouse.Dragable.Systems
                     GameMatcher.WorldPosition));
             
             _input = game.GetGroup(GameMatcher
-                .AllOf(GameMatcher.Input));
+                .AllOf(GameMatcher.Input,
+                    GameMatcher.MouseWorldPosition));
         }
         
         public void Execute()
@@ -30,7 +31,7 @@ namespace Code.Gameplay.Input.Mouse.Dragable.Systems
                 {
                     dragableItem.ReplaceWorldPosition(Vector3.Lerp(
                         a: dragableItem.WorldPosition, 
-                        b: new Vector3(input.MousePosition.x, input.MousePosition.y), 
+                        b: new Vector3(input.MouseWorldPosition.x, input.MouseWorldPosition.y),
                         t: dragableItem.DragLerp));
                 }
             }

@@ -7,6 +7,7 @@ namespace Code.Gameplay.Input
     [Game] public class AxisInput : IComponent { public Vector2 Value; }
     [Game] public class MouseAxisInput : IComponent { public Vector2 Value; }
     [Game] public class MousePosition : IComponent { public Vector2 Value; }
+    [Game] public class MouseWorldPosition : IComponent { public Vector3 Value; }
     [Game] public class LeftMouseButtonDownPressed : IComponent { }
     [Game] public class RightMouseButtonPressed : IComponent { }
     [Game] public class LeftMouseButtonDown : IComponent { }

@@ -1,6 +1,7 @@
 using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Features.Cards.Factory;
+using Code.Gameplay.Features.Cursor;
 using Code.Identifiers;
 using Code.Infrastructures.AssetManagement;
 using Code.Infrastructures.Factories;
@@ -27,6 +28,7 @@ namespace Code.Infrastructures.Installers
     {
         public override void InstallBindings()
         {
+            InstallConfigs();
             InstallSelfAsCourutineRunner();
             InstallServices();
             InstallGameplayFactories();
@@ -67,6 +69,11 @@ namespace Code.Infrastructures.Installers
             Install<PhysicsInstaller>();
             Install<GameAnalyticInstaller>();
             Install<AudioInstaller>();
+        }
+
+        private void InstallConfigs()
+        {
+            Install<CursorInstaller>();
         }
 
         private void InstallGameplayFactories()

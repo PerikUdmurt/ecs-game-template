@@ -2,6 +2,7 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Camera
 {
-    public class CameraComponent : IComponent { public UnityEngine.Camera Value; }
-    public class LookToCameraComponent : IComponent { }
+    [Game] public class CameraComponent : IComponent { public UnityEngine.Camera Value; }
+    [Game] public class MainCameraComponent : IComponent { }
+    [Game] public class LookToCameraComponent : IComponent { }
 }

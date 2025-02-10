@@ -32,50 +32,55 @@ public static class GameComponentsLookup {
     public const int Executing = 21;
     public const int Camera = 22;
     public const int LookToCamera = 23;
-    public const int Card = 24;
-    public const int Dragable = 25;
-    public const int Dragging = 26;
-    public const int DragLerp = 27;
-    public const int Dropped = 28;
-    public const int StartDragging = 29;
-    public const int CurrentHp = 30;
-    public const int Dead = 31;
-    public const int MaxHp = 32;
-    public const int ProcessingDeath = 33;
-    public const int Acceleration = 34;
-    public const int Direction = 35;
-    public const int MoveTargetPosition = 36;
-    public const int Moving = 37;
-    public const int Speed = 38;
-    public const int CardStack = 39;
-    public const int CardStackElement = 40;
-    public const int HorizontalLayout = 41;
-    public const int OutOfRangeOfStack = 42;
-    public const int StackCount = 43;
-    public const int StackMaxCount = 44;
-    public const int AxisInput = 45;
-    public const int Input = 46;
-    public const int LeftMouseButtonDown = 47;
-    public const int LeftMouseButtonDownPressed = 48;
-    public const int LeftMouseButtonHold = 49;
-    public const int LeftMouseButtonUp = 50;
-    public const int Clickable = 51;
-    public const int Clicked = 52;
-    public const int Deselected = 53;
-    public const int Selectable = 54;
-    public const int Selected = 55;
-    public const int MouseAxisInput = 56;
-    public const int MousePosition = 57;
-    public const int RightMouseButtonDown = 58;
-    public const int RightMouseButtonHold = 59;
-    public const int RightMouseButtonPressed = 60;
-    public const int RightMouseButtonUp = 61;
-    public const int ScrollWheelAxis = 62;
-    public const int SpaceButtonPressed = 63;
-    public const int AssetIsLoading = 64;
-    public const int Invincible = 65;
+    public const int MainCamera = 24;
+    public const int Card = 25;
+    public const int Cursor = 26;
+    public const int CursorType = 27;
+    public const int EntityUnderCursor = 28;
+    public const int Dragable = 29;
+    public const int Dragging = 30;
+    public const int DragLerp = 31;
+    public const int Dropped = 32;
+    public const int StartDragging = 33;
+    public const int CurrentHp = 34;
+    public const int Dead = 35;
+    public const int MaxHp = 36;
+    public const int ProcessingDeath = 37;
+    public const int Acceleration = 38;
+    public const int Direction = 39;
+    public const int MoveTargetPosition = 40;
+    public const int Moving = 41;
+    public const int Speed = 42;
+    public const int CardStack = 43;
+    public const int CardStackElement = 44;
+    public const int HorizontalLayout = 45;
+    public const int OutOfRangeOfStack = 46;
+    public const int StackCount = 47;
+    public const int StackMaxCount = 48;
+    public const int AxisInput = 49;
+    public const int Input = 50;
+    public const int LeftMouseButtonDown = 51;
+    public const int LeftMouseButtonDownPressed = 52;
+    public const int LeftMouseButtonHold = 53;
+    public const int LeftMouseButtonUp = 54;
+    public const int Clickable = 55;
+    public const int Clicked = 56;
+    public const int Deselected = 57;
+    public const int Selectable = 58;
+    public const int Selected = 59;
+    public const int MouseAxisInput = 60;
+    public const int MousePosition = 61;
+    public const int MouseWorldPosition = 62;
+    public const int RightMouseButtonDown = 63;
+    public const int RightMouseButtonHold = 64;
+    public const int RightMouseButtonPressed = 65;
+    public const int RightMouseButtonUp = 66;
+    public const int ScrollWheelAxis = 67;
+    public const int SpaceButtonPressed = 68;
+    public const int AssetIsLoading = 69;
+    public const int Invincible = 70;
 
-    public const int TotalComponents = 66;
+    public const int TotalComponents = 71;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -102,7 +107,11 @@ public static class GameComponentsLookup {
         "Executing",
         "Camera",
         "LookToCamera",
+        "MainCamera",
         "Card",
+        "Cursor",
+        "CursorType",
+        "EntityUnderCursor",
         "Dragable",
         "Dragging",
         "DragLerp",
@@ -136,6 +145,7 @@ public static class GameComponentsLookup {
         "Selected",
         "MouseAxisInput",
         "MousePosition",
+        "MouseWorldPosition",
         "RightMouseButtonDown",
         "RightMouseButtonHold",
         "RightMouseButtonPressed",
@@ -171,7 +181,11 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Battle.ExecutingComponent),
         typeof(Code.Gameplay.Features.Camera.CameraComponent),
         typeof(Code.Gameplay.Features.Camera.LookToCameraComponent),
+        typeof(Code.Gameplay.Features.Camera.MainCameraComponent),
         typeof(Code.Gameplay.Features.Cards.CardComponent),
+        typeof(Code.Gameplay.Features.Cursor.CursorComponent),
+        typeof(Code.Gameplay.Features.Cursor.CursorType),
+        typeof(Code.Gameplay.Features.Cursor.EntityUnderCursor),
         typeof(Code.Gameplay.Features.Dragable.DragableComponent),
         typeof(Code.Gameplay.Features.Dragable.DraggingComponent),
         typeof(Code.Gameplay.Features.Dragable.DragLerpComponent),
@@ -205,6 +219,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Input.Mouse.Selectable.SelectedComponent),
         typeof(Code.Gameplay.Input.MouseAxisInput),
         typeof(Code.Gameplay.Input.MousePosition),
+        typeof(Code.Gameplay.Input.MouseWorldPosition),
         typeof(Code.Gameplay.Input.RightMouseButtonDown),
         typeof(Code.Gameplay.Input.RightMouseButtonHold),
         typeof(Code.Gameplay.Input.RightMouseButtonPressed),

@@ -25,8 +25,10 @@ namespace Code.Gameplay.Input.Mouse.Systems
             {
                 foreach (GameEntity camera in _cameras)
                 {
+                    input.ReplaceMousePosition(_inputService.GetMouseScreenPosition());
+                    
                     Vector3 mouseWorldPos = camera.Camera.ScreenToWorldPoint(_inputService.GetMouseScreenPosition());
-                    input.ReplaceMousePosition(new (mouseWorldPos.x, mouseWorldPos.y));
+                    input.ReplaceMouseWorldPosition(mouseWorldPos);
                 }
             }
         }
