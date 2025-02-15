@@ -1,5 +1,6 @@
 using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
+using Code.Gameplay.Features.Camera;
 using Code.Gameplay.Features.Cards.Factory;
 using Code.Gameplay.Features.Cursor;
 using Code.Identifiers;
@@ -74,6 +75,7 @@ namespace Code.Infrastructures.Installers
         private void InstallConfigs()
         {
             Install<CursorInstaller>();
+            Install<CameraInstaller>();
         }
 
         private void InstallGameplayFactories()

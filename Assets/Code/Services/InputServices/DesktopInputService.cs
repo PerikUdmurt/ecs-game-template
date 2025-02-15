@@ -27,6 +27,9 @@ namespace Code.Services.InputServices
         public Vector2 GetMouseScreenPosition() => Input.mousePosition;
         public float GetMouseAxisHorizontal() => Input.GetAxisRaw(MouseXInput);
         public float GetMouseAxisVertical() => Input.GetAxisRaw(MouseYInput);
+        public bool GetMiddleMouseButtonDown() => Input.GetMouseButtonDown(2);
+        public bool GetMiddleMouseButtonUp() => Input.GetMouseButtonUp(2);
+        public bool GetMiddleMouseButtonHold() => Input.GetMouseButton(2);
         public bool IsAxisActive() => Input.GetAxisRaw(HorizontalInput) != 0 && Input.GetAxisRaw(VerticalInput) != 0;
     }
 }

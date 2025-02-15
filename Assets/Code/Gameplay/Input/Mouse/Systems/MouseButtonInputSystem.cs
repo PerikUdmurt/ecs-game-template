@@ -26,6 +26,9 @@ namespace Code.Gameplay.Input.Mouse.Systems
                 input.isLeftMouseButtonUp = _inputService.GetLeftMouseButtonUp();
                 input.isRightMouseButtonHold = _inputService.GetRightMouseButtonHold();
                 input.isLeftMouseButtonHold = _inputService.GetLeftMouseButtonHold();
+                input.isMiddleMouseButtonDown = _inputService.GetMiddleMouseButtonDown();
+                input.isMiddleMouseButtonUp = _inputService.GetMiddleMouseButtonUp();
+                input.isMiddleMouseButtonHold = _inputService.GetMiddleMouseButtonHold();
             }
         }
     }

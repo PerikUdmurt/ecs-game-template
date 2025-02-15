@@ -16,6 +16,9 @@ namespace Code.Gameplay.Input
     [Game] public class RightMouseButtonUp : IComponent { }
     [Game] public class LeftMouseButtonHold : IComponent { }
     [Game] public class RightMouseButtonHold : IComponent { }
+    [Game] public class MiddleMouseButtonUp : IComponent { }
+    [Game] public class MiddleMouseButtonHold : IComponent { }
+    [Game] public class MiddleMouseButtonDown : IComponent { }
     [Game] public class SpaceButtonPressed : IComponent { }
     [Game] public class ScrollWheelAxis : IComponent {public float Value; }
 }

@@ -20,5 +20,8 @@ namespace Code.Services.InputServices
         bool GetRightMouseButtonHold();
         float GetMouseAxisHorizontal();
         float GetMouseAxisVertical();
+        bool GetMiddleMouseButtonDown();
+        bool GetMiddleMouseButtonUp();
+        bool GetMiddleMouseButtonHold();
     }
 }

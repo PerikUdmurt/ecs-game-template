@@ -57,5 +57,7 @@ namespace Extensions
 
         public static Vector2 WithRandomBias(this Vector2 v, Vector2 biasValue) =>
             new Vector2(v.x.RandomBias(biasValue.x), v.y.RandomBias(biasValue.y));
+        
+        public static Vector3 ToX0Y(this Vector2 v) => new Vector3(v.x, 0, v.y);
     }
 }

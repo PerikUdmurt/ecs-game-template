@@ -41,23 +41,31 @@ namespace Code.Gameplay.Common.Physics
         public GameEntity Raycast(Vector3 worldPosition, Vector3 direction, float maxDistance, int layerMask)
         {
             int hitCount = UnityEngine.Physics.RaycastNonAlloc(worldPosition, direction, Hits, maxDistance, layerMask);
-
+            
             DrawDebugRay(worldPosition, direction, Color.green);
             
-            for (int i = 0; i < hitCount; i++)
+            return FindEntity(hitCount);
+        }
+
+        public GameEntity Raycast(Ray ray, float maxDistance, int layerMask)
+        {
+            int hitCount = UnityEngine.Physics.RaycastNonAlloc(ray, Hits, maxDistance, layerMask);
+            
+            DrawDebugRay(ray.origin, ray.direction, Color.yellow);
+
+            return FindEntity(hitCount);
+        }
+
+        public GameEntity ScreenPointToRay(Vector2 screenPoint,int layerMask, Camera camera = null)
+        {
+            if (camera == null)
             {
-                RaycastHit hit = Hits[i];
-                if (hit.collider == null)
-                    continue;
-
-                GameEntity entity = _collisionRegistry.Get<GameEntity>(hit.collider.GetInstanceID());
-                if (entity == null)
-                    continue;
-
-                return entity;
+                camera = Camera.main;
             }
+            
+            Ray ray = camera.ScreenPointToRay(screenPoint);
 
-            return null;
+            return Raycast(ray, float.MaxValue, layerMask);
         }
 
         public IEnumerable<GameEntity> SphereCast(Vector3 position, float radius, int layerMask)
@@ -113,6 +121,24 @@ namespace Code.Gameplay.Common.Physics
         private static void DrawDebugRay(Vector3 start, Vector3 dir, Color color)
         {
             Debug.DrawRay(start, dir, color, 1f);
+        }
+        
+        private GameEntity FindEntity(int hitCount)
+        {
+            for (int i = 0; i < hitCount; i++)
+            {
+                RaycastHit hit = Hits[i];
+                if (hit.collider == null)
+                    continue;
+
+                GameEntity entity = _collisionRegistry.Get<GameEntity>(hit.collider.GetInstanceID());
+                if (entity == null)
+                    continue;
+
+                return entity;
+            }
+
+            return null;
         }
     }
 }

@@ -35,14 +35,10 @@ namespace Code.Gameplay.Features.Cursor.Systems
             foreach (var input in _inputGroup)
             foreach (var camera in _cameraGroup)
             {
-                Vector3 sourcePos = input.MouseWorldPosition;
-                Vector3 targetPos = input.MouseWorldPosition + new Vector3(0,0,100);
-                        
-                GameEntity entity = _physicsService.Raycast(
-                    sourcePos
-                    ,targetPos, 
-                    float.MaxValue, 
-                    LayerMask.GetMask("Interactive")
+                GameEntity entity = _physicsService.ScreenPointToRay(
+                    input.MousePosition,
+                    LayerMask.GetMask("Interactive"),
+                    camera.Camera
                 );              
                         
                 cursor.ReplaceEntityUnderCursor(entity);
