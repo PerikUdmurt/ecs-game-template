@@ -16,11 +16,11 @@ MonoBehaviour:
   maxDistance: 15
   minDistance: 3
   initialRotation: {x: 0, y: 0, z: 0}
-  movementLerp: 1
+  movementLerp: 0.7
   rotationLerp: 1
   zoomDelta: 5
   rotationDelta: 5
-  movementDistanceRatio: 1
+  movementDistanceRatio: 0.05
   initialPosition: {x: 0, y: 1, z: 0}
   maxZoomSlopeAngle: -90
   minZoomSlopeAngle: -21.5
