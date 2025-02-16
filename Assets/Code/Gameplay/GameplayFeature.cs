@@ -5,6 +5,7 @@ using Code.Gameplay.Features.Camera;
 using Code.Gameplay.Features.Cards;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Stack;
+using Code.Gameplay.Features.Tiles;
 using Code.Gameplay.Input;
 using Code.Gameplay.Test;
 using Code.Infrastructures.Factories;
@@ -27,11 +28,12 @@ namespace Code.Gameplay
             Add(systemFactory.Create<StorageFeature>());
             Add(systemFactory.Create<InputFeature>());
             Add(systemFactory.Create<ProcessDestuctedFeature>());
-            Add(systemFactory.Create<GameplayTestFeature>());
-            Add(systemFactory.Create<CardFeature>());
             Add(systemFactory.Create<CardDecksFeature>());
             Add(systemFactory.Create<BattleFeature>());
             Add(systemFactory.Create<CameraFeature>());
+            Add(systemFactory.Create<TilesFeature>());
+            
+            Add(systemFactory.Create<GameplayTestFeature>());
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Code.Gameplay.Test.Systems
 
         protected override ICollector<ProgressEntity> GetTrigger(IContext<ProgressEntity> context)
         {
-            return context.CreateCollector(ProgressMatcher.AllOf(
+            return context.CreateCollector(ProgressMatcher.AnyOf(
                 ProgressMatcher.PlayerResources, 
                 ProgressMatcher.Benzine,
                 ProgressMatcher.Money,

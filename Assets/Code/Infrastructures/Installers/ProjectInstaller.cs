@@ -3,6 +3,7 @@ using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Features.Camera;
 using Code.Gameplay.Features.Cards.Factory;
 using Code.Gameplay.Features.Cursor;
+using Code.Gameplay.Features.Tiles;
 using Code.Identifiers;
 using Code.Infrastructures.AssetManagement;
 using Code.Infrastructures.Factories;
@@ -81,6 +82,7 @@ namespace Code.Infrastructures.Installers
         private void InstallGameplayFactories()
         {
             Install<EntityViewFactoryInstaller>();
+            Install<TilesFactoryInstaller>();
         }
 
         private void InstallUI()

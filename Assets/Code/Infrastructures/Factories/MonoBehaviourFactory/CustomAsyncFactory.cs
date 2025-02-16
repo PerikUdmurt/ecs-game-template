@@ -27,7 +27,7 @@ namespace Code.Infrastructures.Factories
 
         private T InstantiatePrefab<T>(GameObject gameObject) where T : MonoBehaviour
         {
-            if (!gameObject.TryGetComponent<T>(out T component))
+            if (!gameObject.TryGetComponent(out T component))
             {
                 Debug.LogError($"Can't find component of type {typeof(T)} while instantiate prefab {gameObject.name}");
             }

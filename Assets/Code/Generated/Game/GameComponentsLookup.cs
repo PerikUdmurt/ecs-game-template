@@ -74,33 +74,41 @@ public static class GameComponentsLookup {
     public const int OutOfRangeOfStack = 63;
     public const int StackCount = 64;
     public const int StackMaxCount = 65;
-    public const int AxisInput = 66;
-    public const int Input = 67;
-    public const int LeftMouseButtonDown = 68;
-    public const int LeftMouseButtonDownPressed = 69;
-    public const int LeftMouseButtonHold = 70;
-    public const int LeftMouseButtonUp = 71;
-    public const int MiddleMouseButtonDown = 72;
-    public const int MiddleMouseButtonHold = 73;
-    public const int MiddleMouseButtonUp = 74;
-    public const int Clickable = 75;
-    public const int Clicked = 76;
-    public const int Deselected = 77;
-    public const int Selectable = 78;
-    public const int Selected = 79;
-    public const int MouseAxisInput = 80;
-    public const int MousePosition = 81;
-    public const int MouseWorldPosition = 82;
-    public const int RightMouseButtonDown = 83;
-    public const int RightMouseButtonHold = 84;
-    public const int RightMouseButtonPressed = 85;
-    public const int RightMouseButtonUp = 86;
-    public const int ScrollWheelAxis = 87;
-    public const int SpaceButtonPressed = 88;
-    public const int AssetIsLoading = 89;
-    public const int Invincible = 90;
+    public const int BelongsToTheGrid = 66;
+    public const int Grid = 67;
+    public const int GridSize = 68;
+    public const int TileLevel = 69;
+    public const int TilePieces = 70;
+    public const int TilePosition = 71;
+    public const int TileRotationType = 72;
+    public const int TileType = 73;
+    public const int AxisInput = 74;
+    public const int Input = 75;
+    public const int LeftMouseButtonDown = 76;
+    public const int LeftMouseButtonDownPressed = 77;
+    public const int LeftMouseButtonHold = 78;
+    public const int LeftMouseButtonUp = 79;
+    public const int MiddleMouseButtonDown = 80;
+    public const int MiddleMouseButtonHold = 81;
+    public const int MiddleMouseButtonUp = 82;
+    public const int Clickable = 83;
+    public const int Clicked = 84;
+    public const int Deselected = 85;
+    public const int Selectable = 86;
+    public const int Selected = 87;
+    public const int MouseAxisInput = 88;
+    public const int MousePosition = 89;
+    public const int MouseWorldPosition = 90;
+    public const int RightMouseButtonDown = 91;
+    public const int RightMouseButtonHold = 92;
+    public const int RightMouseButtonPressed = 93;
+    public const int RightMouseButtonUp = 94;
+    public const int ScrollWheelAxis = 95;
+    public const int SpaceButtonPressed = 96;
+    public const int AssetIsLoading = 97;
+    public const int Invincible = 98;
 
-    public const int TotalComponents = 91;
+    public const int TotalComponents = 99;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -169,6 +177,14 @@ public static class GameComponentsLookup {
         "OutOfRangeOfStack",
         "StackCount",
         "StackMaxCount",
+        "BelongsToTheGrid",
+        "Grid",
+        "GridSize",
+        "TileLevel",
+        "TilePieces",
+        "TilePosition",
+        "TileRotationType",
+        "TileType",
         "AxisInput",
         "Input",
         "LeftMouseButtonDown",
@@ -263,6 +279,14 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Stack.OutOfRangeOfStackComponent),
         typeof(Code.Gameplay.Features.Stack.StackCountComponent),
         typeof(Code.Gameplay.Features.Stack.StackMaxCountComponent),
+        typeof(Code.Gameplay.Features.Tiles.BelongsToTheGrid),
+        typeof(Code.Gameplay.Features.Tiles.GridComponent),
+        typeof(Code.Gameplay.Features.Tiles.GridSize),
+        typeof(Code.Gameplay.Features.Tiles.TileLevel),
+        typeof(Code.Gameplay.Features.Tiles.TilePieces),
+        typeof(Code.Gameplay.Features.Tiles.TilePosition),
+        typeof(Code.Gameplay.Features.Tiles.TileRotationType),
+        typeof(Code.Gameplay.Features.Tiles.TileTypeComponent),
         typeof(Code.Gameplay.Input.AxisInput),
         typeof(Code.Gameplay.Input.Input),
         typeof(Code.Gameplay.Input.LeftMouseButtonDown),

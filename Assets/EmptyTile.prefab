@@ -9,12 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7310190364287348366}
-  - component: {fileID: 6307307128843783101}
   - component: {fileID: 5492637807757689554}
   - component: {fileID: 5146007319385456204}
   - component: {fileID: 615934414023181803}
-  m_Layer: 0
-  m_Name: BaseTile 1
+  m_Layer: 6
+  m_Name: EmptyTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,19 +35,6 @@ Transform:
   - {fileID: 783602614191968508}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6307307128843783101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3672734299324521176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 280e26ae738f4259a9de4100c2800bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entityBehaviour: {fileID: 615934414023181803}
 --- !u!114 &5492637807757689554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +128,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 470857bf745a26040b57f435c52b40a7, type: 3}
       propertyPath: m_Name
       value: hex_grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 470857bf745a26040b57f435c52b40a7, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

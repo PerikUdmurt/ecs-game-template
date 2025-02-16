@@ -14,7 +14,6 @@ namespace Code.Gameplay.Features.Camera
             Add(systemFactory.Create<CameraInitializeSystem>());
             Add(systemFactory.Create<RtsCameraFeature>());
             Add(systemFactory.Create<LookToCameraSystem>());
-            Add(systemFactory.Create<DebugCameraFeature>());
         }
     }
 }
