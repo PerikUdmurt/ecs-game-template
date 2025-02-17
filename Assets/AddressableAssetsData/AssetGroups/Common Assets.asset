@@ -37,6 +37,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb9b0b422af66a3478e0d8f32214c809
+    m_Address: EmptyTile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f96c5d947e440d944a0d18733ddfcaec
     m_Address: CardReset
     m_ReadOnly: 0

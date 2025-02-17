@@ -11,6 +11,8 @@ namespace Code.Gameplay.Features.Tiles
         {
             Add(factory.Create<InitializeGridSystem>());
             Add(factory.Create<InitializeTilesSystem>());
+            Add(factory.Create<TestCalculateInitializeSystem>());
+            Add(factory.Create<CalculateTileLevelOnTypeChangedSystem>());
         }
     }
 }

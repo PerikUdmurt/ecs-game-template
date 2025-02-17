@@ -10,32 +10,52 @@ namespace Code.Gameplay.Features.Tiles
             return (float)tileRotationType * 60f;
         }
         
-        public static Vector2Int[] GetHexNeighbors(this Vector2Int hexCoord, bool isFlatTop)
+        public static Vector2Int[] GetHexNeighbors(this Vector2Int hexCoord)
         {
-            if (isFlatTop)
+
+            return new Vector2Int[]
             {
-                return new Vector2Int[]
-                {
-                    new Vector2Int(hexCoord.x + 1, hexCoord.y - 1),     // Верхний правый
-                    new Vector2Int(hexCoord.x + 1, hexCoord.y),         // Правый
-                    new Vector2Int(hexCoord.x, hexCoord.y + 1),         // Нижний правый
-                    new Vector2Int(hexCoord.x - 1, hexCoord.y + 1),     // Нижний левый
-                    new Vector2Int(hexCoord.x - 1, hexCoord.y),         // Левый
-                    new Vector2Int(hexCoord.x, hexCoord.y - 1)          // Верхний левый
-                };
-            }
-            else
-            {
-                return new Vector2Int[]
-                {
-                    new Vector2Int(hexCoord.x, hexCoord.y - 1),         // Левый нижний
-                    new Vector2Int(hexCoord.x + 1, hexCoord.y - 1),     // Верхний правый
-                    new Vector2Int(hexCoord.x + 1, hexCoord.y),         // Нижний правый
-                    new Vector2Int(hexCoord.x, hexCoord.y + 1),         // Нижний
-                    new Vector2Int(hexCoord.x - 1, hexCoord.y + 1),     // Нижний левый
-                    new Vector2Int(hexCoord.x - 1, hexCoord.y)          // Верхний левый
-                };
-            }
+                GetTopNeighbour(hexCoord),
+                GetTopRightNeighbour(hexCoord),
+                GetBottomRightNeighbour(hexCoord),
+                GetBottomNeighbour(hexCoord),
+                GetBottomLeftNeighbour(hexCoord),
+                GetTopLeftNeighbour(hexCoord),
+            };
+        }
+
+        public static Vector2Int GetTopNeighbour(this Vector2Int hexCoord) =>
+            new Vector2Int(hexCoord.x + 1, hexCoord.y);
+
+        public static Vector2Int GetBottomNeighbour(this Vector2Int hexCoord) =>
+            new Vector2Int(hexCoord.x - 1, hexCoord.y);
+
+        public static Vector2Int GetTopRightNeighbour(this Vector2Int hexCoord)
+        {
+            return hexCoord.y % 2 == 0 
+                ? new Vector2Int(hexCoord.x, hexCoord.y + 1) //Chet
+                : new Vector2Int(hexCoord.x + 1, hexCoord.y + 1); // Nechet
+        }
+        
+        public static Vector2Int GetBottomRightNeighbour(this Vector2Int hexCoord)
+        {
+            return hexCoord.y % 2 == 0 
+                ? new Vector2Int(hexCoord.x - 1, hexCoord.y + 1) //Chet
+                : new Vector2Int(hexCoord.x, hexCoord.y + 1); // Nechet
+        }
+        
+        public static Vector2Int GetBottomLeftNeighbour(this Vector2Int hexCoord)
+        {
+            return hexCoord.y % 2 == 0 
+                ? new Vector2Int(hexCoord.x - 1, hexCoord.y - 1) //Chet
+                : new Vector2Int(hexCoord.x, hexCoord.y - 1); // Nechet
+        }
+        
+        public static Vector2Int GetTopLeftNeighbour(this Vector2Int hexCoord)
+        {
+            return hexCoord.y % 2 == 0 
+                ? new Vector2Int(hexCoord.x, hexCoord.y - 1) //Chet
+                : new Vector2Int(hexCoord.x + 1, hexCoord.y - 1); // Nechet
         }
     }
 }
