@@ -5,15 +5,15 @@ using JetBrains.Annotations;
 namespace Code.Gameplay.Features.Movement.Systems
 {
     [UsedImplicitly]
-    public class WorldPositionSystem : IExecuteSystem
+    public class RotationSystem : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _movers;
 
-        public WorldPositionSystem(GameContext gameContext ,ITimeService timeService)
+        public RotationSystem(GameContext gameContext ,ITimeService timeService)
         {
             _movers = gameContext.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.WorldPosition,
+                    GameMatcher.Rotation,
                     GameMatcher.Transform));
         }
 
@@ -21,7 +21,7 @@ namespace Code.Gameplay.Features.Movement.Systems
         {
             foreach (var entity in _movers)
             {
-                entity.Transform.position = entity.WorldPosition;
+                entity.Transform.rotation = entity.Rotation;
             }
         }
     }

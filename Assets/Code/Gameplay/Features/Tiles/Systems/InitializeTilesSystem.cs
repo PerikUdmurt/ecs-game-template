@@ -36,6 +36,7 @@ namespace Code.Gameplay.Features.Tiles.Systems
                         .AddTilePosition(new Vector2Int(x, y))
                         .AddBelongsToTheGrid(grid.grid.Value)
                         .AddWorldPosition(grid.Grid.CellToWorld(new Vector3Int(x, y, 0)))
+                        .AddRotation(Quaternion.identity)
                         .AddTileRotationType(ETileRotationType.Top)
                         .AddViewPath("EmptyTile")
                         .AddTilePieces(new TilePiecesData()

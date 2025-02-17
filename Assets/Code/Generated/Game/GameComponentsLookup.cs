@@ -21,94 +21,95 @@ public static class GameComponentsLookup {
     public const int ViewPath = 10;
     public const int ViewPrefab = 11;
     public const int Id = 12;
-    public const int WorldPosition = 13;
-    public const int ActionSourceId = 14;
-    public const int ActionTargetId = 15;
-    public const int BattleActionRequest = 16;
-    public const int Bleeding = 17;
-    public const int BleedingResistance = 18;
-    public const int Damage = 19;
-    public const int Executed = 20;
-    public const int Executing = 21;
-    public const int Camera = 22;
-    public const int LookToCamera = 23;
-    public const int MainCamera = 24;
-    public const int CameraMovementDelta = 25;
-    public const int CameraMovementLerp = 26;
-    public const int CameraRotation = 27;
-    public const int CameraRotationDelta = 28;
-    public const int CameraRotationLerp = 29;
-    public const int CameraScrollDelta = 30;
-    public const int CameraScrollLerp = 31;
-    public const int CameraSlope = 32;
-    public const int MaxZoomSlope = 33;
-    public const int MinZoomSlope = 34;
-    public const int RatioOfCameraMovementAndDistance = 35;
-    public const int RTSCamera = 36;
-    public const int RTSCameraMaxDistance = 37;
-    public const int RTSCameraMinDistance = 38;
-    public const int RTSCameraTargetDistance = 39;
-    public const int RTSCameraTargetPosition = 40;
-    public const int RTSCameraTargetRotation = 41;
-    public const int Card = 42;
-    public const int Cursor = 43;
-    public const int CursorType = 44;
-    public const int EntityUnderCursor = 45;
-    public const int Dragable = 46;
-    public const int Dragging = 47;
-    public const int DragLerp = 48;
-    public const int Dropped = 49;
-    public const int StartDragging = 50;
-    public const int CurrentHp = 51;
-    public const int Dead = 52;
-    public const int MaxHp = 53;
-    public const int ProcessingDeath = 54;
-    public const int Acceleration = 55;
-    public const int Direction = 56;
-    public const int MoveTargetPosition = 57;
-    public const int Moving = 58;
-    public const int Speed = 59;
-    public const int CardStack = 60;
-    public const int CardStackElement = 61;
-    public const int HorizontalLayout = 62;
-    public const int OutOfRangeOfStack = 63;
-    public const int StackCount = 64;
-    public const int StackMaxCount = 65;
-    public const int BelongsToTheGrid = 66;
-    public const int Grid = 67;
-    public const int GridSize = 68;
-    public const int TileLevel = 69;
-    public const int TilePieces = 70;
-    public const int TilePosition = 71;
-    public const int TileRotationType = 72;
-    public const int TileType = 73;
-    public const int AxisInput = 74;
-    public const int Input = 75;
-    public const int LeftMouseButtonDown = 76;
-    public const int LeftMouseButtonDownPressed = 77;
-    public const int LeftMouseButtonHold = 78;
-    public const int LeftMouseButtonUp = 79;
-    public const int MiddleMouseButtonDown = 80;
-    public const int MiddleMouseButtonHold = 81;
-    public const int MiddleMouseButtonUp = 82;
-    public const int Clickable = 83;
-    public const int Clicked = 84;
-    public const int Deselected = 85;
-    public const int Selectable = 86;
-    public const int Selected = 87;
-    public const int MouseAxisInput = 88;
-    public const int MousePosition = 89;
-    public const int MouseWorldPosition = 90;
-    public const int RightMouseButtonDown = 91;
-    public const int RightMouseButtonHold = 92;
-    public const int RightMouseButtonPressed = 93;
-    public const int RightMouseButtonUp = 94;
-    public const int ScrollWheelAxis = 95;
-    public const int SpaceButtonPressed = 96;
-    public const int AssetIsLoading = 97;
-    public const int Invincible = 98;
+    public const int Rotation = 13;
+    public const int WorldPosition = 14;
+    public const int ActionSourceId = 15;
+    public const int ActionTargetId = 16;
+    public const int BattleActionRequest = 17;
+    public const int Bleeding = 18;
+    public const int BleedingResistance = 19;
+    public const int Damage = 20;
+    public const int Executed = 21;
+    public const int Executing = 22;
+    public const int Camera = 23;
+    public const int LookToCamera = 24;
+    public const int MainCamera = 25;
+    public const int CameraMovementDelta = 26;
+    public const int CameraMovementLerp = 27;
+    public const int CameraRotation = 28;
+    public const int CameraRotationDelta = 29;
+    public const int CameraRotationLerp = 30;
+    public const int CameraScrollDelta = 31;
+    public const int CameraScrollLerp = 32;
+    public const int CameraSlope = 33;
+    public const int MaxZoomSlope = 34;
+    public const int MinZoomSlope = 35;
+    public const int RatioOfCameraMovementAndDistance = 36;
+    public const int RTSCamera = 37;
+    public const int RTSCameraMaxDistance = 38;
+    public const int RTSCameraMinDistance = 39;
+    public const int RTSCameraTargetDistance = 40;
+    public const int RTSCameraTargetPosition = 41;
+    public const int RTSCameraTargetRotation = 42;
+    public const int Card = 43;
+    public const int Cursor = 44;
+    public const int CursorType = 45;
+    public const int EntityUnderCursor = 46;
+    public const int Dragable = 47;
+    public const int Dragging = 48;
+    public const int DragLerp = 49;
+    public const int Dropped = 50;
+    public const int StartDragging = 51;
+    public const int CurrentHp = 52;
+    public const int Dead = 53;
+    public const int MaxHp = 54;
+    public const int ProcessingDeath = 55;
+    public const int Acceleration = 56;
+    public const int Direction = 57;
+    public const int MoveTargetPosition = 58;
+    public const int Moving = 59;
+    public const int Speed = 60;
+    public const int CardStack = 61;
+    public const int CardStackElement = 62;
+    public const int HorizontalLayout = 63;
+    public const int OutOfRangeOfStack = 64;
+    public const int StackCount = 65;
+    public const int StackMaxCount = 66;
+    public const int BelongsToTheGrid = 67;
+    public const int Grid = 68;
+    public const int GridSize = 69;
+    public const int TileLevel = 70;
+    public const int TilePieces = 71;
+    public const int TilePosition = 72;
+    public const int TileRotationType = 73;
+    public const int TileType = 74;
+    public const int AxisInput = 75;
+    public const int Input = 76;
+    public const int LeftMouseButtonDown = 77;
+    public const int LeftMouseButtonDownPressed = 78;
+    public const int LeftMouseButtonHold = 79;
+    public const int LeftMouseButtonUp = 80;
+    public const int MiddleMouseButtonDown = 81;
+    public const int MiddleMouseButtonHold = 82;
+    public const int MiddleMouseButtonUp = 83;
+    public const int Clickable = 84;
+    public const int Clicked = 85;
+    public const int Deselected = 86;
+    public const int Selectable = 87;
+    public const int Selected = 88;
+    public const int MouseAxisInput = 89;
+    public const int MousePosition = 90;
+    public const int MouseWorldPosition = 91;
+    public const int RightMouseButtonDown = 92;
+    public const int RightMouseButtonHold = 93;
+    public const int RightMouseButtonPressed = 94;
+    public const int RightMouseButtonUp = 95;
+    public const int ScrollWheelAxis = 96;
+    public const int SpaceButtonPressed = 97;
+    public const int AssetIsLoading = 98;
+    public const int Invincible = 99;
 
-    public const int TotalComponents = 99;
+    public const int TotalComponents = 100;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -124,6 +125,7 @@ public static class GameComponentsLookup {
         "ViewPath",
         "ViewPrefab",
         "Id",
+        "Rotation",
         "WorldPosition",
         "ActionSourceId",
         "ActionTargetId",
@@ -226,6 +228,7 @@ public static class GameComponentsLookup {
         typeof(Code.Common.ViewPath),
         typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.Id),
+        typeof(Code.Gameplay.Common.Rotation),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Battle.ActionSourceIdComponent),
         typeof(Code.Gameplay.Features.Battle.ActionTargetIdComponent),

@@ -5,7 +5,7 @@ namespace Code.Gameplay.Features.Tiles
 {
     public static class TileExtensions
     {
-        public static float GetRotationValue(this ETileRotationType tileRotationType)
+        public static float ToRotationValue(this ETileRotationType tileRotationType)
         {
             return (float)tileRotationType * 60f;
         }

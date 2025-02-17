@@ -1,3 +1,4 @@
+using Code.Gameplay.Features.Tiles.Animations;
 using Code.Gameplay.Features.Tiles.Systems;
 using Code.Infrastructures.Factories;
 using JetBrains.Annotations;
@@ -13,6 +14,7 @@ namespace Code.Gameplay.Features.Tiles
             Add(factory.Create<InitializeTilesSystem>());
             Add(factory.Create<TestCalculateInitializeSystem>());
             Add(factory.Create<CalculateTileLevelOnTypeChangedSystem>());
+            Add(factory.Create<TileAnimationFeature>());
         }
     }
 }

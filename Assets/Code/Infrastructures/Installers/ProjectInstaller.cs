@@ -82,7 +82,7 @@ namespace Code.Infrastructures.Installers
         private void InstallGameplayFactories()
         {
             Install<EntityViewFactoryInstaller>();
-            Install<TilesFactoryInstaller>();
+            Install<TilesInstaller>();
         }
 
         private void InstallUI()
