@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a80cf7ff320ab0409cccfdf76b7b7b2, type: 3}
   m_Name: CommonTileAnimationsConfig
   m_EditorClassIdentifier: 
-  rotationSpeed: 0
+  rotationDuration: 1
+  rotationEase: 4
