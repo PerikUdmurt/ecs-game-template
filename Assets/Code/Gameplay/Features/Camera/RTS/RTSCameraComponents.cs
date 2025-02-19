@@ -20,4 +20,11 @@ namespace Code.Gameplay.Features.Camera.RTS
     [Game] public class MinZoomSlope : IComponent { public float Value; }
     [Game] public class CameraSlope : IComponent { public float Value; }
     [Game] public class CameraRotation : IComponent { public float Value; }
+    [Game] public class CameraBonudaries : IComponent { public CameraBoundariesData Value; }
+    
+    public class CameraBoundariesData
+    {
+        public Vector2 Start;
+        public Vector2 End;
+    }
 }

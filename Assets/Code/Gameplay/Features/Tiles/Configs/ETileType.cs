@@ -4,6 +4,7 @@ namespace Code.Gameplay.Features.Tiles.Configs
     {
         Empty = 0,
         Available = 1,
-        Built = 2
+        Built = 2,
+        Prepare = 3
     }
 }

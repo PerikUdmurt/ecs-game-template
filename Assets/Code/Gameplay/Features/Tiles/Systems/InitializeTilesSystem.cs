@@ -1,7 +1,7 @@
 using Code.Common.Entity;
+using Code.Common.Extensions;
 using Code.Gameplay.Features.Tiles.Configs;
 using Code.Gameplay.Features.Tiles.Datas;
-using Code.Gameplay.Features.Tiles.Factories;
 using Code.Infrastructure.Identifiers;
 using Entitas;
 using JetBrains.Annotations;
@@ -15,7 +15,6 @@ namespace Code.Gameplay.Features.Tiles.Systems
         private readonly IGroup<GameEntity> _gridGroup;
         
         public InitializeTilesSystem(
-            ITileFactory tileFactory,
             GameContext gameContext,
             IIdentifierService identifierService)
         {
@@ -34,11 +33,14 @@ namespace Code.Gameplay.Features.Tiles.Systems
                     CreateEntity.Empty()
                         .AddTileType(ETileType.Empty)
                         .AddTilePosition(new Vector2Int(x, y))
+                        .AddScale(Vector3.one)
                         .AddBelongsToTheGrid(grid.grid.Value)
                         .AddWorldPosition(grid.Grid.CellToWorld(new Vector3Int(x, y, 0)))
                         .AddRotation(Quaternion.identity)
                         .AddTileRotationType(ETileRotationType.Top)
-                        .AddViewPath("EmptyTile")
+                        .AddEmptyTileViewPath("EmptyTile")
+                        .AddViewPath("TestTile")
+                        .With(e => e.isInstantiateWithDisabledView = true)
                         .AddTilePieces(new TilePiecesData()
                         {
                             Top = ETilePieceType.Field,

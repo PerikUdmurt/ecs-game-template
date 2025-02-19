@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7310190364287348366}
   - component: {fileID: 615934414023181803}
   m_Layer: 6
-  m_Name: EmptyTile
+  m_Name: TestTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 470857bf745a26040b57f435c52b40a7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f1363dbf4563951498ca97a4875a0080, type: 2}
+      objectReference: {fileID: 2100000, guid: 958ae798dc002f743b86fc6da43e9c83, type: 2}
     - target: {fileID: 919132149155446097, guid: 470857bf745a26040b57f435c52b40a7, type: 3}
       propertyPath: m_Name
       value: hex_grass

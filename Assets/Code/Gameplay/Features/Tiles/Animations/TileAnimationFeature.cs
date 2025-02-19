@@ -10,6 +10,7 @@ namespace Code.Gameplay.Features.Tiles.Animations
         public TileAnimationFeature(ISystemFactory factory)
         {
             Add(factory.Create<TileRotateAnimationSystem>());
+            Add(factory.Create<OnTileTypeChangedAnimationSystem>());
         }
     }
 }

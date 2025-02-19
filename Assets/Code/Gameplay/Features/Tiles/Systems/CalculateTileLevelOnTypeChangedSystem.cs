@@ -4,7 +4,6 @@ using System.Text;
 using Code.Gameplay.Features.Tiles.Configs;
 using Entitas;
 using JetBrains.Annotations;
-using UnityEditor.Scripting;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Tiles.Systems
@@ -27,7 +26,7 @@ namespace Code.Gameplay.Features.Tiles.Systems
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
             return context.CreateCollector(
-                GameMatcher.TileType.AddedOrRemoved(), 
+                GameMatcher.TileType.AddedOrRemoved(),
                 GameMatcher.TilePieces.AddedOrRemoved(),
                 GameMatcher.TileRotationType.AddedOrRemoved());
         }
@@ -44,7 +43,7 @@ namespace Code.Gameplay.Features.Tiles.Systems
         protected override void Execute(List<GameEntity> entities)
         {
             StringBuilder str = new("[CalculateTileLevelOnTypeChangedSystem] Recalculated tile level.");
-            
+
             foreach (GameEntity tile in entities)
             {
                 Vector2Int[] tilesPositions = tile.TilePosition.GetHexNeighbors();
@@ -57,7 +56,7 @@ namespace Code.Gameplay.Features.Tiles.Systems
                     str.AppendLine($"Tile {t.TilePosition}");
                     RecalculateTileLevelForEntity(t, str);
                 }
-                
+
                 Debug.Log(str.ToString());
             }
         }
@@ -78,7 +77,7 @@ namespace Code.Gameplay.Features.Tiles.Systems
             };
 
             int level = 0;
-            
+
             for (int i = 0; i < tilesPositions.Length; i++)
             {
                 GameEntity neighbourTile = _tiles.GetEntities()
@@ -108,13 +107,13 @@ namespace Code.Gameplay.Features.Tiles.Systems
                         nind -= 6;
                     }
                 }
-                
+
                 ETilePieceType neighbourPiece = neighbourPieces[nind];
-                
+
                 int ind = sourceRotationIndex + i;
                 if (ind >= pieces.Length)
                     ind -= pieces.Length;
-                
+
                 ETilePieceType sourcePiece = pieces[ind];
 
                 if (neighbourPiece == sourcePiece)

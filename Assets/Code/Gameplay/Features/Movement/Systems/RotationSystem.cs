@@ -1,5 +1,6 @@
 using Code.Infrastructures.Time;
 using Entitas;
+using Extensions;
 using JetBrains.Annotations;
 
 namespace Code.Gameplay.Features.Movement.Systems
@@ -9,7 +10,7 @@ namespace Code.Gameplay.Features.Movement.Systems
     {
         private readonly IGroup<GameEntity> _movers;
 
-        public RotationSystem(GameContext gameContext ,ITimeService timeService)
+        public RotationSystem(GameContext gameContext)
         {
             _movers = gameContext.GetGroup(GameMatcher
                 .AllOf(
@@ -22,6 +23,28 @@ namespace Code.Gameplay.Features.Movement.Systems
             foreach (var entity in _movers)
             {
                 entity.Transform.rotation = entity.Rotation;
+            }
+        }
+    }
+    
+    [UsedImplicitly]
+    public class ScaleSystem : IExecuteSystem
+    {
+        private readonly IGroup<GameEntity> _movers;
+
+        public ScaleSystem(GameContext gameContext)
+        {
+            _movers = gameContext.GetGroup(GameMatcher
+                .AllOf(
+                    GameMatcher.Scale,
+                    GameMatcher.Transform));
+        }
+
+        public void Execute()
+        {
+            foreach (var entity in _movers)
+            {
+                entity.Transform.localScale = entity.Scale;
             }
         }
     }

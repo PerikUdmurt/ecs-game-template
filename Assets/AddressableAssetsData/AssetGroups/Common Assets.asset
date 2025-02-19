@@ -27,6 +27,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 76086dfd267b96443a9a1788d018a0f5
+    m_Address: TestTile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7e8c45275f46ca141ade7b6a1b02e641
     m_Address: Card
     m_ReadOnly: 0

@@ -22,6 +22,12 @@ namespace Code.Infrastructures.View.Factory
     public async UniTask<EntityBehaviour> CreateViewForEntity(GameEntity entity)
     {
       entity.isAssetIsLoading = true;
+
+      if (entity.hasView)
+      {
+        entity.View.ReleaseEntity();
+        Object.Destroy(entity.View.gameObject);
+      }
       
       GameObject obj = await _assetProvider.Load<GameObject>(entity.ViewPath);
       EntityBehaviour viewPrefab = obj.GetComponent<EntityBehaviour>();
@@ -32,21 +38,38 @@ namespace Code.Infrastructures.View.Factory
         parentTransform: null);
 
       view.SetEntity(entity);
+      entity.RemoveViewPath();
       entity.isAssetIsLoading = false;
+
+      if (entity.isInstantiateWithDisabledView)
+      {
+        entity.View.gameObject.SetActive(false);
+      }
 
       return view;
     }
 
     public EntityBehaviour CreateViewForEntityFromPrefab(GameEntity entity)
     {
+      if (entity.hasView)
+      {
+        Object.Destroy(entity.View.gameObject);
+      }
+      
       EntityBehaviour view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
         entity.ViewPrefab,
         position: _farAway,
         Quaternion.identity,
         parentTransform: null);
-        
+      
       view.SetEntity(entity);
-   
+      entity.RemoveViewPrefab();
+      
+      if (entity.isInstantiateWithDisabledView)
+      {
+        entity.View.gameObject.SetActive(false);
+      }
+      
       return view;
     }
   }

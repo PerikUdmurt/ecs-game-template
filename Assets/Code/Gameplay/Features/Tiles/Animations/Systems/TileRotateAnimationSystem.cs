@@ -12,7 +12,7 @@ namespace Code.Gameplay.Features.Tiles.Animations.Systems
     {
         private readonly CommonTileAnimationsConfig _config;
 
-        public TileRotateAnimationSystem(GameContext context, CommonTileAnimationsConfig config)  
+        public TileRotateAnimationSystem(GameContext context, CommonTileAnimationsConfig config)
             : base(context)
         {
             _config = config;
@@ -38,14 +38,14 @@ namespace Code.Gameplay.Features.Tiles.Animations.Systems
                 float targetAngle = entity.TileRotationType.ToRotationValue();
                 if (entity.TileRotationType.ToRotationValue() - rotation.y > 180)
                 {
-                     targetAngle -= 360;
+                    targetAngle -= 360;
                 }
 
                 if (rotation.y - entity.TileRotationType.ToRotationValue() > 180)
                 {
                     targetAngle += 360;
                 }
-                    
+
                 Sequence sequence = DOTween.Sequence();
                 sequence.Append(DOTween.To(
                         () => rotation.y,
@@ -53,7 +53,9 @@ namespace Code.Gameplay.Features.Tiles.Animations.Systems
                         targetAngle,
                         _config.rotationDuration))
                     .SetEase(_config.rotationEase)
-                    .AppendCallback(() => entity.ReplaceRotation(Quaternion.Euler(rotation.x, entity.TileRotationType.ToRotationValue(), rotation.z)))
+                    .AppendCallback(() =>
+                        entity.ReplaceRotation(Quaternion.Euler(rotation.x, entity.TileRotationType.ToRotationValue(),
+                            rotation.z)))
                     .Play();
             }
         }

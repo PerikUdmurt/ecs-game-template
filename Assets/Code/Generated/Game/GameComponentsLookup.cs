@@ -9,110 +9,117 @@
 public static class GameComponentsLookup {
 
     public const int Destructed = 0;
-    public const int Animator = 1;
-    public const int AudioSource = 2;
-    public const int NavMeshAgent = 3;
-    public const int Rigidbody = 4;
-    public const int Rigidbody2D = 5;
-    public const int Rigidbody3D = 6;
-    public const int SpriteRenderer = 7;
-    public const int Transform = 8;
-    public const int View = 9;
-    public const int ViewPath = 10;
-    public const int ViewPrefab = 11;
-    public const int Id = 12;
-    public const int Rotation = 13;
-    public const int WorldPosition = 14;
-    public const int ActionSourceId = 15;
-    public const int ActionTargetId = 16;
-    public const int BattleActionRequest = 17;
-    public const int Bleeding = 18;
-    public const int BleedingResistance = 19;
-    public const int Damage = 20;
-    public const int Executed = 21;
-    public const int Executing = 22;
-    public const int Camera = 23;
-    public const int LookToCamera = 24;
-    public const int MainCamera = 25;
-    public const int CameraMovementDelta = 26;
-    public const int CameraMovementLerp = 27;
-    public const int CameraRotation = 28;
-    public const int CameraRotationDelta = 29;
-    public const int CameraRotationLerp = 30;
-    public const int CameraScrollDelta = 31;
-    public const int CameraScrollLerp = 32;
-    public const int CameraSlope = 33;
-    public const int MaxZoomSlope = 34;
-    public const int MinZoomSlope = 35;
-    public const int RatioOfCameraMovementAndDistance = 36;
-    public const int RTSCamera = 37;
-    public const int RTSCameraMaxDistance = 38;
-    public const int RTSCameraMinDistance = 39;
-    public const int RTSCameraTargetDistance = 40;
-    public const int RTSCameraTargetPosition = 41;
-    public const int RTSCameraTargetRotation = 42;
-    public const int Card = 43;
-    public const int Cursor = 44;
-    public const int CursorType = 45;
-    public const int EntityUnderCursor = 46;
-    public const int Dragable = 47;
-    public const int Dragging = 48;
-    public const int DragLerp = 49;
-    public const int Dropped = 50;
-    public const int StartDragging = 51;
-    public const int CurrentHp = 52;
-    public const int Dead = 53;
-    public const int MaxHp = 54;
-    public const int ProcessingDeath = 55;
-    public const int Acceleration = 56;
-    public const int Direction = 57;
-    public const int MoveTargetPosition = 58;
-    public const int Moving = 59;
-    public const int Speed = 60;
-    public const int CardStack = 61;
-    public const int CardStackElement = 62;
-    public const int HorizontalLayout = 63;
-    public const int OutOfRangeOfStack = 64;
-    public const int StackCount = 65;
-    public const int StackMaxCount = 66;
-    public const int BelongsToTheGrid = 67;
-    public const int Grid = 68;
-    public const int GridSize = 69;
-    public const int TileLevel = 70;
-    public const int TilePieces = 71;
-    public const int TilePosition = 72;
-    public const int TileRotationType = 73;
-    public const int TileType = 74;
-    public const int AxisInput = 75;
-    public const int Input = 76;
-    public const int LeftMouseButtonDown = 77;
-    public const int LeftMouseButtonDownPressed = 78;
-    public const int LeftMouseButtonHold = 79;
-    public const int LeftMouseButtonUp = 80;
-    public const int MiddleMouseButtonDown = 81;
-    public const int MiddleMouseButtonHold = 82;
-    public const int MiddleMouseButtonUp = 83;
-    public const int Clickable = 84;
-    public const int Clicked = 85;
-    public const int Deselected = 86;
-    public const int Selectable = 87;
-    public const int Selected = 88;
-    public const int MouseAxisInput = 89;
-    public const int MousePosition = 90;
-    public const int MouseWorldPosition = 91;
-    public const int RightMouseButtonDown = 92;
-    public const int RightMouseButtonHold = 93;
-    public const int RightMouseButtonPressed = 94;
-    public const int RightMouseButtonUp = 95;
-    public const int ScrollWheelAxis = 96;
-    public const int SpaceButtonPressed = 97;
-    public const int AssetIsLoading = 98;
-    public const int Invincible = 99;
+    public const int InstantiateWithDisabledView = 1;
+    public const int Animator = 2;
+    public const int AudioSource = 3;
+    public const int NavMeshAgent = 4;
+    public const int Rigidbody = 5;
+    public const int Rigidbody2D = 6;
+    public const int Rigidbody3D = 7;
+    public const int SpriteRenderer = 8;
+    public const int Transform = 9;
+    public const int View = 10;
+    public const int ViewPath = 11;
+    public const int ViewPrefab = 12;
+    public const int Id = 13;
+    public const int Rotation = 14;
+    public const int Scale = 15;
+    public const int WorldPosition = 16;
+    public const int ActionSourceId = 17;
+    public const int ActionTargetId = 18;
+    public const int BattleActionRequest = 19;
+    public const int Bleeding = 20;
+    public const int BleedingResistance = 21;
+    public const int Damage = 22;
+    public const int Executed = 23;
+    public const int Executing = 24;
+    public const int Camera = 25;
+    public const int LookToCamera = 26;
+    public const int MainCamera = 27;
+    public const int CameraBonudaries = 28;
+    public const int CameraMovementDelta = 29;
+    public const int CameraMovementLerp = 30;
+    public const int CameraRotation = 31;
+    public const int CameraRotationDelta = 32;
+    public const int CameraRotationLerp = 33;
+    public const int CameraScrollDelta = 34;
+    public const int CameraScrollLerp = 35;
+    public const int CameraSlope = 36;
+    public const int MaxZoomSlope = 37;
+    public const int MinZoomSlope = 38;
+    public const int RatioOfCameraMovementAndDistance = 39;
+    public const int RTSCamera = 40;
+    public const int RTSCameraMaxDistance = 41;
+    public const int RTSCameraMinDistance = 42;
+    public const int RTSCameraTargetDistance = 43;
+    public const int RTSCameraTargetPosition = 44;
+    public const int RTSCameraTargetRotation = 45;
+    public const int Card = 46;
+    public const int Cursor = 47;
+    public const int CursorType = 48;
+    public const int EntityUnderCursor = 49;
+    public const int Dragable = 50;
+    public const int Dragging = 51;
+    public const int DragLerp = 52;
+    public const int Dropped = 53;
+    public const int StartDragging = 54;
+    public const int CurrentHp = 55;
+    public const int Dead = 56;
+    public const int MaxHp = 57;
+    public const int ProcessingDeath = 58;
+    public const int Acceleration = 59;
+    public const int Direction = 60;
+    public const int MoveTargetPosition = 61;
+    public const int Moving = 62;
+    public const int Speed = 63;
+    public const int CardStack = 64;
+    public const int CardStackElement = 65;
+    public const int HorizontalLayout = 66;
+    public const int OutOfRangeOfStack = 67;
+    public const int StackCount = 68;
+    public const int StackMaxCount = 69;
+    public const int BelongsToTheGrid = 70;
+    public const int EmptyTileIsLoading = 71;
+    public const int EmptyTileView = 72;
+    public const int EmptyTileViewPath = 73;
+    public const int Grid = 74;
+    public const int GridSize = 75;
+    public const int TileLevel = 76;
+    public const int TilePieces = 77;
+    public const int TilePosition = 78;
+    public const int TileRotationType = 79;
+    public const int TileType = 80;
+    public const int AxisInput = 81;
+    public const int Input = 82;
+    public const int LeftMouseButtonDown = 83;
+    public const int LeftMouseButtonDownPressed = 84;
+    public const int LeftMouseButtonHold = 85;
+    public const int LeftMouseButtonUp = 86;
+    public const int MiddleMouseButtonDown = 87;
+    public const int MiddleMouseButtonHold = 88;
+    public const int MiddleMouseButtonUp = 89;
+    public const int Clickable = 90;
+    public const int Clicked = 91;
+    public const int Deselected = 92;
+    public const int Selectable = 93;
+    public const int Selected = 94;
+    public const int MouseAxisInput = 95;
+    public const int MousePosition = 96;
+    public const int MouseWorldPosition = 97;
+    public const int RightMouseButtonDown = 98;
+    public const int RightMouseButtonHold = 99;
+    public const int RightMouseButtonPressed = 100;
+    public const int RightMouseButtonUp = 101;
+    public const int ScrollWheelAxis = 102;
+    public const int SpaceButtonPressed = 103;
+    public const int AssetIsLoading = 104;
+    public const int Invincible = 105;
 
-    public const int TotalComponents = 100;
+    public const int TotalComponents = 106;
 
     public static readonly string[] componentNames = {
         "Destructed",
+        "InstantiateWithDisabledView",
         "Animator",
         "AudioSource",
         "NavMeshAgent",
@@ -126,6 +133,7 @@ public static class GameComponentsLookup {
         "ViewPrefab",
         "Id",
         "Rotation",
+        "Scale",
         "WorldPosition",
         "ActionSourceId",
         "ActionTargetId",
@@ -138,6 +146,7 @@ public static class GameComponentsLookup {
         "Camera",
         "LookToCamera",
         "MainCamera",
+        "CameraBonudaries",
         "CameraMovementDelta",
         "CameraMovementLerp",
         "CameraRotation",
@@ -180,6 +189,9 @@ public static class GameComponentsLookup {
         "StackCount",
         "StackMaxCount",
         "BelongsToTheGrid",
+        "EmptyTileIsLoading",
+        "EmptyTileView",
+        "EmptyTileViewPath",
         "Grid",
         "GridSize",
         "TileLevel",
@@ -216,6 +228,7 @@ public static class GameComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(Code.Common.Destructed),
+        typeof(Code.Common.InstantiateWithDisabledView),
         typeof(Code.Common.Unity.Animator),
         typeof(Code.Common.Unity.AudioSource),
         typeof(Code.Common.Unity.NavMeshAgent),
@@ -229,6 +242,7 @@ public static class GameComponentsLookup {
         typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.Rotation),
+        typeof(Code.Gameplay.Common.Scale),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Battle.ActionSourceIdComponent),
         typeof(Code.Gameplay.Features.Battle.ActionTargetIdComponent),
@@ -241,6 +255,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Camera.CameraComponent),
         typeof(Code.Gameplay.Features.Camera.LookToCameraComponent),
         typeof(Code.Gameplay.Features.Camera.MainCameraComponent),
+        typeof(Code.Gameplay.Features.Camera.RTS.CameraBonudaries),
         typeof(Code.Gameplay.Features.Camera.RTS.CameraMovementDelta),
         typeof(Code.Gameplay.Features.Camera.RTS.CameraMovementLerp),
         typeof(Code.Gameplay.Features.Camera.RTS.CameraRotation),
@@ -283,6 +298,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Stack.StackCountComponent),
         typeof(Code.Gameplay.Features.Stack.StackMaxCountComponent),
         typeof(Code.Gameplay.Features.Tiles.BelongsToTheGrid),
+        typeof(Code.Gameplay.Features.Tiles.EmptyTileIsLoading),
+        typeof(Code.Gameplay.Features.Tiles.EmptyTileView),
+        typeof(Code.Gameplay.Features.Tiles.EmptyTileViewPath),
         typeof(Code.Gameplay.Features.Tiles.GridComponent),
         typeof(Code.Gameplay.Features.Tiles.GridSize),
         typeof(Code.Gameplay.Features.Tiles.TileLevel),

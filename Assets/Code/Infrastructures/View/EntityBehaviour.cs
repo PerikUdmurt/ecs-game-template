@@ -20,8 +20,8 @@ namespace Code.Infrastructures.View
         public void SetEntity(GameEntity entity)
         {
             _entity = entity;
-            _entity.AddView(this);
-            _entity.AddTransform(transform);
+            _entity.ReplaceView(this);
+            _entity.ReplaceTransform(transform);
             
             entity.Retain(this);
 

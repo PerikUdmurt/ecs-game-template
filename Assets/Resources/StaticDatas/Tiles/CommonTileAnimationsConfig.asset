@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationDuration: 1
   rotationEase: 4
+  ScaleTileDuration: 1
+  onEmptyTileEase: 4

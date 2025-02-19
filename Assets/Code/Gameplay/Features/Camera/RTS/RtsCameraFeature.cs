@@ -9,6 +9,8 @@ namespace Code.Gameplay.Features.Camera.RTS
     {
         public RtsCameraFeature(ISystemFactory factory)
         {
+            //Add(factory.Create<SetCameraBoundariesByCellGrid>());
+            //Add(factory.Create<CameraOutOfBoundariesSystem>());
             Add(factory.Create<RTSCameraTargetMovementSystem>());
             Add(factory.Create<RTSCameraDistanceSystem>());
             Add(factory.Create<CameraRotationSystem>());
